@@ -8,8 +8,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    position: relative;
-    /* Ensure relative positioning for proper absolute positioning of iframe */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 100px; /* Adjust spacing between app grid and footer */
 }
 
 .app-grid {
@@ -55,10 +60,4 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
