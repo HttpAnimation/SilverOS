@@ -16,8 +16,6 @@
     <div class="main-content">
         <div id="display-size-info"></div>
     </div>
-    <script src="js/goBackToSettingsx.js"></script>
-    <script src="js/displaySizeInfo.js"></script>
     <script src="js/populateSystemInfo.js"></script>
 </body>
 </html>
