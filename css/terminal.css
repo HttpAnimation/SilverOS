@@ -60,3 +60,23 @@ body {
     margin-bottom: 10px;
 }
 
+.terminal-output p {
+    margin: 5px 0;
+}
+
+#terminal-input {
+    width: calc(100% - 22px);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    padding: 5px;
+    margin: 0;
+    line-height: 1;
+    caret-color: #fff;
+}
+
+#terminal-input::placeholder {
+    color: #999;
+}
