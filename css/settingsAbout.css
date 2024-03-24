@@ -30,7 +30,7 @@ body {
 }
 
 #display-size-info {
-    background-color: #464849; /* Blue color similar to Android */
+    background-color: #464849;
     color: #fff;
     border: none;
     width: 100%; /* Stretch across the horizontal space */
