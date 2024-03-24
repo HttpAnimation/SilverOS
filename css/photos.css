@@ -1,11 +1,8 @@
 body {
     background-color: #242424;
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
     font-family: Arial, sans-serif;
-    /* Use a default font */
 }
 
 .top-bar {
@@ -13,29 +10,39 @@ body {
     color: #fff;
     padding: 10px;
     display: flex;
-    /* Use flexbox to align items */
     justify-content: space-between;
-    /* Space between items */
     align-items: center;
-    /* Center items vertically */
 }
 
 .close-button {
     cursor: pointer;
     margin-right: 10px;
-    /* Add margin to the right */
 }
 
 .close-button img {
     width: 24px;
-    /* Adjust width as needed */
     height: 24px;
-    /* Adjust height as needed */
 }
 
 .app-name {
     flex-grow: 1;
-    /* Take up remaining space */
     text-align: center;
-    /* Center text */
+}
+
+.photo-box {
+    width: 200px; /* Fixed size */
+    height: 200px; /* Fixed size */
+    margin: 10px;
+    overflow: hidden; /* Hide overflow content */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.photo-box.expanded {
+    width: 100vw; /* Take up full width of the viewport */
+    height: 100vh; /* Take up full height of the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999; /* Ensure it's on top of other content */
 }
