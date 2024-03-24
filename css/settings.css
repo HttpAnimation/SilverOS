@@ -40,7 +40,10 @@ body {
     margin-right: 10px;
     display: block; /* Display as block to occupy full width */
     font-weight: bold; /* Make the text bold */
+    font-size: 24px; /* Increase the font size */
+    padding: 20px; /* Add padding to fit the text */
 }
+
 
 .about-button:hover {
     background-color: #303031; /* Darker blue on hover */
