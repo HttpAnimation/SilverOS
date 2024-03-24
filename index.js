@@ -1,9 +1,10 @@
-const dockImg = document.getElementById('dockImg');
-const appOverlay = document.getElementById('appOverlay');
+const dockItem = document.getElementById('dockItem');
+const settingsFrame = document.getElementById('settingsFrame');
 
-dockImg.addEventListener('click', function() {
-    appOverlay.style.opacity = '1'; // Show the overlay
-    setTimeout(function() {
-        appOverlay.style.opacity = '0'; // Hide the overlay after a short delay
-    }, 500); // Adjust this delay according to your preference
+dockItem.addEventListener('click', function() {
+    // Show the iframe
+    settingsFrame.style.display = 'block';
+
+    // Load settings.html into the iframe
+    settingsFrame.src = 'settings.html';
 });
