@@ -53,6 +53,10 @@ footer {
     width: 60px; /* Adjust width for each dock item */
     height: 60px; /* Keep height consistent */
     cursor: pointer;
-    margin: 0 5px; /* Adjusted margin between dock items */
     /* Change cursor to pointer when hovering over the image */
+}
+
+/* Remove margin between dock items */
+.dock-item + .dock-item {
+    margin-left: 1; /* Remove the left margin for dock items except the first one */
 }
