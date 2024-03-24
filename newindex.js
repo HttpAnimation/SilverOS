@@ -1,16 +1,10 @@
 // Get the elements
 const dockItemSettings = document.getElementById('dockItemSettings');
-const popupContainer = document.getElementById('popupContainer');
+
+// Function to open settings.html
+function openSettingsPage() {
+    window.location.href = 'settings.html'; // Redirect to settings.html
+}
 
 // Add click event listener
-dockItemSettings.addEventListener('click', function() {
-    // Show the popup
-    popupContainer.style.display = 'block';
-});
-
-// Close popup when clicking outside of it
-popupContainer.addEventListener('click', function(event) {
-    if (event.target === popupContainer) {
-        popupContainer.style.display = 'none';
-    }
-});
+dockItemSettings.addEventListener('click', openSettingsPage);
