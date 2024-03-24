@@ -41,7 +41,7 @@ body {
 footer {
     background-color: #383838; /* Dark mode footer background color */
     display: flex;
-    justify-content: flex-start; /* Align dock items from left to right */
+    justify-content: center; /* Center dock items horizontally */
     align-items: center;
     height: 100px; /* Increased height for phone-like dock */
     position: fixed;
