@@ -47,4 +47,5 @@ body {
     top: 0;
     left: 0;
     z-index: 999; /* Ensure it's on top of other content */
+    border-radius: 0; /* No border-radius when expanded */
 }
