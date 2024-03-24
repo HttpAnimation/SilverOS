@@ -13,51 +13,10 @@
         </span>
         <div class="app-name">Photos</div>
     </div>
-    <div id="photo-library" class="photo-library" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div id="drop-area" class="drop-area">
         Drag photos here
     </div>
-    <div id="full-screen-overlay" class="full-screen-overlay" onclick="closeFullScreen()">
-        <img id="full-screen-image" class="full-screen-image" src="" alt="Full Screen Image">
-    </div>
     <script src="js/goToIndexPhotos.js"></script>
-    <script>
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-        
-        function drop(event) {
-            event.preventDefault();
-            var files = event.dataTransfer.files;
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                if (file.type.startsWith('image/')) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        var imageSrc = e.target.result;
-                        addImageToLibrary(imageSrc);
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-        }
-        
-        function addImageToLibrary(imageSrc) {
-            var img = new Image();
-            img.src = imageSrc;
-            img.onclick = function() {
-                openFullScreen(imageSrc);
-            }
-            document.getElementById('photo-library').appendChild(img);
-        }
-        
-        function openFullScreen(imageSrc) {
-            document.getElementById('full-screen-image').src = imageSrc;
-            document.getElementById('full-screen-overlay').style.display = 'block';
-        }
-        
-        function closeFullScreen() {
-            document.getElementById('full-screen-overlay').style.display = 'none';
-        }
-    </script>
+    <script src="js/photos.js"></script>
 </body>
 </html>
