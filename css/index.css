@@ -48,16 +48,13 @@ footer {
 }
 
 .dock-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 60px; /* Adjust width for each dock item */
+    height: 60px; /* Keep height consistent */
     cursor: pointer;
+    /* Change cursor to pointer when hovering over the image */
 }
 
-.dock-item img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+/* Optional: Adjust margin between dock items */
+.dock-item + .dock-item {
+    margin-left: 10px; /* Add margin only to dock items that come after the first one */
 }
