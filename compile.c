@@ -1,0 +1,1 @@
+// This script will compile with nodejs, npm and electron
