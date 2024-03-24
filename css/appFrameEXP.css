@@ -19,6 +19,11 @@ body {
     margin-right: 10px; /* Add margin to the right */
 }
 
+.close-button img {
+    width: 24px; /* Adjust width as needed */
+    height: 24px; /* Adjust height as needed */
+}
+
 .app-name {
     flex-grow: 1; /* Take up remaining space */
     text-align: center; /* Center text */
