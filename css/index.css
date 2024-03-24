@@ -41,7 +41,7 @@ body {
 footer {
     background-color: #383838; /* Dark mode footer background color */
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start; /* Align dock items from left to right */
     align-items: center;
     height: 100px; /* Increased height for phone-like dock */
     position: fixed;
@@ -57,6 +57,6 @@ footer {
 }
 
 /* Remove margin between dock items */
-.dock-item + .dock-item {
-    margin-left: 1; /* Remove the left margin for dock items except the first one */
+footer .dock-item + .dock-item {
+    margin-left: 0; /* Remove the left margin for dock items except the first one */
 }
