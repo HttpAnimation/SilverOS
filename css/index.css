@@ -31,6 +31,32 @@ body {
     border-radius: 50%;
 }
 
+footer {
+    background-color: #383838;
+    /* Dark mode footer background color */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px; /* Increased height for phone-like dock */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.dock-item {
+    width: 60px; /* Increased width for phone-like dock */
+    height: 60px; /* Increased height for phone-like dock */
+    margin: 0 10px;
+    cursor: pointer;
+    /* Change cursor to pointer when hovering over the image */
+}
+
+.dock-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
 iframe {
     width: 100%;
     height: 100%;
