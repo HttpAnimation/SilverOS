@@ -29,4 +29,22 @@ body {
     text-align: center;
 }
 
+.photo-box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 10px;
 
+}
+
+.photo-box.expanded {
+    width: 100vw; /* Take up full width of the viewport */
+    height: 100vh; /* Take up full height of the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999; /* Ensure it's on top of other content */
+}
