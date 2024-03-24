@@ -1,11 +1,8 @@
 body {
     background-color: #242424;
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
     font-family: Arial, sans-serif;
-    /* Use a default font */
 }
 
 .top-bar {
@@ -13,29 +10,35 @@ body {
     color: #fff;
     padding: 10px;
     display: flex;
-    /* Use flexbox to align items */
     justify-content: space-between;
-    /* Space between items */
     align-items: center;
-    /* Center items vertically */
 }
 
 .close-button {
     cursor: pointer;
     margin-right: 10px;
-    /* Add margin to the right */
 }
 
 .close-button img {
     width: 24px;
-    /* Adjust width as needed */
     height: 24px;
-    /* Adjust height as needed */
 }
 
 .app-name {
     flex-grow: 1;
-    /* Take up remaining space */
     text-align: center;
-    /* Center text */
+}
+
+.about-button {
+    background-color: #007bff; /* Blue color similar to Android */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.about-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
