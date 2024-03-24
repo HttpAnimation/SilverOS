@@ -13,12 +13,23 @@
         <!-- Add more app icons here as needed -->
     </div>
 
+    <footer>
+        <div class="dock-item" id="dockItemSettings"><img src="photos/Testing/settings.ico"></div>
+        <!-- Add more dock items here as needed -->
+    </footer>
+
     <script>
         // JavaScript code to handle the click event and redirect to settings.html
         document.getElementById('appIconSettings').addEventListener('click', function() {
             window.location.href = 'settings.html';
         });
         // Add similar event listeners for other app icons as needed
+
+        // JavaScript code to handle the click event and redirect to settings.html from dock item
+        document.getElementById('dockItemSettings').addEventListener('click', function() {
+            window.location.href = 'settings.html';
+        });
+        // Add similar event listeners for other dock items as needed
     </script>
 </body>
 </html>
