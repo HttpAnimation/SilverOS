@@ -38,9 +38,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
-    display: block; /* Display as block to occupy full width */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     font-weight: bold; /* Make the text bold */
     font-size: 24px; /* Increase the font size */
     padding: 20px; /* Add padding to fit the text */
 }
-
