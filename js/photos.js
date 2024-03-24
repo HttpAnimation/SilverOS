@@ -41,7 +41,3 @@ function expandPhoto(e) {
     let photo = e.target;
     photo.classList.toggle('expanded');
 }
-
-function goToIndex() {
-    window.location.href = 'index.html';
-}
