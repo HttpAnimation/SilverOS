@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- Base html code here :3 -->
+    <!-- Base html code here -->
     <footer>
         <div class="dock-item" id="dockItemSettings"><img src="Photos/Testing/settings.ico"></div>
     </footer>
+
+    <script>
+        // Function to handle click event on dockItemSettings
+        document.getElementById('dockItemSettings').addEventListener('click', function() {
+            // Open settings.html in a new window
+            window.open('settings.html', '_blank');
+        });
+    </script>
 </body>
 </html>
