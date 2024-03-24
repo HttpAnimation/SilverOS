@@ -18,7 +18,7 @@ function handleDrop(e) {
 
     handleFiles(files);
 }
-
+// This function is be removed for a new one to hold data when the user gets a update.
 function handleFiles(files) {
     ([...files]).forEach(uploadFile);
 }
