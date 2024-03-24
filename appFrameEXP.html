@@ -25,14 +25,19 @@
 
         .close-button {
             cursor: pointer;
-            margin-left: 10px; /* Add margin to the left */
+            margin-right: 10px; /* Add margin to the right */
+        }
+
+        .app-name {
+            flex-grow: 1; /* Take up remaining space */
+            text-align: center; /* Center text */
         }
     </style>
 </head>
 <body>
     <div class="top-bar">
         <span class="close-button" onclick="goToIndex()">Close</span>
-        AppName <!-- Replace this with your app name -->
+        <div class="app-name">AppName</div> <!-- Replace this with your app name -->
     </div>
 
     <!-- Main content of your app goes here -->
