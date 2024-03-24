@@ -34,7 +34,7 @@ body {
     color: #fff;
     border: none;
     width: 100%; /* Stretch across the horizontal space */
-    height: 90px; /* Fixed height */
+    height: 40px; /* Fixed height */
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
