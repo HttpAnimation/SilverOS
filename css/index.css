@@ -1,3 +1,4 @@
+/* Your existing CSS styles */
 body {
     margin: 0;
     padding: 0;
@@ -11,14 +12,13 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row; /* Change to row to align horizontally */
-    justify-content: space-between; /* Spread the items evenly */
+    flex-wrap: wrap; /* Wrap items to new line if needed */
     margin-bottom: 100px; /* Adjust spacing between app grid and footer */
 }
 
 .app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Adjust as needed */
+    display: flex;
+    flex-wrap: wrap; /* Wrap app icons to new line if needed */
     gap: 10px; /* Adjust the gap between app icons */
     padding: 10px; /* Add padding around the app grid */
 }
