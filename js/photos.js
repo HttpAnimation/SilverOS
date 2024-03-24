@@ -29,10 +29,17 @@ function uploadFile(file) {
     reader.onload = function(event) {
         let image = new Image();
         image.src = event.target.result;
+        image.classList.add('photo-box'); // Add class for styling
+        image.addEventListener('click', expandPhoto); // Add click event listener
         document.body.appendChild(image); // Append image to body, you can modify this as needed
     };
 
     reader.readAsDataURL(file);
+}
+
+function expandPhoto(e) {
+    let photo = e.target;
+    photo.classList.toggle('expanded');
 }
 
 function goToIndex() {
