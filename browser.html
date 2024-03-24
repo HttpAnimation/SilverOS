@@ -11,9 +11,14 @@
         <span class="close-button" onclick="goToIndex()">
             <img src="photos/close.png" alt="Close">
         </span>
-        <div class="app-name">Browser</div> <!-- Replace this with your app name -->
+        <div class="app-name">Browser</div>
+        <input type="text" id="urlInput" placeholder="Enter URL">
+        <button onclick="loadURL()">Go</button>
     </div>
-    <!-- Main content of your app goes here -->
+    <div class="main-content">
+        <iframe id="browserFrame" src="" frameborder="0"></iframe>
+    </div>
     <script src="js/goToIndexBrowser.js"></script>
+    <script src="js/browser.js"></script>
 </body>
 </html>
