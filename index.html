@@ -8,15 +8,17 @@
 </head>
 <body>
     <!-- Base html code here :3 -->
-    <footer>
-        <div class="dock-item" id="dockItemSettings"><img src="photos/Testing/settings.ico"></div>
-    </footer>
+    <div class="app-grid">
+        <div class="app-icon" id="appIconSettings"><img src="photos/Testing/settings.ico"></div>
+        <!-- Add more app icons here as needed -->
+    </div>
 
     <script>
         // JavaScript code to handle the click event and redirect to settings.html
-        document.getElementById('dockItemSettings').addEventListener('click', function() {
+        document.getElementById('appIconSettings').addEventListener('click', function() {
             window.location.href = 'settings.html';
         });
+        // Add similar event listeners for other app icons as needed
     </script>
 </body>
 </html>
