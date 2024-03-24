@@ -4,19 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index.html</title>
-    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #242424;
+            /* Dark mode background color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            /* Ensure relative positioning for proper absolute positioning of iframe */
+        }
+
+        footer {
+            background-color: #383838;
+            /* Dark mode footer background color */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .dock-item {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+            /* Change cursor to pointer when hovering over the image */
+        }
+
+        .dock-item img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .iframe-container {
+            flex-grow: 1; /* Take up remaining vertical space */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+    </style>
 </head>
 <body>
     <!-- Base html code here :3 -->
     <footer>
         <div class="dock-item" id="dockItemSettings"><img src="Photos/Testing/settings.ico"></div>
     </footer>
-
-    <!-- Iframe container -->
-    <div class="iframe-container" id="iframeContainer">
-        <iframe src="settings.html" id="settingsFrame"></iframe>
-    </div>
-
-    <script src="newindex.js"></script>
+    
 </body>
 </html>
