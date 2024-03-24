@@ -1,3 +1,5 @@
+// Scrape
+
 const dockItem = document.getElementById('dockItem');
 const settingsFrame = document.getElementById('settingsFrame');
 

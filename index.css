@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    /* Ensure relative positioning for proper absolute positioning of iframe */
 }
 
 footer {
@@ -36,7 +38,13 @@ footer {
     border-radius: 50%;
 }
 
-#iframeContainer {
-    display: flex;
-    flex: 1;
+#settingsFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 60px);
+    /* Width of viewport minus width of dock */
+    height: 100vh;
+    /* Full height of viewport */
+    border: none;
 }
