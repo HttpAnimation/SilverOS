@@ -42,8 +42,6 @@ body {
     font-weight: bold; /* Make the text bold */
 }
 
-
-
 .about-button:hover {
     background-color: #303031; /* Darker blue on hover */
 }
