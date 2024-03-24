@@ -30,21 +30,29 @@ body {
 }
 
 .about-button {
-    background-color: #464849; /* Blue color similar to Android */
+    background-color: #464849;
+    /* Blue color similar to Android */
     color: #fff;
     border: none;
-    width: 100%; /* Stretch across the horizontal space */
-    height: 90px; /* Fixed height */
+    width: 100%;
+    /* Stretch across the horizontal space */
+    height: 90px;
+    /* Fixed height */
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
-    display: block; /* Display as block to occupy full width */
-    font-weight: bold; /* Make the text bold */
-    font-size: 24px; /* Increase the font size */
-    padding: 20px; /* Add padding to fit the text */
+    display: block;
+    /* Display as block to occupy full width */
+    font-weight: bold;
+    /* Make the text bold */
+    font-size: 24px;
+    /* Increase the font size */
+    padding: 20px;
+    /* Add padding to fit the text */
 }
 
 
 .about-button:hover {
-    background-color: #303031; /* Darker blue on hover */
+    background-color: #303031;
+    /* Darker blue on hover */
 }
