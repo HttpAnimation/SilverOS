@@ -1,15 +1,3 @@
-function saveNote() {
-    var note = document.getElementById("noteInput").value;
-    if (note.trim() !== "") {
-        // You can implement your logic to save the note here
-        alert("Note saved: " + note);
-        // Clear the input field after saving the note
-        document.getElementById("noteInput").value = "";
-    } else {
-        alert("Please enter a note before saving.");
-    }
-}
-
 function loadFile() {
     var noteInput = document.getElementById("noteInput");
     if (noteInput.value.trim() !== "") {
@@ -22,15 +10,27 @@ function loadFile() {
     
     var fileInput = document.createElement("input");
     fileInput.type = "file";
-    fileInput.accept = ".txt"; // Accepts only text files
+    fileInput.accept = ".txt, .md"; // Accepts both text and Markdown files
     fileInput.addEventListener("change", function(event) {
         var file = event.target.files[0];
         if (file) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                noteInput.value = e.target.result;
-            };
-            reader.readAsText(file);
+            if (file.name.endsWith('.md')) {
+                // Load Markdown file using md-block
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    md.block(e.target.result).then(function(html) {
+                        noteInput.value = html;
+                    });
+                };
+                reader.readAsText(file);
+            } else {
+                // Load text file
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    noteInput.value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
         }
     });
     fileInput.click();
