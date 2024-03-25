@@ -34,12 +34,14 @@ body {
 }
 
 textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjusting width to account for padding */
     margin-bottom: 10px;
+    resize: vertical; /* Allowing vertical resize of textarea */
 }
 
 button {
-    padding: 10px 20px;
+    width: 100%; /* Making button stretch to fit container */
+    padding: 10px 0; /* Adjusting padding */
     background-color: #4CAF50;
     color: white;
     border: none;
