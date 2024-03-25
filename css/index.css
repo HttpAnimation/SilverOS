@@ -9,6 +9,21 @@ body {
     min-height: 100vh;
 }
 
+/* New styles for the top bar */
+.top-bar {
+    background-color: #1e1e1e; /* Dark mode top bar background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Adjust top bar height */
+    padding: 0 20px; /* Add padding to the top bar */
+}
+
+.top-bar img {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap; /* Wrap items to new line if needed */
