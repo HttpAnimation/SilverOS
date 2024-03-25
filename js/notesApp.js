@@ -9,3 +9,24 @@ function saveNote() {
         alert("Please enter a note before saving.");
     }
 }
+
+function loadFile() {
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = ".txt"; // Accepts only text files
+    fileInput.addEventListener("change", function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("noteInput").value = e.target.result;
+            };
+            reader.readAsText(file);
+        }
+    });
+    fileInput.click();
+}
+
+function goToIndex() {
+    // Implement logic to navigate to index or close the app
+}
