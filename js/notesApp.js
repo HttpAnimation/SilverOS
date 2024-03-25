@@ -27,6 +27,3 @@ function loadFile() {
     fileInput.click();
 }
 
-function goToIndex() {
-    // Implement logic to navigate to index or close the app
-}
