@@ -9,7 +9,3 @@ function saveNote() {
         alert("Please enter a note before saving.");
     }
 }
-
-function goToIndex() {
-    // Implement logic to navigate to index or close the app
-}
