@@ -1,3 +1,27 @@
+function saveNote() {
+    var note = document.getElementById("noteInput").value;
+    if (note.trim() !== "") {
+        var fileName = "note.txt"; // Default file name
+        var blob = new Blob([note], { type: "text/plain" }); // Create a Blob containing the note content
+        var url = window.URL.createObjectURL(blob); // Create a URL for the Blob
+
+        // Create a link element to trigger the download
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+
+        // Clean up by revoking the URL and removing the link element
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+
+        alert("Note saved as " + fileName);
+    } else {
+        alert("Please enter a note before saving.");
+    }
+}
+
 function loadFile() {
     var noteInput = document.getElementById("noteInput");
     if (noteInput.value.trim() !== "") {
