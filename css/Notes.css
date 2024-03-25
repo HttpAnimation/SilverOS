@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
 }
 
 .top-bar {
@@ -31,9 +34,13 @@ body {
 
 .notes-container {
     margin: 20px;
+    flex-grow: 1; /* Let the notes container grow to fill the remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 textarea {
+    flex-grow: 1; /* Let the textarea fill the remaining space */
     width: calc(100% - 20px); /* Adjusting width to account for padding */
     margin-bottom: 10px;
     resize: vertical; /* Allowing vertical resize of textarea */
