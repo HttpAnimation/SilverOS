@@ -1,0 +1,1 @@
+# When custom apps get added this program will compile all of them at once and enbed them in html
