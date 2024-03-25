@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battery Information</title>
+</head>
+<body>
+<h1>Battery Information</h1>
+<div id="battery_info">
+    <p>Battery Level: <span id="battery_level">---</span>%</p>
+    <p>Charging: <span id="charging_status">---</span></p>
+</div>
+
+<script>
+window.onload = function() {
+    var batteryInfo = document.getElementById('battery_info');
+    var batteryLevel = document.getElementById('battery_level');
+    var chargingStatus = document.getElementById('charging_status');
+
+    function updateBatteryStatus(battery) {
+        batteryLevel.textContent = Math.round(battery.level * 100) + '%';
+        chargingStatus.textContent = battery.charging ? 'Yes' : 'No';
+    }
+
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(function(battery) {
+            updateBatteryStatus(battery);
+            battery.addEventListener('levelchange', function() {
+                updateBatteryStatus(battery);
+            });
+            battery.addEventListener('chargingchange', function() {
+                updateBatteryStatus(battery);
+            });
+        });
+    } else {
+        batteryInfo.textContent = "Battery information not supported in this browser.";
+    }
+}
+</script>
+</body>
+</html>
