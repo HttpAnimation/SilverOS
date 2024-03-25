@@ -11,6 +11,15 @@ function saveNote() {
 }
 
 function loadFile() {
+    var noteInput = document.getElementById("noteInput");
+    if (noteInput.value.trim() !== "") {
+        // If there are existing notes, prompt the user for confirmation
+        var confirmLoad = confirm("Loading a file will replace the current notes. Are you sure you want to continue?");
+        if (!confirmLoad) {
+            return; // If the user cancels, exit the function
+        }
+    }
+    
     var fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = ".txt"; // Accepts only text files
@@ -19,11 +28,10 @@ function loadFile() {
         if (file) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById("noteInput").value = e.target.result;
+                noteInput.value = e.target.result;
             };
             reader.readAsText(file);
         }
     });
     fileInput.click();
 }
-
