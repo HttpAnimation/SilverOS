@@ -41,11 +41,15 @@ body {
 }
 
 .photo-box.expanded {
-    width: 100vw; /* Take up full width of the viewport */
-    height: 100vh; /* Take up full height of the viewport */
+    width: 100vw;
+    /* Take up full width of the viewport */
+    height: 100vh;
+    /* Take up full height of the viewport */
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999; /* Ensure it's on top of other content */
-    border-radius: 0; /* No border-radius when expanded */
+    z-index: 999;
+    /* Ensure it's on top of other content */
+    border-radius: 0;
+    /* No border-radius when expanded */
 }
