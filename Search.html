@@ -29,6 +29,14 @@
             const searchResultsContainer = document.getElementById('searchResults');
             searchResultsContainer.innerHTML = ''; // Clear previous results
 
+            // Check if the data object is empty
+            if (Object.keys(data).length === 0) {
+                const noResultsMessage = document.createElement('div');
+                noResultsMessage.textContent = 'No apps found.';
+                searchResultsContainer.appendChild(noResultsMessage);
+                return;
+            }
+
             // If search input is empty, display all apps
             if (searchInput === '') {
                 for (const appName in data) {
