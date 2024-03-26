@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #242424; /* Dark mode background color */
+    background-color: #242424;
+    /* Dark mode background color */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -11,30 +12,39 @@ body {
 
 /* New styles for the top bar */
 .top-bar {
-    background-color: #1e1e1e; /* Dark mode top bar background color */
+    background-color: #1e1e1e;
+    /* Dark mode top bar background color */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30px; /* Adjust top bar height */
-    padding: 0 20px; /* Add padding to the top bar */
+    height: 30px;
+    /* Adjust top bar height */
+    padding: 0 20px;
+    /* Add padding to the top bar */
 }
 
 .top-bar img {
-    width: 30px; /* Adjust icon size */
+    width: 30px;
+    /* Adjust icon size */
     height: 30px;
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Wrap items to new line if needed */
-    margin-bottom: 100px; /* Adjust spacing between app grid and footer */
+    flex-wrap: wrap;
+    /* Wrap items to new line if needed */
+    margin-bottom: 100px;
+    /* Adjust spacing between app grid and footer */
 }
 
 .app-grid {
     display: flex;
-    flex-wrap: wrap; /* Wrap app icons to new line if needed */
-    gap: 10px; /* Adjust the gap between app icons */
-    padding: 10px; /* Add padding around the app grid */
+    flex-wrap: wrap;
+    /* Wrap app icons to new line if needed */
+    gap: 10px;
+    /* Adjust the gap between app icons */
+    padding: 10px;
+    /* Add padding around the app grid */
 }
 
 .app-icon {
@@ -47,32 +57,42 @@ body {
 .dock-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Maintain aspect ratio and fit within the container */
-    max-width: 100%; /* Ensure the image does not exceed its container */
-    max-height: 100%; /* Ensure the image does not exceed its container */
+    object-fit: contain;
+    /* Maintain aspect ratio and fit within the container */
+    max-width: 100%;
+    /* Ensure the image does not exceed its container */
+    max-height: 100%;
+    /* Ensure the image does not exceed its container */
     border-radius: 50%;
 }
 
 footer {
-    background-color: #383838; /* Dark mode footer background color */
+    background-color: #383838;
+    /* Dark mode footer background color */
     display: flex;
-    justify-content: center; /* Center dock items horizontally */
+    justify-content: center;
+    /* Center dock items horizontally */
     align-items: center;
-    height: 100px; /* Increased height for phone-like dock */
+    height: 100px;
+    /* Increased height for phone-like dock */
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 .dock-item {
-    width: 60px; /* Adjust width for each dock item */
-    height: 60px; /* Keep height consistent */
+    width: 60px;
+    /* Adjust width for each dock item */
+    height: 60px;
+    /* Keep height consistent */
     cursor: pointer;
-    margin: 0 20px; /* Add margin to separate dock items */
+    margin: 0 20px;
+    /* Add margin to separate dock items */
     /* Change cursor to pointer when hovering over the image */
 }
 
 /* Remove margin between dock items */
-footer .dock-item + .dock-item {
-    margin-left: 0; /* Remove the left margin for dock items except the first one */
+footer .dock-item+.dock-item {
+    margin-left: 0;
+    /* Remove the left margin for dock items except the first one */
 }
