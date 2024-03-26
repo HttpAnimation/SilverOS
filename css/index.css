@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px; /* Adjust top bar height */
+    height: 30px; /* Adjust top bar height */
     padding: 0 20px; /* Add padding to the top bar */
 }
 
