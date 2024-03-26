@@ -29,15 +29,17 @@
             const searchResultsContainer = document.getElementById('searchResults');
             searchResultsContainer.innerHTML = ''; // Clear previous results
 
-            data.forEach(app => {
-                const appName = app.AppName.toLowerCase();
-                if (appName.includes(searchInput)) {
-                    const appImage = document.createElement('img');
-                    appImage.src = app.AppName;
-                    appImage.alt = appName;
-                    searchResultsContainer.appendChild(appImage);
+            // Iterate over each app in the JSON data
+            for (const appName in data) {
+                if (data.hasOwnProperty(appName)) {
+                    if (appName.toLowerCase().includes(searchInput)) {
+                        const appImage = document.createElement('img');
+                        appImage.src = data[appName];
+                        appImage.alt = appName;
+                        searchResultsContainer.appendChild(appImage);
+                    }
                 }
-            });
+            }
         }
 
         // Trigger search on input change
