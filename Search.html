@@ -11,13 +11,37 @@
         <span class="close-button" onclick="goToIndex()">
             <img src="photos/close.png" alt="Close">
         </span>
-        <div class="app-name">Search</div> <!-- Replace this with your app name -->
+        <div class="app-name">Search</div>
     </div>
-    <!-- Search bar -->
-    <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search for apps...">
-    <!-- Container to display search results -->
-    <div id="searchResults" class="search-results"></div>
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <div id="searchResults"></div>
+    </div>
+
     <script src="js/goToIndexSearch.js"></script>
-    <script src="js/search.js"></script>
+    <script>
+        // Function to fetch data from searchData.json and display search results
+        async function searchApps() {
+            const response = await fetch('searchData.json');
+            const data = await response.json();
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchResultsContainer = document.getElementById('searchResults');
+            searchResultsContainer.innerHTML = ''; // Clear previous results
+
+            data.forEach(app => {
+                const appName = app.AppName.toLowerCase();
+                if (appName.includes(searchInput)) {
+                    const appImage = document.createElement('img');
+                    appImage.src = app.AppName;
+                    appImage.alt = appName;
+                    searchResultsContainer.appendChild(appImage);
+                }
+            });
+        }
+
+        // Trigger search on input change
+        document.getElementById('searchInput').addEventListener('input', searchApps);
+    </script>
 </body>
 </html>
