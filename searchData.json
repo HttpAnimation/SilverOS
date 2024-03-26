@@ -1,5 +1,6 @@
 [
     {
-        "AppName": "photos/AppPhoto.png"
+        "Photos": "photos/photos.png",
+        "Settings": "photos/settings.png"
     }
 ]
