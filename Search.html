@@ -25,14 +25,24 @@
         async function searchApps() {
             const response = await fetch('searchData.json');
             const data = await response.json();
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
             const searchResultsContainer = document.getElementById('searchResults');
             searchResultsContainer.innerHTML = ''; // Clear previous results
 
-            // Iterate over each app in the JSON data
-            for (const appName in data) {
-                if (data.hasOwnProperty(appName)) {
-                    if (appName.toLowerCase().includes(searchInput)) {
+            // If search input is empty, display all apps
+            if (searchInput === '') {
+                for (const appName in data) {
+                    if (data.hasOwnProperty(appName)) {
+                        const appImage = document.createElement('img');
+                        appImage.src = data[appName];
+                        appImage.alt = appName;
+                        searchResultsContainer.appendChild(appImage);
+                    }
+                }
+            } else {
+                // Filter apps based on search input
+                for (const appName in data) {
+                    if (data.hasOwnProperty(appName) && appName.toLowerCase().includes(searchInput)) {
                         const appImage = document.createElement('img');
                         appImage.src = data[appName];
                         appImage.alt = appName;
