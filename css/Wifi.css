@@ -11,13 +11,13 @@ body {
     color: #fff;
     padding: 10px;
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: space-between;
     align-items: center;
 }
 
 .close-button {
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: auto; /* Push close button to the left */
 }
 
 .close-button img {
@@ -29,6 +29,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+    margin: 0 auto; /* Center the text and the photo */
 }
 
 .app-name .app-logo {
