@@ -73,7 +73,7 @@ footer {
     justify-content: center;
     /* Center dock items horizontally */
     align-items: center;
-    height: 100px;
+    height: 80px;
     /* Increased height for phone-like dock */
     position: fixed;
     bottom: 0;
