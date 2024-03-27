@@ -17,7 +17,7 @@ body {
 
 .close-button {
     cursor: pointer;
-    margin-right: auto; /* Push close button to the left */
+    margin-right: 10px;
 }
 
 .close-button img {
@@ -26,16 +26,8 @@ body {
 }
 
 .app-name {
-    display: flex;
-    align-items: center;
+    flex-grow: 1;
     text-align: center;
-    margin: 0 auto; /* Center the text and the photo */
-}
-
-.app-name .app-logo {
-    width: 24px; /* Adjust the size as needed */
-    height: 24px; /* Adjust the size as needed */
-    margin-right: 5px; /* Adjust spacing between logo and text */
 }
 
 /* CSS for Wi-Fi list animation */
