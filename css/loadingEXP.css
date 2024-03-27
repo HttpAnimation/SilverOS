@@ -13,22 +13,16 @@ body {
     text-align: center;
 }
 
-.container img,
+.container img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    max-height: 100%; /* Ensure the image does not exceed its container */
+}
+
 .container p {
-    opacity: 0; /* Initially make both elements transparent */
-}
-
-.animate-pop-in {
-    animation: pop-in 0.5s ease forwards; /* Use a pop-in animation */
-}
-
-@keyframes pop-in {
-    from {
-        opacity: 0; /* Start with full transparency */
-        transform: scale(0.5); /* Start small */
-    }
-    to {
-        opacity: 1; /* End with full opacity */
-        transform: scale(1); /* End with original size */
-    }
+    margin-top: 10px; /* Adjust the margin top as needed */
+    color: white; /* Adjust the color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
 }
