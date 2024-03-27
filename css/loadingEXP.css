@@ -7,10 +7,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Prevents overflow during animation */
 }
 
 .container {
     text-align: center;
+    animation: slideIn 1s forwards; /* Apply slideIn animation */
+    opacity: 0; /* Initially hide container */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Slide in from left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Slide in to original position */
+        opacity: 1;
+    }
 }
 
 .container img {
