@@ -1,0 +1,55 @@
+body {
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    /* Prevents overflow during animation */
+}
+
+.container {
+    text-align: center;
+    animation: slideIn 1s forwards;
+    /* Apply slideIn animation */
+    opacity: 0;
+    /* Initially hide container */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        /* Slide in from right */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Slide in to original position */
+        opacity: 1;
+    }
+}
+
+.container img {
+    width: 200px;
+    /* Adjust the width as needed */
+    height: auto;
+    max-width: 100%;
+    /* Ensure the image does not exceed its container */
+    max-height: 100%;
+    /* Ensure the image does not exceed its container */
+}
+
+.container p {
+    margin-top: 10px;
+    /* Adjust the margin top as needed */
+    color: white;
+    /* Adjust the color as needed */
+    font-size: 20px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    /* Make the text bold */
+}
