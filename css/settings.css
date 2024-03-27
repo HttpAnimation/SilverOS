@@ -66,3 +66,8 @@ body {
     height: 30px; /* Adjust the height as needed */
     margin-right: 10px; /* Add some space between the icon and text */
 }
+
+.about-button:hover, .wifi-button:hover {
+    background-color: #303031;
+    transform: scale(1.1); /* Scale the button up by 10% on hover */
+}
