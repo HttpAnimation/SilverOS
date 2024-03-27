@@ -39,3 +39,26 @@ body {
     text-align: center;
     /* Center text */
 }
+
+.wifi-list {
+    padding: 20px;
+}
+
+.wifi-network {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wifi-name {
+    flex-grow: 1;
+    /* Take up remaining space */
+}
+
+.wifi-strength {
+    margin-left: 10px;
+}
