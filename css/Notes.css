@@ -1,19 +1,14 @@
 body {
-    background-color: #121212;
-    /* Dark background color */
-    color: #fff;
-    /* Light text color */
+    background-color: #1c1c1e; /* Dark background color */
+    color: #ffffff; /* Light text color */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .top-bar {
-    background-color: #333;
-    color: #fff;
+    background-color: #1c1c1e; /* Dark background color for top bar */
+    color: #ffffff; /* Light text color for top bar */
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -44,31 +39,43 @@ body {
 
 textarea {
     flex-grow: 1;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
+    margin: 20px;
     margin-bottom: 10px;
     resize: vertical;
-    background-color: #1e1e1e;
-    /* Dark background color for textarea */
-    color: #fff;
-    /* Light text color for textarea */
-    border: 1px solid #555;
-    /* Border color */
+    background-color: #1c1c1e; /* Dark background color for textarea */
+    color: #ffffff; /* Light text color for textarea */
+    border: none;
+    /* No border */
+    outline: none;
+    /* No outline */
+    font-size: 18px;
+    /* Font size */
     padding: 10px;
     /* Padding */
+    font-family: inherit;
+    /* Inherit font family */
 }
 
 button {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #4CAF50;
-    /* Green background color for button */
-    color: #fff;
-    /* Light text color for button */
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    padding: 15px 0;
+    background-color: #007AFF; /* Blue background color for button */
+    color: #ffffff; /* Light text color for button */
     border: none;
+    /* No border */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 12px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold font */
+    outline: none;
+    /* No outline */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Darker blue background color on hover */
 }
