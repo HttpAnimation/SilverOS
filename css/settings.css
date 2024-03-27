@@ -45,11 +45,13 @@ body {
 }
 
 .about-button {
-    margin-right: 5px; /* Add space to the right of the "About" button */
+    margin-right: auto; /* Push the "About" button to the right */
+    margin-left: 5px; /* Add space to the left of the "About" button */
 }
 
 .wifi-button {
-    margin-left: 5px; /* Add space to the left of the "Wi-Fi" button */
+    margin-left: auto; /* Push the "Wi-Fi" button to the left */
+    margin-right: 5px; /* Add space to the right of the "Wi-Fi" button */
 }
 
 /* Center both buttons */
