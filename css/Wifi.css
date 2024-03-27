@@ -32,7 +32,7 @@ body {
 }
 
 .app-name img {
-    max-width: 100px; /* Adjust the maximum width as needed */
+    width: 24px; /* Set width to match the close button */
     height: auto; /* Maintain aspect ratio */
     margin-right: 5px; /* Adjust margin as needed */
 }
