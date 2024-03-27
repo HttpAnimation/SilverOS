@@ -29,58 +29,21 @@ body {
     text-align: center;
 }
 
-.about-button {
+.about-button, .wifi-button {
     background-color: #464849;
-    /* Blue color similar to Android */
     color: #fff;
     border: none;
-    width: 100%;
-    /* Stretch across the horizontal space */
-    height: 90px;
-    /* Fixed height */
-    border-radius: 5px;
+    width: 150px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    border-radius: 30px; /* Make it more rounded */
     cursor: pointer;
     margin-right: 10px;
     display: block;
-    /* Display as block to occupy full width */
     font-weight: bold;
-    /* Make the text bold */
-    font-size: 24px;
-    /* Increase the font size */
-    padding: 20px;
-    /* Add padding to fit the text */
+    font-size: 18px; /* Decrease font size */
+    padding: 15px; /* Adjust padding */
 }
 
-
-.about-button:hover {
+.about-button:hover, .wifi-button:hover {
     background-color: #303031;
-    /* Darker blue on hover */
-}
-
-.wifi-button {
-    background-color: #464849;
-    /* Blue color similar to Android */
-    color: #fff;
-    border: none;
-    width: 100%;
-    /* Stretch across the horizontal space */
-    height: 90px;
-    /* Fixed height */
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    display: block;
-    /* Display as block to occupy full width */
-    font-weight: bold;
-    /* Make the text bold */
-    font-size: 24px;
-    /* Increase the font size */
-    padding: 20px;
-    /* Add padding to fit the text */
-}
-
-
-.wifi-button:hover {
-    background-color: #303031;
-    /* Darker blue on hover */
 }
