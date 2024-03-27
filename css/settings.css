@@ -37,7 +37,7 @@ body {
     height: 60px; /* Adjust height as needed */
     border-radius: 30px; /* Make it more rounded */
     cursor: pointer;
-    margin-right: 10px;
+    margin: 0 auto; /* Center the buttons */
     display: block;
     font-weight: bold;
     font-size: 18px; /* Decrease font size */
