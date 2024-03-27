@@ -31,6 +31,12 @@ body {
     text-align: center;
 }
 
+.app-name .app-logo {
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+    margin-right: 5px; /* Adjust spacing between logo and text */
+}
+
 /* CSS for Wi-Fi list animation */
 .wifi-list {
     padding: 20px;
