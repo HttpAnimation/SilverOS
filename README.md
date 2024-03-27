@@ -4,6 +4,8 @@ A os made in only **html**, **js**, **c** and **css**.
 ## Installing
 To install open a terminal and run the following command.
 
+```bash
+```
 
 ## Credits
 Bell | [svgrepo](https://www.svgrepo.com/svg/52215/bell)
