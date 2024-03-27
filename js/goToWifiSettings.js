@@ -1,4 +1,4 @@
 function goToAbout() {
-    window.location.href = 'settingsAbout.html';
+    window.location.href = 'settingsWifi.html';
 }
  
