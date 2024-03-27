@@ -1,5 +1,5 @@
 # SilverOS/main
-A os made in only **html**, **js**, **c** and **css**.
+An OS simulator as a phone.
 
 ## Installing
 To install open a terminal and run the following command.
