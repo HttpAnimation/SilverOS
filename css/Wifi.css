@@ -31,12 +31,6 @@ body {
     text-align: center;
 }
 
-.app-name img {
-    width: 24px; /* Set width to match the close button */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Adjust margin as needed */
-}
-
 /* CSS for Wi-Fi list animation */
 .wifi-list {
     padding: 20px;
