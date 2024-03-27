@@ -1,11 +1,9 @@
+/* CSS for body and top bar */
 body {
     background-color: #242424;
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
     font-family: Arial, sans-serif;
-    /* Use a default font */
 }
 
 .top-bar {
@@ -13,37 +11,44 @@ body {
     color: #fff;
     padding: 10px;
     display: flex;
-    /* Use flexbox to align items */
     justify-content: space-between;
-    /* Space between items */
     align-items: center;
-    /* Center items vertically */
 }
 
 .close-button {
     cursor: pointer;
     margin-right: 10px;
-    /* Add margin to the right */
 }
 
 .close-button img {
     width: 24px;
-    /* Adjust width as needed */
     height: 24px;
-    /* Adjust height as needed */
 }
 
 .app-name {
     flex-grow: 1;
-    /* Take up remaining space */
     text-align: center;
-    /* Center text */
 }
 
+/* CSS for Wi-Fi list animation */
 .wifi-list {
     padding: 20px;
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Additional styling for individual Wi-Fi networks */
 .wifi-network {
     background-color: #444;
     color: #fff;
@@ -52,11 +57,22 @@ body {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Additional styling for Wi-Fi network name and strength */
 .wifi-name {
     flex-grow: 1;
-    /* Take up remaining space */
 }
 
 .wifi-strength {
