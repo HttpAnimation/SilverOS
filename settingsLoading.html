@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="css/loadingEXP.css">
 </head>
 <body>
     <div class="container">
-        <img src="photos/browser.png" alt="Error loading photo look at the path">
-        <p>App</p>
+        <img src="photos/gear.png" alt="Error loading photo look at the path">
+        <p>Settings</p>
     </div>
+    <script>
+        setInterval(function() {
+            window.location.href = "settings.html";
+        }, 1000); // Redirect every 1 second (1000 milliseconds)
+    </script>
 </body>
 </html>
