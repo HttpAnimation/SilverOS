@@ -72,3 +72,8 @@ body {
     background-color: #303031;
     transform: scale(1.1); /* Scale the button up by 10% on hover */
 }
+
+.about-button:hover, .wifi-button:hover {
+    background-color: #303031;
+    transform: scale(1.1); /* Scale the button up by 10% on hover */
+}
