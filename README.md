@@ -5,6 +5,7 @@ A os made in only **html**, **js**, **c** and **css**.
 To install open a terminal and run the following command.
 
 ```bash
+
 ```
 
 ## Credits
