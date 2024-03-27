@@ -5,7 +5,7 @@ A os made in only **html**, **js**, **c** and **css**.
 To install open a terminal and run the following command.
 
 ```bash
-git clone -b main https://github.com/HttpAnimation/SilverOS.git
+git clone -b main https://github.com/HttpAnimation/SilverOS.git && cd SilverOS
 ```
 
 ## Credits
