@@ -57,7 +57,7 @@ footer {
     background-color: rgba(56, 56, 56, 0.8); /* Dark mode footer background color with transparency */
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
     display: flex;
-    justify-content: center; /* Center dock items horizontally */
+    justify-content: space-around; /* Center dock items horizontally with equal space between */
     align-items: center;
     height: 80px; /* Increased height for phone-like dock */
     position: fixed;
@@ -72,6 +72,7 @@ footer {
     border-radius: 50%; /* Make the dock items more rounded */
     overflow: hidden; /* Ensure content within the dock items stays within bounds */
     transition: transform 0.3s ease; /* Add transition for smoother animation */
+    margin: 0 5px; /* Add margin to create space between dock items */
 }
 
 /* Hover effect for dock items */
