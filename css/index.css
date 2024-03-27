@@ -72,7 +72,7 @@ footer {
     border-radius: 50%; /* Make the dock items more rounded */
     overflow: hidden; /* Ensure content within the dock items stays within bounds */
     transition: transform 0.3s ease; /* Add transition for smoother animation */
-    margin: 0 5px; /* Add margin to create space between dock items */
+    margin: 0 3px; /* Add a small margin to create space between dock items */
 }
 
 /* Hover effect for dock items */
