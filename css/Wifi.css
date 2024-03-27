@@ -26,8 +26,15 @@ body {
 }
 
 .app-name {
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
     text-align: center;
+}
+
+.app-name img {
+    max-width: 100px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Adjust margin as needed */
 }
 
 /* CSS for Wi-Fi list animation */
