@@ -11,6 +11,10 @@
         <img src="photos/browser.png" alt="Error loading photo look at the path">
         <p>App</p>
     </div>
-    <script src="js/takeToNewSite.js"></script>
+    <script>
+        setInterval(function() {
+            window.location.href = "index.html";
+        }, 1000); // Redirect every 1 second (1000 milliseconds)
+    </script>
 </body>
 </html>
