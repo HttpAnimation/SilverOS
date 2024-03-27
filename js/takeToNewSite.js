@@ -1,8 +1,3 @@
-// Function to redirect to index.html
-function redirectToIndex() {
-    window.location.href = 'index.html';
-  }
-  
-  // Set interval to call the function every second
-  setInterval(redirectToIndex, 1000);
-  
+setInterval(function() {
+    window.location.href = "index.html";
+}, 1000); // Redirect every 1 second (1000 milliseconds)
