@@ -45,8 +45,11 @@ body {
 }
 
 .about-button {
-    margin-right: auto; /* Push the "About" button to the right */
-    margin-left: 5px; /* Add space to the left of the "About" button */
+    margin-left: auto; /* Push the "Wi-Fi" button to the left */
+    margin-right: auto; /* Push the "Wi-Fi" button to the right */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 .wifi-button {
