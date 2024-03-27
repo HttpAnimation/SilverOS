@@ -11,11 +11,18 @@
         <span class="close-button" onclick="goToIndex()">
             <img src="photos/close.png" alt="Close">
         </span>
-        <div class="app-name">Settings</div> <!-- Replace this with your app name -->
+        <div class="app-name">Settings</div>
     </div>
-    <!-- Main content of your app goes here -->
-    <button class="about-button" onclick="goToAbout()">About</button>
-    <button class="wifi-button" onclick="goToWifi()">Wifi</button>
+    <div class="button-container">
+        <button class="about-button" onclick="goToAbout()">
+            <img src="photos/about_icon.png" alt="About Icon">
+            <span>About</span>
+        </button>
+        <button class="wifi-button" onclick="goToWifi()">
+            <img src="photos/wifi_icon.png" alt="Wi-Fi Icon">
+            <span>Wi-Fi</span>
+        </button>
+    </div>
     <script src="js/goToIndexSettings.js"></script>
     <script src="js/goToWifiSettings.js"></script>
 </body>
