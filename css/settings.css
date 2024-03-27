@@ -34,16 +34,24 @@ body {
     background-color: #464849;
     color: #fff;
     border: none;
-    width: 150px; /* Adjust width as needed */
+    width: 200px; /* Increase width for larger buttons */
     height: 60px; /* Adjust height as needed */
     border-radius: 30px; /* Make it more rounded */
     cursor: pointer;
-    margin: 0 auto; /* Center the buttons */
+    margin: 0 auto 10px; /* Center the buttons and add 10px bottom margin */
     display: block;
     font-weight: bold;
     font-size: 18px; /* Decrease font size */
     padding: 15px; /* Adjust padding */
-    margin: 0 auto 10px; /* Center the button and add 10px bottom margin */
+    margin-left: calc(50% - 100px); /* Adjust to center horizontally */
+}
+
+.about-button {
+    margin-right: 10px; /* Add space to the right of the "About" button */
+}
+
+.wifi-button {
+    margin-left: 10px; /* Add space to the left of the "Wi-Fi" button */
 }
 
 .about-button:hover, .wifi-button:hover {
