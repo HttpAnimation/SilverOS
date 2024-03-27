@@ -88,4 +88,5 @@ body {
 
 #terminal-input::placeholder {
     color: #999;
+    height: inherit;
 }
