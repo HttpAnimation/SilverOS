@@ -1,4 +1,4 @@
 // JavaScript function to redirect to index.html
-function goToIndex() {
+function goToSettings() {
     window.location.href = 'settings.html';
 }
