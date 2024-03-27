@@ -51,7 +51,10 @@ body {
 
 .wifi-button {
     margin-left: auto; /* Push the "Wi-Fi" button to the left */
-    margin-right: 5px; /* Add space to the right of the "Wi-Fi" button */
+    margin-right: auto; /* Push the "Wi-Fi" button to the right */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Center both buttons */
