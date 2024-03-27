@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto 10px; /* Center the button and add 10px bottom margin */
 }
 
 .close-button {
