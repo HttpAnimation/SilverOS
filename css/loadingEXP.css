@@ -1,9 +1,19 @@
 body {
     background-color: #242424;
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
     font-family: Arial, sans-serif;
-    /* Use a default font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.container img {
+    max-width: 100%;
+    max-height: 100%;
 }
