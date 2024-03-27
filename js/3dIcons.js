@@ -1,4 +1,4 @@
-// Removed
+// Removed because it was not working right.
 
 document.addEventListener('DOMContentLoaded', function() {
     const appIcons = document.querySelectorAll('.app-icon');
