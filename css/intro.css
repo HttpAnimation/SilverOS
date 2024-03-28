@@ -1,5 +1,3 @@
-/* css/intro.css */
-
 body, html {
     margin: 0;
     padding: 0;
@@ -15,4 +13,22 @@ body, html {
     width: 100%;
     height: 100%;
     background-color: black;
+}
+
+.photo-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
