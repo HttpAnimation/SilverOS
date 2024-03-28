@@ -1,12 +1,19 @@
 import json
 import subprocess
+import sys
+
+def get_pip_command():
+    if 'win' in sys.platform:
+        return 'pip'
+    return 'pip3'
 
 def install_packages(packages):
+    pip_command = get_pip_command()
     for package_data in packages:
         for package_name, install_command in package_data.items():
             print(f"Installing {package_name}...")
             try:
-                subprocess.run(install_command.split(), check=True)
+                subprocess.run([pip_command, 'install', package_name], check=True)
                 print(f"{package_name} installed successfully.")
             except subprocess.CalledProcessError:
                 print(f"Failed to install {package_name}.")
