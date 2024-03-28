@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         var photoContainer = document.querySelector('.photo-container');
-        var sound = new Audio('path_to_your_sound_file.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
+        var sound = new Audio('audio/intro.wav'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
         sound.volume = 0.5; // Adjust the volume as needed
         sound.play();
 
