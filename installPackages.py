@@ -1,6 +1,7 @@
 import json
 import subprocess
 import sys
+import os
 
 def get_pip_command():
     if 'win' in sys.platform:
@@ -21,6 +22,8 @@ def install_packages(packages):
                 print(f"Failed to install {package_name}.")
 
 def main():
+    current_directory = os.getcwd()
+    print(f"Current directory: {current_directory}")
     try:
         with open('packages.json', 'r') as file:
             packages = json.load(file)
