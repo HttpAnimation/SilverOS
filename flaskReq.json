@@ -1,0 +1,7 @@
+[
+    {
+        "flask": "pip3 install flask",
+        "tkinterweb": "pip3 install tkinterweb",
+        "pywebview": "pip3 install pywebview"
+    }
+]

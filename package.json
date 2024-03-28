@@ -1,0 +1,11 @@
+{
+  "name": "silveros",
+  "version": "1.0.1",
+  "main": "main.js",
+  "scripts": {
+      "start": "electron ."
+  },
+  "devDependencies": {
+      "electron": "^15.3.0"
+  }
+}
