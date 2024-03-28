@@ -13,8 +13,4 @@ rm web_view.c
 rm compile.sh
 rm display.py
 npm install electron --save-dev
-rm PrintHiInWindows.c
-rm PrintHiInWindows.exe
-rm PrintHiInWindows
-rm web_view.c
 echo "Done"
