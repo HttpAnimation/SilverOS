@@ -4,7 +4,9 @@ import sys
 
 def get_pip_command():
     if 'win' in sys.platform:
+        print("Running on Windows system.")
         return 'pip'
+    print("Running on Unix-like system.")
     return 'pip3'
 
 def install_packages(packages):
