@@ -5,7 +5,7 @@ An OS simulator as a phone.
 To install open a terminal and run the following command.
 
 ```bash
-https://raw.githubusercontent.com/HttpAnimation/SilverOS/main/install.sh
+curl -O https://raw.githubusercontent.com/HttpAnimation/SilverOS/main/install.sh
 chmod +x install.sh
 ./install.sh
 ```
