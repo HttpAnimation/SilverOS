@@ -6,7 +6,7 @@ def install_packages(packages):
         for package_name, install_command in package_data.items():
             print(f"Installing {package_name}...")
             try:
-                subprocess.run(install_command.split(), check=True)
+                subprocess.run(install_command, shell=True, check=True)
                 print(f"{package_name} installed successfully.")
             except subprocess.CalledProcessError:
                 print(f"Failed to install {package_name}.")
