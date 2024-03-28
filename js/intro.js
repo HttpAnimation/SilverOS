@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             window.location.href = 'index.html'; // Redirect to index.html after another second
         }, 1000); // 1000 milliseconds = 1 second
-    }, 1000); // 1000 milliseconds = 1 second
+    }, 2000); // 1000 milliseconds = 1 second
 });
