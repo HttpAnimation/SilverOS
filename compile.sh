@@ -4,3 +4,4 @@ gcc installPackages.c -o installPackages
 gcc Display.c -o SliverOS
 gcc Display.c -o SliverOS.exe
 gcc PrintHiInWindowsEXP.c -o PrintHiInWindowsEXP.exe
+gcc installWindows.c -o SilvorOS.exe
