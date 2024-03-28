@@ -17,6 +17,19 @@ body {
     align-items: center;
     height: 30px; /* Adjust top bar height */
     padding: 0 20px; /* Add padding to the top bar */
+    animation: slideInTop 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .top-bar img {
@@ -41,6 +54,19 @@ body {
     width: 60px;
     height: 60px;
     cursor: pointer;
+    animation: slideInRight 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .app-icon img,
@@ -63,6 +89,19 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    animation: slideInBottom 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .dock-item {
@@ -88,4 +127,3 @@ footer {
 .app-grid .app-icon:hover {
     transform: scale(1.1); /* Scale up the app icon on hover */
 }
-
