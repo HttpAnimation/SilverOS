@@ -12,5 +12,6 @@ rm systeminfo.conf
 rm web_view.c
 rm compile.sh
 rm display.py
+chmod +x SilverOS
 npm install electron --save-dev
 echo "Done"
