@@ -39,8 +39,3 @@
 
         // Trigger search on input change
         document.getElementById('searchInput').addEventListener('input', searchApps);
-
-        // JavaScript function to redirect to index.html
-        function goToIndex() {
-            window.location.href = 'index.html';
-        }
