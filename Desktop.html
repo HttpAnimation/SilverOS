@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Draggable Iframe with Dock</title>
 <style>
+  body {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* Light text color */
+    font-family: Arial, sans-serif; /* Use a sans-serif font */
+  }
+
   #dock {
     position: fixed;
     bottom: 0;
@@ -46,24 +52,24 @@
   .draggableIframe {
     width: 400px;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid #fff; /* White border */
     position: absolute;
     cursor: move;
+    background-color: #444; /* Dark background color */
   }
   
   .iframe-top-bar {
-    background-color: #f7f7f7; /* Light gray similar to macOS */
+    background-color: #666; /* Dark gray */
     padding: 7px 15px; /* Adjust padding */
-    border-bottom: 1px solid #ccc; /* Add a border at the bottom */
+    border-bottom: 1px solid #fff; /* White border at the bottom */
     cursor: move;
     user-select: none; /* Disable text selection */
   }
 
   .close-button {
-    float: left;
+    float: right;
     cursor: pointer;
-    font-weight: bold; /* Make the X button bold */
-    margin-right: 10px; /* Add some space between X button and text */
+    margin-left: 10px; /* Add some space between close button and title */
   }
 </style>
 </head>
@@ -104,20 +110,16 @@ function openSettings() {
   topBar.classList.add("iframe-top-bar");
 
   // Create the close button for the iframe
-  var closeButton = document.createElement("span");
+  var closeButton = document.createElement("img");
   closeButton.classList.add("close-button");
-  closeButton.innerHTML = "X";
+  closeButton.src = "photos/Close.png"; // Close button image
+  closeButton.alt = "Close";
   closeButton.onclick = function() {
     settingsIframeContainer.removeChild(draggableIframe);
   };
 
-  // Create the title for the iframe
-  var title = document.createElement("span");
-  title.innerText = "Settings";
-
   // Append elements
   topBar.appendChild(closeButton);
-  topBar.appendChild(title);
   draggableIframe.appendChild(topBar);
   draggableIframe.appendChild(iframeContent);
   settingsIframeContainer.appendChild(draggableIframe);
