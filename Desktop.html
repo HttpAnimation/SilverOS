@@ -39,7 +39,11 @@
     transform: scale(1.2);
   }
   
-  #draggableIframe {
+  .iframe-container {
+    position: relative;
+  }
+
+  .draggableIframe {
     width: 400px;
     height: 300px;
     border: 1px solid black;
@@ -73,77 +77,67 @@
   </div>
 </div>
 
-<div id="draggableIframe">
-  <div class="iframe-top-bar">
-    <span class="close-button" onclick="closeIframe()">X</span>
-    <span class="window-title">Iframe Window</span> <!-- Add a title for the window -->
-  </div>
-  <iframe id="iframeContent" width="100%" height="100%" frameborder="0"></iframe>
-</div>
+<div class="iframe-container" id="settingsIframeContainer"></div>
 
 <script>
-// Get the draggable iframe element
-var draggableIframe = document.getElementById("draggableIframe");
-var topBar = draggableIframe.querySelector('.iframe-top-bar');
-var iframeContent = document.getElementById("iframeContent");
-
-// Function to handle mouse down event
-function dragMouseDown(e) {
-  e = e || window.event;
-  e.preventDefault();
-  
-  // Check if the click is on the close button
-  if (e.target.classList.contains('close-button')) {
-    return;
-  }
-
-  // Get initial mouse position
-  offsetX = e.clientX - draggableIframe.offsetLeft;
-  offsetY = e.clientY - draggableIframe.offsetTop;
-
-  // Call function when mouse moves or is released
-  document.onmousemove = dragMouseMove;
-  document.onmouseup = closeDragElement;
-}
-
-// Function to handle mouse move event
-function dragMouseMove(e) {
-  e = e || window.event;
-  e.preventDefault();
-  
-  // Calculate new position of the draggable iframe
-  var posX = e.clientX - offsetX;
-  var posY = e.clientY - offsetY;
-
-  // Set new position
-  draggableIframe.style.left = posX + "px";
-  draggableIframe.style.top = posY + "px";
-}
-
-// Function to handle mouse up event
-function closeDragElement() {
-  // Stop moving when mouse button is released
-  document.onmouseup = null;
-  document.onmousemove = null;
-}
-
-// Function to close the iframe
-function closeIframe() {
-  draggableIframe.style.display = 'none';
-}
-
-// Function to open an app
-function openApp(appName) {
-  alert("Opening " + appName);
-}
+var iframeCounter = 0;
 
 // Function to open settings
 function openSettings() {
+  // Create a new draggable iframe
+  var settingsIframeContainer = document.getElementById("settingsIframeContainer");
+  var draggableIframe = document.createElement("div");
+  draggableIframe.classList.add("draggableIframe");
+  draggableIframe.style.left = "50px"; // Adjust initial position
+  draggableIframe.style.top = "50px"; // Adjust initial position
+
+  // Create the iframe content
+  var iframeContent = document.createElement("iframe");
   iframeContent.src = "settings.html";
+  iframeContent.width = "100%";
+  iframeContent.height = "100%";
+  iframeContent.frameBorder = "0";
+
+  // Create the top bar for the iframe
+  var topBar = document.createElement("div");
+  topBar.classList.add("iframe-top-bar");
+
+  // Create the close button for the iframe
+  var closeButton = document.createElement("span");
+  closeButton.classList.add("close-button");
+  closeButton.innerHTML = "X";
+  closeButton.onclick = function() {
+    settingsIframeContainer.removeChild(draggableIframe);
+  };
+
+  // Append elements
+  topBar.appendChild(closeButton);
+  draggableIframe.appendChild(topBar);
+  draggableIframe.appendChild(iframeContent);
+  settingsIframeContainer.appendChild(draggableIframe);
+
+  // Make the iframe draggable
+  draggableIframe.onmousedown = function(e) {
+    var offsetX = e.clientX - draggableIframe.offsetLeft;
+    var offsetY = e.clientY - draggableIframe.offsetTop;
+
+    function dragMouseMove(e) {
+      e.preventDefault();
+      var posX = e.clientX - offsetX;
+      var posY = e.clientY - offsetY;
+      draggableIframe.style.left = posX + "px";
+      draggableIframe.style.top = posY + "px";
+    }
+
+    function closeDragElement() {
+      document.removeEventListener("mousemove", dragMouseMove);
+      document.removeEventListener("mouseup", closeDragElement);
+    }
+
+    document.addEventListener("mousemove", dragMouseMove);
+    document.addEventListener("mouseup", closeDragElement);
+  };
 }
-// Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
-draggableIframe.onmousedown = dragMouseDown;
-topBar.onmousedown = dragMouseDown;
 </script>
 
 </body>
