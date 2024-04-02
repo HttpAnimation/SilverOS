@@ -9,6 +9,12 @@
         background-color: #222;
         color: #fff;
         font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     #drop-area {
         border: 2px dashed #555;
@@ -16,11 +22,10 @@
         text-align: center;
         margin: 20px;
     }
-    .draggable {
+    img {
         max-width: 100px;
         max-height: 100px;
         margin: 10px;
-        cursor: move;
         position: absolute;
     }
 </style>
@@ -33,16 +38,16 @@
         const dropArea = document.getElementById('drop-area');
         const gallery = document.getElementById('gallery');
         
-        dropArea.addEventListener('dragover', (e) => {
+        document.addEventListener('dragover', (e) => {
             e.preventDefault();
             dropArea.style.border = '2px dashed #999';
         });
         
-        dropArea.addEventListener('dragleave', () => {
+        document.addEventListener('dragleave', () => {
             dropArea.style.border = '2px dashed #555';
         });
         
-        dropArea.addEventListener('drop', (e) => {
+        document.addEventListener('drop', (e) => {
             e.preventDefault();
             dropArea.style.border = '2px dashed #555';
             
@@ -55,38 +60,15 @@
                     reader.onload = function (e) {
                         const img = document.createElement('img');
                         img.src = e.target.result;
-                        img.classList.add('draggable');
+                        img.style.left = e.clientX - 50 + 'px'; // Adjusting image position based on cursor
+                        img.style.top = e.clientY - 50 + 'px';
                         gallery.appendChild(img);
-                        makeDraggable(img);
                     }
                     
                     reader.readAsDataURL(file);
                 }
             }
         });
-
-        function makeDraggable(element) {
-            let offsetX, offsetY, isDragging = false;
-
-            element.addEventListener('mousedown', (e) => {
-                offsetX = e.clientX - element.getBoundingClientRect().left;
-                offsetY = e.clientY - element.getBoundingClientRect().top;
-                isDragging = true;
-            });
-
-            element.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    const x = e.clientX - offsetX;
-                    const y = e.clientY - offsetY;
-                    element.style.left = x + 'px';
-                    element.style.top = y + 'px';
-                }
-            });
-
-            element.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-        }
     </script>
 </body>
 </html>
