@@ -44,8 +44,8 @@
 }
 
 .desktop-icon {
-    width: 60px;
-    height: 60px;
+    width: 60px; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
 }
 
 .desktop-icon img {
