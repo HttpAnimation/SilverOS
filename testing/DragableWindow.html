@@ -3,8 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Iframe with Close Button</title>
+<title>Draggable Iframe with Dock</title>
 <style>
+  #dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
   #draggableIframe {
     width: 400px;
     height: 300px;
@@ -23,29 +44,15 @@
     float: left;
     cursor: pointer;
   }
-
-  /* Dock styles */
-  #dock {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensures the dock is always on top */
-  }
-
-  .dock-item {
-    margin: 0 10px;
-    color: white;
-    cursor: pointer;
-  }
 </style>
 </head>
 <body>
+
+<div id="dock">
+  <div class="app-icon" onclick="openApp('app1')"></div>
+  <div class="app-icon" onclick="openApp('app2')"></div>
+  <!-- Add more app icons here -->
+</div>
 
 <div id="draggableIframe">
   <div class="iframe-top-bar">
@@ -54,20 +61,10 @@
   <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
-<div id="dock">
-  <!-- Add your dock items here -->
-  <div class="dock-item">App 1</div>
-  <div class="dock-item">App 2</div>
-  <div class="dock-item">App 3</div>
-</div>
-
 <script>
 // Get the draggable iframe element
 var draggableIframe = document.getElementById("draggableIframe");
 var topBar = draggableIframe.querySelector('.iframe-top-bar');
-
-// Initialize variables for mouse position
-var offsetX, offsetY;
 
 // Function to handle mouse down event
 function dragMouseDown(e) {
@@ -114,6 +111,10 @@ function closeIframe() {
   draggableIframe.style.display = 'none';
 }
 
+// Function to open an app
+function openApp(appName) {
+  alert("Opening " + appName);
+}
 // Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
 draggableIframe.onmousedown = dragMouseDown;
 topBar.onmousedown = dragMouseDown;
