@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Iframe</title>
+<title>Draggable Iframe with Close Button</title>
 <style>
   #draggableIframe {
     width: 400px;
@@ -12,17 +12,32 @@
     position: absolute;
     cursor: move;
   }
+  
+  .iframe-top-bar {
+    background-color: #ccc;
+    padding: 5px;
+    cursor: move;
+  }
+
+  .close-button {
+    float: right;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
 
 <div id="draggableIframe">
+  <div class="iframe-top-bar">
+    <span class="close-button" onclick="closeIframe()">X</span>
+  </div>
   <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
 <script>
 // Get the draggable iframe element
 var draggableIframe = document.getElementById("draggableIframe");
+var topBar = draggableIframe.querySelector('.iframe-top-bar');
 
 // Initialize variables for mouse position
 var offsetX, offsetY;
@@ -32,6 +47,11 @@ function dragMouseDown(e) {
   e = e || window.event;
   e.preventDefault();
   
+  // Check if the click is on the close button
+  if (e.target.classList.contains('close-button')) {
+    return;
+  }
+
   // Get initial mouse position
   offsetX = e.clientX - draggableIframe.offsetLeft;
   offsetY = e.clientY - draggableIframe.offsetTop;
@@ -62,8 +82,14 @@ function closeDragElement() {
   document.onmousemove = null;
 }
 
-// Call the dragMouseDown function when mouse down event is triggered on the iframe
+// Function to close the iframe
+function closeIframe() {
+  draggableIframe.style.display = 'none';
+}
+
+// Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
 draggableIframe.onmousedown = dragMouseDown;
+topBar.onmousedown = dragMouseDown;
 </script>
 
 </body>
