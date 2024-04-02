@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SilverOS</title>
+<title>Draggable Iframe with Dock</title>
 <style>
   #dock {
     position: fixed;
@@ -58,15 +58,14 @@
 <body>
 
 <div id="dock">
-  <div class="app-icon" onclick="openApp('app1')"></div>
-  <div class="app-icon" onclick="openApp('app2')"></div>
+  <div class="app-icon" onclick="openSettings()"></div>
   <!-- Add more app icons here -->
 </div>
 
 <div id="draggableIframe">
   <div class="iframe-top-bar">
     <span class="close-button" onclick="closeIframe()">X</span>
-    <span class="window-title">Window name</span> <!-- Add a title for the window -->
+    <span class="window-title">Iframe Window</span> <!-- Add a title for the window -->
   </div>
   <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
 </div>
@@ -121,9 +120,14 @@ function closeIframe() {
   draggableIframe.style.display = 'none';
 }
 
-// Function to open an app
-function openApp(appName) {
-  alert("Opening " + appName);
+// Function to open settings.html in a new iframe window
+function openSettings() {
+  var settingsIframe = document.createElement('iframe');
+  settingsIframe.src = 'settings.html';
+  settingsIframe.width = '400';
+  settingsIframe.height = '300';
+  settingsIframe.frameborder = '0';
+  draggableIframe.appendChild(settingsIframe);
 }
 // Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
 draggableIframe.onmousedown = dragMouseDown;
