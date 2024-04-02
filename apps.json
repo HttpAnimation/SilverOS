@@ -8,6 +8,21 @@
       "name": "Notes",
       "html": "notes.html",
       "icon": "photos/Notes.png"
+    },
+    {
+      "name": "New App",
+      "html": "newapp.html",
+      "icon": "photos/newapp.png"
+    },
+    {
+      "name": "New App",
+      "html": "newapp.html",
+      "icon": "photos/newapp.png"
+    },
+    {
+      "name": "New App",
+      "html": "newapp.html",
+      "icon": "photos/newapp.png"
     }
   ]
   
