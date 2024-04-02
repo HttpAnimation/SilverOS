@@ -1,4 +1,4 @@
 function goToWifi() {
-    window.location.href = 'settingsWifi.html';
+    window.location.href = 'Desktop.html';
 }
  
