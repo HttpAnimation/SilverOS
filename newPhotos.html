@@ -16,10 +16,12 @@
         text-align: center;
         margin: 20px;
     }
-    img {
+    .draggable {
         max-width: 100px;
         max-height: 100px;
         margin: 10px;
+        cursor: move;
+        position: absolute;
     }
 </style>
 </head>
@@ -53,13 +55,38 @@
                     reader.onload = function (e) {
                         const img = document.createElement('img');
                         img.src = e.target.result;
+                        img.classList.add('draggable');
                         gallery.appendChild(img);
+                        makeDraggable(img);
                     }
                     
                     reader.readAsDataURL(file);
                 }
             }
         });
+
+        function makeDraggable(element) {
+            let offsetX, offsetY, isDragging = false;
+
+            element.addEventListener('mousedown', (e) => {
+                offsetX = e.clientX - element.getBoundingClientRect().left;
+                offsetY = e.clientY - element.getBoundingClientRect().top;
+                isDragging = true;
+            });
+
+            element.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const x = e.clientX - offsetX;
+                    const y = e.clientY - offsetY;
+                    element.style.left = x + 'px';
+                    element.style.top = y + 'px';
+                }
+            });
+
+            element.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        }
     </script>
 </body>
 </html>
