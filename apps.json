@@ -3,6 +3,11 @@
       "name": "Settings",
       "html": "settings.html",
       "icon": "photos/gear.png"
+    },
+    {
+      "name": "New App",
+      "html": "newapp.html",
+      "icon": "photos/newapp.png"
     }
   ]
   
