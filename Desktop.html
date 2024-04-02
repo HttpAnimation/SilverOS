@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu 4.04 Desktop (Dark Mode)</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .desktop {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .icon {
+            background-color: #555;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <div class="icon">Home</div>
+        <div class="icon">Files</div>
+        <div class="icon">Settings</div>
+        <div class="icon">Browser</div>
+        <!-- Add more icons as needed -->
+    </div>
+</body>
+</html>
