@@ -84,6 +84,9 @@ var iframeCounter = 0;
 
 // Function to open settings
 function openSettings() {
+  // Increment counter for unique iframe IDs
+  iframeCounter++;
+
   // Create a new draggable iframe
   var settingsIframeContainer = document.getElementById("settingsIframeContainer");
   var draggableIframe = document.createElement("div");
@@ -110,8 +113,13 @@ function openSettings() {
     settingsIframeContainer.removeChild(draggableIframe);
   };
 
+  // Create the title for the iframe
+  var title = document.createElement("span");
+  title.innerText = "Settings";
+
   // Append elements
   topBar.appendChild(closeButton);
+  topBar.appendChild(title);
   draggableIframe.appendChild(topBar);
   draggableIframe.appendChild(iframeContent);
   settingsIframeContainer.appendChild(draggableIframe);
