@@ -58,8 +58,11 @@
 <body>
 
 <div id="dock">
-  <div class="app-icon" onclick="openSettings()"></div>
-  <!-- Add more app icons here -->
+  <div class="app-icon" onclick="openApp('app1')"></div>
+  <div class="app-icon" onclick="openApp('app2')"></div>
+  <div class="app-icon" onclick="openSettings()">
+    <img src="photos/gear.png" alt="Settings">
+  </div>
 </div>
 
 <div id="draggableIframe">
@@ -67,13 +70,14 @@
     <span class="close-button" onclick="closeIframe()">X</span>
     <span class="window-title">Iframe Window</span> <!-- Add a title for the window -->
   </div>
-  <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
+  <iframe id="iframeContent" width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
 <script>
 // Get the draggable iframe element
 var draggableIframe = document.getElementById("draggableIframe");
 var topBar = draggableIframe.querySelector('.iframe-top-bar');
+var iframeContent = document.getElementById("iframeContent");
 
 // Function to handle mouse down event
 function dragMouseDown(e) {
@@ -120,14 +124,14 @@ function closeIframe() {
   draggableIframe.style.display = 'none';
 }
 
-// Function to open settings.html in a new iframe window
+// Function to open an app
+function openApp(appName) {
+  alert("Opening " + appName);
+}
+
+// Function to open settings
 function openSettings() {
-  var settingsIframe = document.createElement('iframe');
-  settingsIframe.src = 'settings.html';
-  settingsIframe.width = '400';
-  settingsIframe.height = '300';
-  settingsIframe.frameborder = '0';
-  draggableIframe.appendChild(settingsIframe);
+  iframeContent.src = "settings.html";
 }
 // Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
 draggableIframe.onmousedown = dragMouseDown;
