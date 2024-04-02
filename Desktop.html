@@ -3,21 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Iframe with Close Button</title>
-<link rel="stylesheet" type="text/css" href="css/desktop.css">
+<title>Draggable Iframe with Dock</title>
+<style>
+  #dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .app-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  #draggableIframe {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    position: absolute;
+    cursor: move;
+  }
+  
+  .iframe-top-bar {
+    background-color: #f7f7f7; /* Light gray similar to macOS */
+    padding: 7px 15px; /* Adjust padding */
+    border-bottom: 1px solid #ccc; /* Add a border at the bottom */
+    cursor: move;
+    user-select: none; /* Disable text selection */
+  }
+
+  .close-button {
+    float: left;
+    cursor: pointer;
+    font-weight: bold; /* Make the X button bold */
+    margin-right: 10px; /* Add some space between X button and text */
+  }
+</style>
 </head>
 <body>
+
+<div id="dock">
+  <div class="app-icon" onclick="openApp('app1')"></div>
+  <div class="app-icon" onclick="openApp('app2')"></div>
+  <div class="app-icon" onclick="openSettings()">
+    <img src="photos/gear.png" alt="Settings">
+  </div>
+</div>
 
 <div id="draggableIframe">
   <div class="iframe-top-bar">
     <span class="close-button" onclick="closeIframe()">X</span>
+    <span class="window-title">Iframe Window</span> <!-- Add a title for the window -->
   </div>
-  <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
+  <iframe id="iframeContent" width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
-<script src="js/desktop.js"></script>
+<script>
+// Get the draggable iframe element
+var draggableIframe = document.getElementById("draggableIframe");
+var topBar = draggableIframe.querySelector('.iframe-top-bar');
+var iframeContent = document.getElementById("iframeContent");
 
+// Function to handle mouse down event
+function dragMouseDown(e) {
+  e = e || window.event;
+  e.preventDefault();
+  
+  // Check if the click is on the close button
+  if (e.target.classList.contains('close-button')) {
+    return;
+  }
 
+  // Get initial mouse position
+  offsetX = e.clientX - draggableIframe.offsetLeft;
+  offsetY = e.clientY - draggableIframe.offsetTop;
+
+  // Call function when mouse moves or is released
+  document.onmousemove = dragMouseMove;
+  document.onmouseup = closeDragElement;
+}
+
+// Function to handle mouse move event
+function dragMouseMove(e) {
+  e = e || window.event;
+  e.preventDefault();
+  
+  // Calculate new position of the draggable iframe
+  var posX = e.clientX - offsetX;
+  var posY = e.clientY - offsetY;
+
+  // Set new position
+  draggableIframe.style.left = posX + "px";
+  draggableIframe.style.top = posY + "px";
+}
+
+// Function to handle mouse up event
+function closeDragElement() {
+  // Stop moving when mouse button is released
+  document.onmouseup = null;
+  document.onmousemove = null;
+}
+
+// Function to close the iframe
+function closeIframe() {
+  draggableIframe.style.display = 'none';
+}
+
+// Function to open an app
+function openApp(appName) {
+  alert("Opening " + appName);
+}
+
+// Function to open settings
+function openSettings() {
+  iframeContent.src = "settings.html";
+}
+// Call the dragMouseDown function when mouse down event is triggered on the iframe or top bar
+draggableIframe.onmousedown = dragMouseDown;
+topBar.onmousedown = dragMouseDown;
+</script>
 
 </body>
 </html>
