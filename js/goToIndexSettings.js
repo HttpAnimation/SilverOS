@@ -5,6 +5,6 @@ function goToIndex() {
 
 // JavaScript function to redirect to settingsAbout.html
 function goToAbout() {
-    window.location.href = 'settingsAbout.html';
+    window.location.href = 'desktop.html';
 }
  
