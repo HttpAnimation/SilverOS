@@ -94,4 +94,9 @@
         document.addEventListener('dragstart', (e) => {
             if (e.target.classList.contains('draggable-img')) {
                 e.dataTransfer.setData('text/plain', e.target.src);
-                e.dataTr
+                e.dataTransfer.effectAllowed = 'move';
+            }
+        });
+    </script>
+</body>
+</html>
