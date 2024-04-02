@@ -1,5 +1,5 @@
 # SilverOS/main
-An OS simulator as a phone.
+An os simualtor.
 
 ## Installing
 To install open a terminal and run the following command.
