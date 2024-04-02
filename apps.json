@@ -10,9 +10,9 @@
       "icon": "photos/Notes.png"
     },
     {
-      "name": "New App",
-      "html": "newapp.html",
-      "icon": "photos/newapp.png"
+      "name": "Photos",
+      "html": "photos.html",
+      "icon": "photos/Photo.png"
     },
     {
       "name": "New App",
