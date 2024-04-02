@@ -5,7 +5,7 @@
       "icon": "photos/gear.png"
     },
     {
-      "name": "New App",
+      "name": "Notes",
       "html": "newapp.html",
       "icon": "photos/newapp.png"
     }
