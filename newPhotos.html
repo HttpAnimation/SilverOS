@@ -9,27 +9,51 @@
         background-color: #222;
         color: #fff;
         font-family: Arial, sans-serif;
+        display: flex;
         height: 100vh;
         margin: 0;
+    }
+
+    .photo-grid {
+        flex: 1;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
         padding: 20px;
         box-sizing: border-box;
+        overflow-y: auto;
     }
+
+    .photo-display {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
     img {
         max-width: 100px;
         max-height: 100px;
         margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.1);
     }
 </style>
 </head>
 <body>
-    <div id="gallery"></div>
+    <div class="photo-grid" id="gallery"></div>
+    <div class="photo-display" id="display-area"></div>
     
     <script>
         const gallery = document.getElementById('gallery');
+        const displayArea = document.getElementById('display-area');
         
         document.addEventListener('dragover', (e) => {
             e.preventDefault();
@@ -53,6 +77,12 @@
                         img.src = e.target.result;
                         img.classList.add('draggable-img');
                         gallery.appendChild(img);
+                        img.addEventListener('click', () => {
+                            displayArea.innerHTML = ''; // Clear previous image
+                            const displayImg = document.createElement('img');
+                            displayImg.src = e.target.result;
+                            displayArea.appendChild(displayImg);
+                        });
                     }
                     
                     reader.readAsDataURL(file);
@@ -64,28 +94,4 @@
         document.addEventListener('dragstart', (e) => {
             if (e.target.classList.contains('draggable-img')) {
                 e.dataTransfer.setData('text/plain', e.target.src);
-                e.dataTransfer.effectAllowed = 'move';
-            }
-        });
-        
-        gallery.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            gallery.style.border = '2px dashed #999';
-        });
-        
-        gallery.addEventListener('dragleave', () => {
-            gallery.style.border = 'none';
-        });
-        
-        gallery.addEventListener('drop', (e) => {
-            e.preventDefault();
-            gallery.style.border = 'none';
-            const imageUrl = e.dataTransfer.getData('text/plain');
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.classList.add('draggable-img');
-            gallery.appendChild(img);
-        });
-    </script>
-</body>
-</html>
+                e.dataTr
