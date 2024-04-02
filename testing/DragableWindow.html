@@ -40,14 +40,18 @@
   }
   
   .iframe-top-bar {
-    background-color: #ccc;
-    padding: 5px;
+    background-color: #f7f7f7; /* Light gray similar to macOS */
+    padding: 7px 15px; /* Adjust padding */
+    border-bottom: 1px solid #ccc; /* Add a border at the bottom */
     cursor: move;
+    user-select: none; /* Disable text selection */
   }
 
   .close-button {
     float: left;
     cursor: pointer;
+    font-weight: bold; /* Make the X button bold */
+    margin-right: 10px; /* Add some space between X button and text */
   }
 </style>
 </head>
@@ -62,6 +66,7 @@
 <div id="draggableIframe">
   <div class="iframe-top-bar">
     <span class="close-button" onclick="closeIframe()">X</span>
+    <span class="window-title">Iframe Window</span> <!-- Add a title for the window -->
   </div>
   <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
 </div>
