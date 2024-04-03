@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,19 @@
         }
     </style>
 </head>
+
 <body>
-    <script src="js/anyInputWillGoBackToTheHomeScreen.js"></script>
+    <script>
+        // Function to redirect to desktop.html
+        function redirectToDesktop() {
+            window.location.href = "desktop.html";
+        }
+
+        // Event listeners for click, mousemove, and keydown
+        document.addEventListener("click", redirectToDesktop);
+        document.addEventListener("mousemove", redirectToDesktop);
+        document.addEventListener("keydown", redirectToDesktop);
+    </script>
 </body>
+
 </html>
