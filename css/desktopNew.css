@@ -113,6 +113,9 @@ body {
   left: 0;
   background-color: #333;
   z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dropdown-menu ul {
@@ -133,4 +136,6 @@ body {
 /* Show dropdown menu when icon is clicked */
 .dropdown-menu.show {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
