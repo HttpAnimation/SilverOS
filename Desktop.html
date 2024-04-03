@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Iframe with Dock</title>
+<title>Draggable Iframe with Dock and Desktop</title>
 <style>
   body {
     background-color: #222; /* Dark background color */
@@ -45,33 +45,27 @@
     transform: scale(1.2);
   }
   
-  .iframe-container {
-    position: relative;
-  }
-
-  .draggableIframe {
-    width: 400px;
-    height: 300px;
-    border: 1px solid #fff; /* White border */
+  #desktop {
     position: absolute;
-    cursor: move;
-    background-color: #444; /* Dark background color */
-  }
-  
-  .iframe-top-bar {
-    background-color: #666; /* Dark gray */
-    padding: 7px 15px; /* Adjust padding */
-    border-bottom: 1px solid #fff; /* White border at the bottom */
-    cursor: move;
-    user-select: none; /* Disable text selection */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 20px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 20px;
   }
 
-  .close-button {
-    float: left; /* Position close button on the left */
-    cursor: pointer;
-    width: 20px; /* Fixed width */
-    height: 20px; /* Fixed height */
-    margin-right: 10px; /* Add some space between close button and title */
+  .desktop-app {
+    text-align: center;
+  }
+
+  .desktop-app img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
   }
 </style>
 </head>
@@ -79,13 +73,15 @@
 
 <div id="dock"></div>
 
+<div id="desktop"></div>
+
 <div class="iframe-container" id="iframeContainer"></div>
 
 <script>
-// Function to fetch and load apps from the configuration file
-async function loadApps() {
+// Function to fetch and load apps from the dockApps.json configuration file
+async function loadDockApps() {
   try {
-    const response = await fetch('apps.json');
+    const response = await fetch('dockApps.json');
     const apps = await response.json();
 
     const dock = document.getElementById('dock');
@@ -100,7 +96,32 @@ async function loadApps() {
       dock.appendChild(appIcon);
     }
   } catch (error) {
-    console.error('Error loading apps:', error);
+    console.error('Error loading dock apps:', error);
+  }
+}
+
+// Function to fetch and load apps from the desktopApps.json configuration file
+async function loadDesktopApps() {
+  try {
+    const response = await fetch('desktopApps.json');
+    const apps = await response.json();
+
+    const desktop = document.getElementById('desktop');
+    for (const app of apps) {
+      const desktopApp = document.createElement('div');
+      desktopApp.classList.add('desktop-app');
+      desktopApp.onclick = () => openApp(app);
+      const iconImg = document.createElement('img');
+      iconImg.src = app.icon;
+      iconImg.alt = app.name;
+      desktopApp.appendChild(iconImg);
+      const appName = document.createElement('div');
+      appName.textContent = app.name;
+      desktopApp.appendChild(appName);
+      desktop.appendChild(desktopApp);
+    }
+  } catch (error) {
+    console.error('Error loading desktop apps:', error);
   }
 }
 
@@ -154,8 +175,9 @@ function openApp(app) {
   };
 }
 
-// Load apps when the page is loaded
-loadApps();
+// Load dock apps and desktop apps when the page is loaded
+loadDockApps();
+loadDesktopApps();
 </script>
 
 </body>
