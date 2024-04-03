@@ -1,0 +1,40 @@
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px; /* Adjust as needed to position the menu below the top bar */
+    left: 0;
+    background-color: #333;
+    z-index: 1000;
+    animation: slideDown 0.3s ease forwards;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu ul li {
+    padding: 10px;
+  }
+  
+  .dropdown-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Show dropdown menu when icon is clicked */
+  .dropdown-menu.show {
+    display: block;
+  }
+  
