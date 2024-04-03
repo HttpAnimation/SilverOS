@@ -68,7 +68,7 @@ body {
     height: 20px; /* Fixed height */
     margin-right: 10px; /* Add some space between close button and title */
   }
-  
+
   /* Add styles for the top bar */
   #top-bar {
     position: fixed;
@@ -86,8 +86,11 @@ body {
     z-index: 1000; /* Ensure it's on top of other elements */
   }
 
-  /* Style for the title in the top bar */
-  #top-bar h1 {
+/* Style for the title in the top bar */
+#top-bar h1 {
     margin: 0;
     font-size: 16px; /* Adjust font size */
-  }
+    margin-right: auto; /* Push the title to the left */
+    margin-left: 20px; /* Add some space to the left */
+}
+
