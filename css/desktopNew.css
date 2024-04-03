@@ -97,3 +97,10 @@ body {
   margin-right: auto;
   margin-left: 20px;
 }
+
+/* Top Bar Icon Styles */
+.top-bar-icon {
+  width: 30px; /* Adjust the width and height as needed */
+  height: 30px;
+  margin-right: 10px; /* Adjust the spacing between the icon and text */
+}
