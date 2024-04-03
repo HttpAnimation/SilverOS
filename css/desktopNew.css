@@ -3,7 +3,7 @@ body {
     color: #fff; /* Light text color */
     font-family: Arial, sans-serif; /* Use a sans-serif font */
   }
-
+  
   #dock {
     position: fixed;
     bottom: 0;
@@ -14,7 +14,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    border-top-left-radius: 25px; /* Adjust border radius */
+    border-top-right-radius: 25px; /* Adjust border radius */
+  }  
   
   .app-icon {
     width: 50px; /* Adjust width */
