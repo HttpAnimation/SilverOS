@@ -73,19 +73,51 @@
     height: 20px; /* Fixed height */
     margin-right: 10px; /* Add some space between close button and title */
   }
+
+  #desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px); /* Adjust height to accommodate dock */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .desktop-app {
+    width: 100px; /* Adjust width */
+    height: 100px; /* Adjust height */
+    background-color: #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .desktop-app img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 </style>
 </head>
 <body>
 
 <div id="dock"></div>
 
+<div id="desktop"></div>
+
 <div class="iframe-container" id="iframeContainer"></div>
 
 <script>
-// Function to fetch and load apps from the configuration file
-async function loadApps() {
+// Function to fetch and load apps from the dock configuration file
+async function loadDockApps() {
   try {
-    const response = await fetch('apps.json');
+    const response = await fetch('dockApps.json');
     const apps = await response.json();
 
     const dock = document.getElementById('dock');
@@ -100,7 +132,29 @@ async function loadApps() {
       dock.appendChild(appIcon);
     }
   } catch (error) {
-    console.error('Error loading apps:', error);
+    console.error('Error loading dock apps:', error);
+  }
+}
+
+// Function to fetch and load apps from the desktop configuration file
+async function loadDesktopApps() {
+  try {
+    const response = await fetch('desktopApps.json');
+    const apps = await response.json();
+
+    const desktop = document.getElementById('desktop');
+    for (const app of apps) {
+      const desktopApp = document.createElement('div');
+      desktopApp.classList.add('desktop-app');
+      desktopApp.onclick = () => openApp(app);
+      const iconImg = document.createElement('img');
+      iconImg.src = app.icon;
+      iconImg.alt = app.name;
+      desktopApp.appendChild(iconImg);
+      desktop.appendChild(desktopApp);
+    }
+  } catch (error) {
+    console.error('Error loading desktop apps:', error);
   }
 }
 
@@ -154,8 +208,9 @@ function openApp(app) {
   };
 }
 
-// Load apps when the page is loaded
-loadApps();
+// Load dock apps and desktop apps when the page is loaded
+loadDockApps();
+loadDesktopApps();
 </script>
 
 </body>
