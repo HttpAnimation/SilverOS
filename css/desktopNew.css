@@ -68,3 +68,26 @@ body {
     height: 20px; /* Fixed height */
     margin-right: 10px; /* Add some space between close button and title */
   }
+  
+  /* Add styles for the top bar */
+  #top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Adjust height as needed */
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px; /* Adjust padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow */
+    z-index: 1000; /* Ensure it's on top of other elements */
+  }
+
+  /* Style for the title in the top bar */
+  #top-bar h1 {
+    margin: 0;
+    font-size: 16px; /* Adjust font size */
+  }
