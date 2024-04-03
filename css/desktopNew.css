@@ -104,38 +104,3 @@ body {
   height: 30px;
   margin-right: 10px; /* Adjust the spacing between the icon and text */
 }
-
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 30px; /* Adjust as needed to position the menu below the top bar */
-  left: 0;
-  background-color: #333;
-  z-index: 1000;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dropdown-menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-menu ul li {
-  padding: 10px;
-}
-
-.dropdown-menu ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Show dropdown menu when icon is clicked */
-.dropdown-menu.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
