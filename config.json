@@ -1,0 +1,6 @@
+[
+    {
+        "Comment": "This is where the icon size for the desktop is 80px+ for big 40px for default and 30px- for small.",
+        "DesktopIconSize": "40px"
+    }
+]
