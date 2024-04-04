@@ -1,5 +1,5 @@
 // JavaScript function to redirect to settingsAbout.html
 function goToAbout() {
-    window.location.href = 'desktop.html';
+    window.location.href = 'settingsAbout.html';
 }
  
