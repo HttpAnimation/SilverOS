@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1e1e1e; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+    font-family: Arial, sans-serif; /* Default font family */
+}
+
+#desktop {
+    width: 100%;
+    height: calc(100% - 100px); /* Adjust height for the dock and top bar */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px; /* Add space between top bar and icons */
+}
+
+.app-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50%; /* Rounded corners for the desktop icons */
+    overflow: hidden; /* Ensures content doesn't overflow if content is larger than the container */
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.window {
+    position: absolute;
+    border: 1px solid #666; /* Dark mode border color */
+    background-color: #333; /* Dark mode window background color */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.window-header {
+    background-color: #444; /* Dark mode header background color */
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-header img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.window-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.window-content {
+    padding: 10px;
+}
+
+#dock {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #333; /* Dark mode background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px; /* Rounded corners for the dock */
+    border-top-right-radius: 20px; /* Rounded corners for the dock */
+}
+
+.dock-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 50%; /* Rounded corners for the dock icons */
+    overflow: hidden; /* Ensures content doesn't overflow if content is larger than the container */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.dock-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image is contained within the container */
+}
+
+.dock-icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+/* Existing CSS styles */
+
+#menu-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #333; /* Dark mode menu bar background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Ensure menu bar appears above other elements */
+}
+
+#title {
+    color: #fff; /* Dark mode text color */
+    font-weight: bold;
+}
+
+#system-controls {
+    display: flex;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Additional styles for hover effect on system controls */
+.control:hover {
+    opacity: 0.7;
+}
+
+/* Existing CSS styles */
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Dark mode dropdown menu background color */
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 30px; /* Position relative to the top bar */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Fade-in/out transition */
+}
+
+.dropdown-content a {
+    color: #fff; /* Dark mode dropdown menu text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555; /* Dark mode hover background color */
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
