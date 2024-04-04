@@ -27,7 +27,7 @@
 <script>
     // Function to read config file
     function readConfig() {
-        return fetch('config.json')
+        return fetch('json/config.json')
             .then(response => response.json())
             .then(data => data[0].DesktopIconSize || '100px') // Default size if not specified
             .catch(error => {
