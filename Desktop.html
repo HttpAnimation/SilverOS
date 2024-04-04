@@ -27,7 +27,7 @@
 <script>
     // Function to read config file
     function readConfig() {
-        return fetch('json/config.json')
+        return fetch('config.json')
             .then(response => response.json())
             .then(data => data[0].DesktopIconSize || '100px') // Default size if not specified
             .catch(error => {
@@ -122,7 +122,7 @@
     // Read config file to get desktop icon size
     readConfig().then(iconSize => {
         // Read apps.json file to fetch app details for desktop icons
-        fetch('json/apps.json')
+        fetch('apps.json')
             .then(response => response.json())
             .then(data => {
                 const desktop = document.getElementById('desktop');
@@ -140,7 +140,7 @@
     });
 
     // Read dockApps.json file to fetch app details for dock icons
-    fetch('json/dockApps.json')
+    fetch('dockApps.json')
         .then(response => response.json())
         .then(data => {
             const dock = document.getElementById('dock');
