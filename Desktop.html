@@ -140,7 +140,7 @@
     });
 
     // Read dockApps.json file to fetch app details for dock icons
-    fetch('dockApps.json')
+    fetch('json/dockApps.json')
         .then(response => response.json())
         .then(data => {
             const dock = document.getElementById('dock');
