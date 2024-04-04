@@ -1,0 +1,66 @@
+body {
+    background-color: #242424;
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    font-family: Arial, sans-serif;
+    /* Use a default font */
+}
+
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    /* Use flexbox to align items */
+    justify-content: space-between;
+    /* Space between items */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.close-button {
+    cursor: pointer;
+    margin-right: 10px;
+    /* Add margin to the right */
+}
+
+.close-button img {
+    width: 24px;
+    /* Adjust width as needed */
+    height: 24px;
+    /* Adjust height as needed */
+}
+
+.app-name {
+    flex-grow: 1;
+    /* Take up remaining space */
+    text-align: center;
+    /* Center text */
+}
+
+#display-size-info {
+    background-color: #464849;
+    color: #fff;
+    border: none;
+    width: 100%;
+    /* Stretch across the horizontal space */
+    height: 40px;
+    /* Fixed height */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    font-weight: bold;
+    /* Make the text bold */
+    font-size: 24px;
+    /* Increase the font size */
+    padding: 20px;
+    /* Add padding to fit the text */
+}
