@@ -1,5 +1,5 @@
 {
     "Name": "TestAppTwo",
-    "Photo": "appTest2/icon.png",
+    "Photo": "Settings/photos/gear.png",
     "MainEXE": "appTest2/index.html"
 }
