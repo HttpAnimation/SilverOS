@@ -37,23 +37,6 @@ function readConfig() {
         });
 }
 
-// Function to read mods.json file for system controls
-function readMods() {
-    return fetch('mods.json')
-        .then(response => response.json())
-        .then(data => {
-            const systemControls = document.getElementById('system-controls');
-            // Iterate over each system control
-            data.forEach(control => {
-                const controlLink = document.createElement('a');
-                controlLink.href = control.URL;
-                controlLink.textContent = control.Label;
-                systemControls.appendChild(controlLink);
-            });
-        })
-        .catch(error => console.error('Error reading mods.json:', error));
-}
-
 // Function to create app icon for desktop with specified size
 function createAppIcon(appName, appDetails, parentElement, iconSize) {
     const appIcon = document.createElement('div');
@@ -159,9 +142,6 @@ function fetchAppDetails(appPath) {
             return {}; // Return empty object if there's an error
         });
 }
-
-// Read mods.json for system controls
-readMods();
 
 // Read config file to get desktop icon size
 readConfig().then(iconSize => {
