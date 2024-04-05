@@ -1,0 +1,7 @@
+{
+    "Name": "Settings",
+    "Photo": "Settings/photos/gear.png",
+    "MainEXE": "Settings/settings.html",
+    "Width": "800px",
+    "Height": "480px"
+}
