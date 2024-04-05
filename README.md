@@ -4,7 +4,6 @@ An os simualtor.
 ## Installing
 To install open a terminal and run the following command.
 
-### The installer has been removed for now as SilverOS is getting rewritten.
 ```bash
 git clone -b gh-pages https://github.com/HttpAnimation/SilverOS.git
 ```
