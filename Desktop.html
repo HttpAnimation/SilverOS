@@ -62,7 +62,7 @@ function createDockIcon(appName, appDetails, parentElement) {
     parentElement.appendChild(dockIcon);
 }
 
-// Function to open app window
+// Function to open app window with specified size or fallback size
 function openAppWindow(appName, appDetails) {
     const windowElement = document.createElement('div');
     windowElement.className = 'window';
@@ -86,8 +86,8 @@ function openAppWindow(appName, appDetails) {
     windowContent.className = 'window-content';
     const iframe = document.createElement('iframe');
     iframe.src = appDetails.MainEXE;
-    iframe.style.width = '100%';
-    iframe.style.height = 'calc(100% - 30px)';
+    iframe.style.width = appDetails.Width || '60%'; // Use specified width or fallback
+    iframe.style.height = appDetails.Height || '60%'; // Use specified height or fallback
     windowContent.appendChild(iframe);
     windowElement.appendChild(windowContent);
 
@@ -126,6 +126,17 @@ function createCloseButton(parentElement) {
     return closeButton;
 }
 
+// Function to read package.json file for app details
+function fetchAppDetails(appPath) {
+    return fetch(appPath)
+        .then(response => response.json())
+        .then(appDetails => appDetails)
+        .catch(error => {
+            console.error('Error fetching app details:', error);
+            return {}; // Return empty object if there's an error
+        });
+}
+
 // Read config file to get desktop icon size
 readConfig().then(iconSize => {
     // Read apps.json file to fetch app details for desktop icons
@@ -135,12 +146,10 @@ readConfig().then(iconSize => {
             const desktop = document.getElementById('desktop');
             // Iterate over each app
             for (const [appName, appPath] of Object.entries(data)) {
-                fetch(appPath)
-                    .then(response => response.json())
+                fetchAppDetails(appPath)
                     .then(appDetails => {
                         createAppIcon(appName, appDetails, desktop, iconSize);
-                    })
-                    .catch(error => console.error('Error fetching app details:', error));
+                    });
             }
         })
         .catch(error => console.error('Error fetching apps.json:', error));
@@ -153,12 +162,10 @@ fetch('dockApps.json')
         const dock = document.getElementById('dock');
         // Iterate over each app
         for (const [appName, appPath] of Object.entries(data)) {
-            fetch(appPath)
-                .then(response => response.json())
+            fetchAppDetails(appPath)
                 .then(appDetails => {
                     createDockIcon(appName, appDetails, dock);
-                })
-                .catch(error => console.error('Error fetching app details for dock:', error));
+                });
         }
     })
     .catch(error => console.error('Error fetching dockApps.json:', error));
