@@ -1,0 +1,7 @@
+{
+    "Name": "Browser",
+    "Photo": "Browser/photos/browser.png",
+    "MainEXE": "Browser/index.html",
+    "Width": "800px",
+    "Height": "480px"
+}
