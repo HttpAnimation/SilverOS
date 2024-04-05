@@ -1,6 +1,6 @@
 {
     "Name": "Notes",
-    "Photo": "Notes/photos/",
+    "Photo": "Notes/photos/Notes.png",
     "MainEXE": "Notes/index.html",
     "Width": "800px",
     "Height": "480px"
