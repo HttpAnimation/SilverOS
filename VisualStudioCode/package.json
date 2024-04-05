@@ -1,0 +1,7 @@
+{
+    "Name": "Terminal",
+    "Photo": "Terminal/photos/Terminal.png",
+    "MainEXE": "VisualStudioCode/index.html",
+    "Width": "800px",
+    "Height": "480px"
+}
