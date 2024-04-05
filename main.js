@@ -1,34 +1,8 @@
 const { app, BrowserWindow, globalShortcut, shell } = require('electron');
-const express = require('express');
-const fetch = require('node-fetch');
-
-const appExpress = express();
-const PORT = 3000;
+const path = require('path');
+const url = require('url');
 
 let mainWindow;
-
-// Proxy server setup
-appExpress.use('/', async (req, res) => {
-    try {
-        const url = 'https://vscode.dev' + req.originalUrl;
-        const response = await fetch(url);
-        const contentType = response.headers.get('content-type');
-        
-        if (contentType && contentType.includes('text/html')) {
-            const html = await response.text();
-            res.send(html);
-        } else {
-            res.sendStatus(404);
-        }
-    } catch (error) {
-        console.error(error);
-        res.sendStatus(500);
-    }
-});
-
-appExpress.listen(PORT, () => {
-    console.log(`Proxy server is running on port ${PORT}`);
-});
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -39,8 +13,7 @@ function createWindow() {
         }
     });
 
-    // Load URL from proxy server
-    mainWindow.loadURL('http://localhost:3000/');
+    mainWindow.loadFile('index.html');
 
     // Register global shortcut for reloading the page
     globalShortcut.register('CommandOrControl+R', () => {
