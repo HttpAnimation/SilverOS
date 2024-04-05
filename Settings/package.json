@@ -1,5 +1,7 @@
 {
     "Name": "Settings",
     "Photo": "Settings/photos/gear.png",
-    "MainEXE": "Settings/settings.html"
+    "MainEXE": "Settings/settings.html",
+    "Width": "",
+    "Hight": ""
 }
