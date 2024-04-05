@@ -161,6 +161,22 @@ readConfig().then(iconSize => {
         .catch(error => console.error('Error fetching apps.json:', error));
 });
 
+// Read mods.json file to fetch additional app details for desktop icons
+fetch('mods.json')
+    .then(response => response.json())
+    .then(data => {
+        const desktop = document.getElementById('desktop');
+        // Iterate over each app
+        for (const [appName, appPath] of Object.entries(data)) {
+            fetchAppDetails(appPath)
+                .then(appDetails => {
+                    readConfig().then(iconSize => {
+                        createAppIcon(appName, appDetails, desktop, iconSize);
+                    });
+                });
+        }
+    })
+    .catch(error => console.error('Error fetching mods.json:', error));
 // Read dockApps.json file to fetch app details for dock icons
 fetch('dockApps.json')
     .then(response => response.json())
