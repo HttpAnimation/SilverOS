@@ -41,12 +41,13 @@ body {
 }
 
 .window-header {
-    background-color: #444; /* Dark mode header background color */
-    padding: 5px;
-    cursor: move;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: absolute;
+    border: 1px solid #666; /* Dark mode border color */
+    background-color: #333; /* Dark mode window background color */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1;
+    resize: both; /* Make window scalable */
+    overflow: auto; /* Allow scrolling if content overflows */
 }
 
 .window-header img {
