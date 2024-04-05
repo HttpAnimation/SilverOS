@@ -68,6 +68,8 @@ function openAppWindow(appName, appDetails) {
     windowElement.className = 'window';
     windowElement.style.top = '50px';
     windowElement.style.left = '50px';
+    windowElement.style.width = appDetails.Width || '800px'; // Default width if not specified
+    windowElement.style.height = appDetails.Height || '480px'; // Default height if not specified
 
     const windowHeader = document.createElement('div');
     windowHeader.className = 'window-header';
@@ -84,11 +86,14 @@ function openAppWindow(appName, appDetails) {
 
     const windowContent = document.createElement('div');
     windowContent.className = 'window-content';
+
     const iframe = document.createElement('iframe');
     iframe.src = appDetails.MainEXE;
-    iframe.style.width = appDetails.Width || '60%'; // Use specified width or fallback
-    iframe.style.height = appDetails.Height || '60%'; // Use specified height or fallback
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none'; // Remove iframe border
     windowContent.appendChild(iframe);
+    
     windowElement.appendChild(windowContent);
 
     // Make window draggable
