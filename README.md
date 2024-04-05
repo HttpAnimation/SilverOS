@@ -4,10 +4,9 @@ An os simualtor.
 ## Installing
 To install open a terminal and run the following command.
 
+### The installer has been removed for now as SilverOS is getting rewritten.
 ```bash
-curl -O https://raw.githubusercontent.com/HttpAnimation/SilverOS/main/install.sh
-chmod +x install.sh
-./install.sh
+
 ```
 
 ## Credits
