@@ -34,10 +34,14 @@ body {
 
 .window {
     position: absolute;
-    border: 1px solid #666; /* Dark mode border color */
-    background-color: #333; /* Dark mode window background color */
+    border: 1px solid #666;
+    background-color: #333;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     z-index: 1;
+    width: 60%; /* Set default width */
+    height: 60%; /* Set default height */
+    resize: both; /* Allow window resizing */
+    overflow: auto; /* Allow content scrolling if window size is smaller */
 }
 
 .window-header {
