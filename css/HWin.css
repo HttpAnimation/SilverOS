@@ -32,14 +32,6 @@ body {
     object-fit: cover; /* Ensure the image covers the entire container */
 }
 
-.window {
-    position: absolute;
-    border: 1px solid #666; /* Dark mode border color */
-    background-color: #333; /* Dark mode window background color */
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    z-index: 1;
-}
-
 .window-header {
     background-color: #444; /* Dark mode header background color */
     padding: 5px;
@@ -49,22 +41,10 @@ body {
     align-items: center;
 }
 
-.window-header img {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
 .window-title {
     flex-grow: 1;
     text-align: center;
 }
-
-.window-content {
-    padding: 10px;
-}
-
 
 #dock {
     position: absolute;
