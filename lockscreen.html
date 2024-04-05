@@ -15,19 +15,24 @@
     <script>
         const passwordInput = document.getElementById('passwordInput');
         const signInButton = document.getElementById('signInButton');
-        
-        passwordInput.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                // Simulate successful login, you can add more validation here
-                alert('Login successful!');
-                window.location.href = "index.html"; // Redirect to index.html
-            }
-        });
-        
+
         signInButton.addEventListener('click', function() {
-            // Simulate successful login, you can add more validation here
-            alert('Login successful!');
-            window.location.href = "index.html"; // Redirect to index.html
+            fetch('config.json')
+                .then(response => response.json())
+                .then(data => {
+                    const storedPassword = data.LoginPassword;
+                    const enteredPassword = passwordInput.value;
+                    
+                    if (storedPassword === enteredPassword) {
+                        alert('Login successful!');
+                        window.location.href = "index.html";
+                    } else {
+                        alert('Incorrect password. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing config.json', error);
+                });
         });
     </script>
 </body>
