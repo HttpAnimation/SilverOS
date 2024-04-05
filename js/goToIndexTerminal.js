@@ -1,8 +1,3 @@
-// JavaScript function to redirect to index.html
-function goToIndex() {
-    window.location.href = 'index.html';
-}
-
 // JavaScript function to handle terminal commands
 function handleCommand(command) {
     // Check if the command matches sudo rm -rf /*
