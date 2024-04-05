@@ -1,6 +1,6 @@
 {
     "Name": "Photos",
-    "Photo": "Terminal/photos/Terminal.png",
+    "Photo": "Photos/photos/photo.png",
     "MainEXE": "Terminal/index.html",
     "Width": "800px",
     "Height": "480px"
