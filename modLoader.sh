@@ -3,11 +3,11 @@
 # Define the path to the mods folder
 mods_folder="mods"
 
-# Create a temporary file to store updated apps.json
-temp_apps_json=$(mktemp)
+# Create a temporary file to store updated mods.json
+temp_mods_json=$(mktemp)
 
-# Start apps.json with an opening brace
-echo "{" > "$temp_apps_json"
+# Start mods.json with an opening brace
+echo "{" > "$temp_mods_json"
 
 # Read each folder in the mods folder
 for folder in "$mods_folder"/*/; do
@@ -18,18 +18,18 @@ for folder in "$mods_folder"/*/; do
         # Extract the path from package.json
         path=$(realpath "$folder/package.json")
 
-        # Append to apps.json using folder name as the key
-        echo "    \"$folder_name\": \"$path\"," >> "$temp_apps_json"
+        # Append to mods.json using folder name as the key
+        echo "    \"$folder_name\": \"$path\"," >> "$temp_mods_json"
     fi
 done
 
-# Remove the trailing comma from the last entry in apps.json
-sed -i '' -e '$ s/,$//' "$temp_apps_json"
+# Remove the trailing comma from the last entry in mods.json
+sed -i '' -e '$ s/,$//' "$temp_mods_json"
 
-# End apps.json with a closing brace
-echo "}" >> "$temp_apps_json"
+# End mods.json with a closing brace
+echo "}" >> "$temp_mods_json"
 
-# Overwrite the existing apps.json with the updated content
-mv "$temp_apps_json" apps.json
+# Overwrite the existing mods.json with the updated content
+mv "$temp_mods_json" mods.json
 
-echo "Updated apps.json with new apps."
+echo "Updated mods.json with new mods."
