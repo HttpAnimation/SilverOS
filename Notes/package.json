@@ -1,7 +1,7 @@
 {
     "Name": "Notes",
     "Photo": "Settings/photos/photos.png",
-    "MainEXE": "photos/photos.html",
+    "MainEXE": "Notes/index.html",
     "Width": "800px",
     "Height": "480px"
 }
