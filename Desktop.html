@@ -25,152 +25,159 @@
 <div id="dock"></div>
 
 <script>
-    // Function to read config file
-    function readConfig() {
-        return fetch('config.json')
-            .then(response => response.json())
-            .then(data => data[0].DesktopIconSize || '100px') // Default size if not specified
-            .catch(error => {
-                console.error('Error reading config file:', error);
-                return '100px'; // Default size if config file cannot be read
-            });
-    }
-
-    // Function to create app icon for desktop with specified size
-    function createAppIcon(appName, appDetails, parentElement, iconSize) {
-        const appIcon = document.createElement('div');
-        appIcon.className = 'app-icon';
-        appIcon.style.width = iconSize;
-        appIcon.style.height = iconSize;
-        const img = document.createElement('img');
-        img.src = appDetails.Photo;
-        img.alt = appName;
-        appIcon.appendChild(img);
-        appIcon.addEventListener('click', () => openAppWindow(appName, appDetails));
-        parentElement.appendChild(appIcon);
-    }
-
-    // Function to create app icon for dock
-    function createDockIcon(appName, appDetails, parentElement) {
-        const dockIcon = document.createElement('div');
-        dockIcon.className = 'dock-icon';
-        const img = document.createElement('img');
-        img.src = appDetails.Photo;
-        img.alt = appName;
-        dockIcon.appendChild(img);
-        dockIcon.addEventListener('click', () => openAppWindow(appName, appDetails));
-        parentElement.appendChild(dockIcon);
-    }
-
-    // Function to open app window
-    function openAppWindow(appName, appDetails) {
-        const windowElement = document.createElement('div');
-        windowElement.className = 'window';
-        windowElement.style.top = '50px';
-        windowElement.style.left = '50px';
-
-        const windowHeader = document.createElement('div');
-        windowHeader.className = 'window-header';
-        
-        const windowTitle = document.createElement('div');
-        windowTitle.className = 'window-title';
-        windowTitle.textContent = appDetails.Name;
-        windowHeader.appendChild(windowTitle);
-
-        const closeButton = document.createElement('img');
-        closeButton.src = 'photos/close.png';
-        closeButton.alt = 'Close';
-        closeButton.addEventListener('click', () => {
-            document.body.removeChild(windowElement);
+// Function to read config file
+function readConfig() {
+    return fetch('config.json')
+        .then(response => response.json())
+        .then(data => data[0].DesktopIconSize || '100px') // Default size if not specified
+        .catch(error => {
+            console.error('Error reading config file:', error);
+            return '100px'; // Default size if config file cannot be read
         });
-        windowHeader.appendChild(closeButton);
-        
-        windowElement.appendChild(windowHeader);
+}
 
-        const windowContent = document.createElement('div');
-        windowContent.className = 'window-content';
-        const iframe = document.createElement('iframe');
-        iframe.src = appDetails.MainEXE;
-        iframe.style.width = '100%';
-        iframe.style.height = 'calc(100% - 30px)';
-        windowContent.appendChild(iframe);
-        windowElement.appendChild(windowContent);
+// Function to create app icon for desktop with specified size
+function createAppIcon(appName, appDetails, parentElement, iconSize) {
+    const appIcon = document.createElement('div');
+    appIcon.className = 'app-icon';
+    appIcon.style.width = iconSize;
+    appIcon.style.height = iconSize;
+    const img = document.createElement('img');
+    img.src = appDetails.Photo;
+    img.alt = appName;
+    appIcon.appendChild(img);
+    appIcon.addEventListener('click', () => openAppWindow(appName, appDetails));
+    parentElement.appendChild(appIcon);
+}
 
-        // Make window draggable
-        let isDragging = false;
-        let offsetX, offsetY;
-        windowHeader.addEventListener('mousedown', e => {
-            isDragging = true;
-            offsetX = e.clientX - windowElement.getBoundingClientRect().left;
-            offsetY = e.clientY - windowElement.getBoundingClientRect().top;
-        });
-        window.addEventListener('mousemove', e => {
-            if (isDragging) {
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
-                windowElement.style.left = x + 'px';
-                windowElement.style.top = y + 'px';
-            }
-        });
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
+// Function to create app icon for dock
+function createDockIcon(appName, appDetails, parentElement) {
+    const dockIcon = document.createElement('div');
+    dockIcon.className = 'dock-icon';
+    const img = document.createElement('img');
+    img.src = appDetails.Photo;
+    img.alt = appName;
+    dockIcon.appendChild(img);
+    dockIcon.addEventListener('click', () => openAppWindow(appName, appDetails));
+    parentElement.appendChild(dockIcon);
+}
 
-        document.body.appendChild(windowElement);
-    }
+// Function to open app window
+function openAppWindow(appName, appDetails) {
+    const windowElement = document.createElement('div');
+    windowElement.className = 'window';
+    windowElement.style.top = '50px';
+    windowElement.style.left = '50px';
 
-    // Read config file to get desktop icon size
-    readConfig().then(iconSize => {
-        // Read apps.json file to fetch app details for desktop icons
-        fetch('apps.json')
-            .then(response => response.json())
-            .then(data => {
-                const desktop = document.getElementById('desktop');
-                // Iterate over each app
-                for (const [appName, appPath] of Object.entries(data)) {
-                    fetch(appPath)
-                        .then(response => response.json())
-                        .then(appDetails => {
-                            createAppIcon(appName, appDetails, desktop, iconSize);
-                        })
-                        .catch(error => console.error('Error fetching app details:', error));
-                }
-            })
-            .catch(error => console.error('Error fetching apps.json:', error));
+    const windowHeader = document.createElement('div');
+    windowHeader.className = 'window-header';
+    
+    const windowTitle = document.createElement('div');
+    windowTitle.className = 'window-title';
+    windowTitle.textContent = appDetails.Name;
+    windowHeader.appendChild(windowTitle);
+
+    const closeButton = createCloseButton(windowElement); // Create close button
+    windowHeader.appendChild(closeButton);
+    
+    windowElement.appendChild(windowHeader);
+
+    const windowContent = document.createElement('div');
+    windowContent.className = 'window-content';
+    const iframe = document.createElement('iframe');
+    iframe.src = appDetails.MainEXE;
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100% - 30px)';
+    windowContent.appendChild(iframe);
+    windowElement.appendChild(windowContent);
+
+    // Make window draggable
+    let isDragging = false;
+    let offsetX, offsetY;
+    windowHeader.addEventListener('mousedown', e => {
+        isDragging = true;
+        offsetX = e.clientX - windowElement.getBoundingClientRect().left;
+        offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+    });
+    window.addEventListener('mousemove', e => {
+        if (isDragging) {
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            windowElement.style.left = x + 'px';
+            windowElement.style.top = y + 'px';
+        }
+    });
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
     });
 
-    // Read dockApps.json file to fetch app details for dock icons
-    fetch('dockApps.json')
+    document.body.appendChild(windowElement);
+}
+
+// Function to create close button
+function createCloseButton(parentElement) {
+    const closeButton = document.createElement('img');
+    closeButton.src = 'photos/close.png';
+    closeButton.alt = 'Close';
+    closeButton.className = 'close-button'; // Assigning the close-button class
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(parentElement); // Remove the window when close button is clicked
+    });
+    return closeButton;
+}
+
+// Read config file to get desktop icon size
+readConfig().then(iconSize => {
+    // Read apps.json file to fetch app details for desktop icons
+    fetch('apps.json')
         .then(response => response.json())
         .then(data => {
-            const dock = document.getElementById('dock');
+            const desktop = document.getElementById('desktop');
             // Iterate over each app
             for (const [appName, appPath] of Object.entries(data)) {
                 fetch(appPath)
                     .then(response => response.json())
                     .then(appDetails => {
-                        createDockIcon(appName, appDetails, dock);
+                        createAppIcon(appName, appDetails, desktop, iconSize);
                     })
-                    .catch(error => console.error('Error fetching app details for dock:', error));
+                    .catch(error => console.error('Error fetching app details:', error));
             }
         })
-        .catch(error => console.error('Error fetching dockApps.json:', error));
+        .catch(error => console.error('Error fetching apps.json:', error));
+});
 
-    // Toggle dropdown menu visibility
-    document.getElementById('title').addEventListener('click', () => {
-        const dropdown = document.getElementById('dropdown-menu');
-        dropdown.classList.toggle('show');
-    });
-
-    // Close dropdown menu if user clicks outside of it
-    window.addEventListener('click', event => {
-        const dropdown = document.getElementById('dropdown-menu');
-        if (!event.target.matches('#title')) {
-            if (dropdown.classList.contains('show')) {
-                dropdown.classList.remove('show');
-            }
+// Read dockApps.json file to fetch app details for dock icons
+fetch('dockApps.json')
+    .then(response => response.json())
+    .then(data => {
+        const dock = document.getElementById('dock');
+        // Iterate over each app
+        for (const [appName, appPath] of Object.entries(data)) {
+            fetch(appPath)
+                .then(response => response.json())
+                .then(appDetails => {
+                    createDockIcon(appName, appDetails, dock);
+                })
+                .catch(error => console.error('Error fetching app details for dock:', error));
         }
-    });
+    })
+    .catch(error => console.error('Error fetching dockApps.json:', error));
+
+// Toggle dropdown menu visibility
+document.getElementById('title').addEventListener('click', () => {
+    const dropdown = document.getElementById('dropdown-menu');
+    dropdown.classList.toggle('show');
+});
+
+// Close dropdown menu if user clicks outside of it
+window.addEventListener('click', event => {
+    const dropdown = document.getElementById('dropdown-menu');
+    if (!event.target.matches('#title')) {
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+        }
+    }
+});
 </script>
 
 </body>
