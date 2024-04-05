@@ -32,6 +32,36 @@ body {
     object-fit: cover; /* Ensure the image covers the entire container */
 }
 
+.window {
+    position: absolute;
+    border: 1px solid #666; /* Dark mode border color */
+    background-color: #333; /* Dark mode window background color */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1;
+    width: 60%; /* Set default width */
+    height: 60%; /* Set default height */
+    resize: both; /* Allow window to be resizable */
+    overflow: auto; /* Allow content overflow */
+}
+
+.window-content {
+    padding: 10px;
+    width: 100%; /* Ensure content fills the window */
+    height: calc(100% - 30px); /* Subtract header height */
+}
+
+.window-header {
+    background-color: #444; /* Dark mode header background color */
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 5px; /* Adjust border radius */
+    border-top-right-radius: 5px; /* Adjust border radius */
+}
+
+
 .window-header {
     background-color: #444; /* Dark mode header background color */
     padding: 5px;
