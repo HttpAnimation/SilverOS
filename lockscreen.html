@@ -10,15 +10,24 @@
     <div class="login-container">
         <h2>Sign in to SilverOS</h2>
         <input type="password" id="passwordInput">
-        <button>Sign In</button>
+        <button id="signInButton">Sign In</button>
     </div>
     <script>
         const passwordInput = document.getElementById('passwordInput');
+        const signInButton = document.getElementById('signInButton');
+        
         passwordInput.addEventListener('keyup', function(event) {
             if (event.key === 'Enter') {
                 // Simulate successful login, you can add more validation here
                 alert('Login successful!');
+                window.location.href = "index.html"; // Redirect to index.html
             }
+        });
+        
+        signInButton.addEventListener('click', function() {
+            // Simulate successful login, you can add more validation here
+            alert('Login successful!');
+            window.location.href = "index.html"; // Redirect to index.html
         });
     </script>
 </body>
