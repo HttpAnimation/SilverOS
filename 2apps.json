@@ -1,0 +1,7 @@
+{
+    "Settings": "Settings/package.json",
+    "Notes": "Notes/package.json",
+    "Terminal": "Terminal/package.json",
+    "Browser": "Browser/package.json",
+    "Photos": "Photos/package.json"
+}
