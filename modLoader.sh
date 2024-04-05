@@ -12,12 +12,11 @@ for folder in "$mods_folder"/*/; do
 
     # Check if package.json exists in the current folder
     if [ -f "$folder/package.json" ]; then
-        # Extract the name and path from package.json
-        name=$(jq -r '.name' "$folder/package.json")
+        # Extract the path from package.json
         path=$(realpath "$folder/package.json")
 
-        # Append to apps.json
-        echo "    \"$name\": \"$path\"," >> apps.json
+        # Append to apps.json using folder name as the key
+        echo "    \"$folder_name\": \"$path\"," >> apps.json
     fi
 done
 
