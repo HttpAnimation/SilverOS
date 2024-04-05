@@ -10,6 +10,18 @@
         }
     </style>
 </head>
+<script>
+    setTimeout(function() {
+        var image = document.createElement("img");
+        image.src = "photos/starting.png";
+        image.id = "loading-image";
+        document.body.appendChild(image);
+
+        // Trigger reflow and enable the transition
+        image.offsetWidth; 
+        image.style.opacity = 1;
+    }, 2000); // Wait for 2 seconds before displaying the image
+</script>
 <body>
     
 </body>
