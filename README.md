@@ -13,6 +13,8 @@ git clone -b gh-pages https://github.com/HttpAnimation/SilverOS.git
 cd SilverOS
 ```
 
+### Running
+
 ```bash
 npm start
 ``
