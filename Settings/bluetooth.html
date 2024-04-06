@@ -134,11 +134,16 @@
             // Event delegation to handle button clicks
             document.addEventListener('click', function(event) {
                 const button = event.target.closest('button');
-                if (button && button.textContent === "Disconnect") {
+                if (button) {
                     const device = button.closest('.device');
-                    if (device && device.parentNode.id === "connectedDeviceList") {
-                        disconnectedDeviceList.appendChild(device);
-                        button.textContent = "Connect";
+                    if (device) {
+                        if (button.textContent === "Disconnect") {
+                            disconnectedDeviceList.appendChild(device);
+                            button.textContent = "Connect";
+                        } else if (button.textContent === "Connect") {
+                            connectedDeviceList.appendChild(device);
+                            button.textContent = "Disconnect";
+                        }
                     }
                 }
             });
