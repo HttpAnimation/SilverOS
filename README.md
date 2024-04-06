@@ -206,6 +206,9 @@ Height is the size of the y-axis of your app and should usally be kept as defaul
 
 NewTab tells SilverOS if the app should be opening a full new frame or a new app window this is usally for fullscreen.
 
+## How updates are made.
+Updates will be sent out to the [github](https://github.com) as packages.
+
 
 ## Credits
 
