@@ -153,6 +153,8 @@ Name is the name of app usally the folder name
     "Name": "Forkfights",
 ```
 
+2) "Photo"
+
 
 
 ## Credits
