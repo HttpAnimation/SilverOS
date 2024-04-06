@@ -133,7 +133,7 @@ Now add the following
 
 ```json
 {
-    "Name": "Name",
+    "Name": "NameOfApp",
     "Photo": "ModName/iconpath/icon.png",
     "MainEXE": "ModName/file.html",
     "Width": "800px",
@@ -147,7 +147,7 @@ Now add the following
 ```bash
     "Name": "NameOfApp",
 ```
-Name is the 
+Name is the aps anme 
 
 
 
