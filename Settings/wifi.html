@@ -45,6 +45,10 @@
             flex: 1;
             color: #fff;
         }
+        .network .strength {
+            margin-right: 10px;
+            color: #fff;
+        }
         .network .status {
             margin-left: auto;
         }
@@ -105,12 +109,17 @@
             return `${randomAdjective} ${randomNoun}`;
         }
 
-        function createNetworkElement(name, connected) {
+        function generateRandomStrength() {
+            return Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4
+        }
+
+        function createNetworkElement(name, strength, connected) {
             const networkElement = document.createElement("div");
             networkElement.className = "network";
             networkElement.dataset.name = name; // Set data attribute for easier identification
             networkElement.innerHTML = `
                 <div class="name">${name}</div>
+                <div class="strength">${"▮".repeat(strength)}</div>
                 <div class="status"><button>${connected ? "Disconnect" : "Connect"}</button></div>
             `;
             return networkElement;
@@ -124,14 +133,16 @@
             // Generate random connected networks
             for (let i = 0; i < 1; i++) { // Generate only 1 random connected network initially
                 const networkName = generateRandomSSID();
-                connectedNetworkList.appendChild(createNetworkElement(networkName, true));
+                const strength = generateRandomStrength();
+                connectedNetworkList.appendChild(createNetworkElement(networkName, strength, true));
                 currentConnectedNetwork = networkName; // Update the currently connected network
             }
 
             // Generate random available networks
             for (let i = 0; i < 3; i++) { // Generate 3 random available networks
                 const networkName = generateRandomSSID();
-                availableNetworkList.appendChild(createNetworkElement(networkName, false));
+                const strength = generateRandomStrength();
+                availableNetworkList.appendChild(createNetworkElement(networkName, strength, false));
             }
 
             // Event delegation to handle button clicks
