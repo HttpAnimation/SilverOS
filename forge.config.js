@@ -26,6 +26,10 @@ module.exports = {
       platforms: ['linux'],
       config: {},
     },
+    {
+      name: '@electron-forge/maker-zip',
+      platforms: ['win32'],
+    },
   ],
   plugins: [
     {
