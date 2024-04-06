@@ -36,15 +36,41 @@
         button:hover {
             background-color: #666; /* Dark hover color for buttons */
         }
+
+        #content {
+            margin-left: 120px; /* Adjust to match the width of the sidebar */
+            padding: 20px;
+        }
+
+        iframe {
+            border: none; /* Remove border around iframe */
+            width: calc(100% - 140px); /* Adjust width to fill remaining space */
+            height: 100vh; /* Make iframe fill the entire viewport height */
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <button>Account</button>
+        <button id="accountButton">Account</button>
         <button>Bluetooth</button>
         <button>Wi-Fi</button>
         <button>About</button>
     </div>
+
+    <div id="content">
+        <iframe id="mainFrame"></iframe>
+    </div>
+
+    <script>
+        // Get references to the buttons and the iframe
+        const accountButton = document.getElementById('accountButton');
+        const mainFrame = document.getElementById('mainFrame');
+
+        // Add click event listener to the account button
+        accountButton.addEventListener('click', function() {
+            // Set the src attribute of the iframe to account.html
+            mainFrame.src = 'account.html';
+        });
+    </script>
 </body>
 </html>
-
