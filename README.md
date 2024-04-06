@@ -2,7 +2,7 @@
 
 SilverOS is an operating system simulator designed for being :3.
 
-## Installation
+## Installation - Source
 
 To install SilverOS, follow these steps:
 
