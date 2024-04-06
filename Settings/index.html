@@ -54,9 +54,9 @@
 <body>
     <div class="sidebar">
         <button id="accountButton">Account</button>
-        <button id="About">About</button>
-        <button id="Bluetooth">Bluetooth</button>
-        <button id="Wifi">Wi-Fi</button>
+        <button id="aboutButton">About</button>
+        <button id="bluetoothButton">Bluetooth</button>
+        <button id="wifiButton">Wi-Fi</button>
     </div>
 
     <div id="content">
@@ -66,12 +66,42 @@
     <script>
         // Get references to the buttons and the iframe
         const accountButton = document.getElementById('accountButton');
+        const aboutButton = document.getElementById('aboutButton');
+        const bluetoothButton = document.getElementById('bluetoothButton');
+        const wifiButton = document.getElementById('wifiButton');
         const mainFrame = document.getElementById('mainFrame');
 
-        // Add click event listener to the account button
+        // Add click event listeners to the buttons
         accountButton.addEventListener('click', function() {
             // Set the src attribute of the iframe to account.html
             mainFrame.src = 'account.html';
+        });
+
+        aboutButton.addEventListener('click', function() {
+            // Close the iframe if already displaying content
+            if (mainFrame.src !== '') {
+                mainFrame.src = '';
+            }
+            // Set the src attribute of the iframe to about.html
+            mainFrame.src = 'about.html';
+        });
+
+        bluetoothButton.addEventListener('click', function() {
+            // Close the iframe if already displaying content
+            if (mainFrame.src !== '') {
+                mainFrame.src = '';
+            }
+            // Set the src attribute of the iframe to bluetooth.html
+            mainFrame.src = 'bluetooth.html';
+        });
+
+        wifiButton.addEventListener('click', function() {
+            // Close the iframe if already displaying content
+            if (mainFrame.src !== '') {
+                mainFrame.src = '';
+            }
+            // Set the src attribute of the iframe to wifi.html
+            mainFrame.src = 'wifi.html';
         });
     </script>
 </body>
