@@ -7,10 +7,37 @@
     <style>
         body {
             background-color: grey;
+            margin: 0; /* Remove default body margin */
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100px; /* Adjust width as needed */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            padding: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    
+    <div class="sidebar">
+        <button>Account</button>
+        <button>Bluetooth</button>
+        <button>Wi-Fi</button>
+        <button>About</button>
+    </div>
 </body>
 </html>
