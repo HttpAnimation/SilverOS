@@ -60,10 +60,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        #backupDate {
+        #doneMessage {
             display: none;
-            margin-top: 10px;
             text-align: center;
+            margin-top: 10px;
+            color: #00ff00; /* Green color for "Done" message */
         }
     </style>
 </head>
@@ -80,8 +81,9 @@
                 <input type="password" id="password" value="********">
             </div>
             <div class="setting">
-                <input type="submit" value="Save Changes">
+                <input type="submit" id="saveChangesButton" value="Save Changes">
             </div>
+            <div id="doneMessage">Done</div>
         </div>
         
         <div class="section">
@@ -115,22 +117,16 @@
     </div>
 
     <script>
-        document.getElementById("backupButton").addEventListener("click", function() {
+        document.getElementById("saveChangesButton").addEventListener("click", function() {
             // Display animation
-            document.getElementById("backupButton").value = "Backing up...";
+            document.getElementById("saveChangesButton").value = "Saving Changes...";
             
-            // Simulate backup process
+            // Simulate saving changes process
             setTimeout(function() {
-                // Display backup date
-                var currentDate = new Date();
-                var formattedDate = currentDate.toLocaleDateString();
-                document.getElementById("backup").textContent = formattedDate;
-
-                // Hide animation
-                document.getElementById("backupButton").style.display = "none";
-                document.getElementById("backupDate").style.display = "block";
-                document.getElementById("backupDate").textContent = "Backup completed on " + formattedDate;
-            }, 2000); // Change 2000 to the time it takes to perform the backup process in milliseconds
+                // Display "Done" message
+                document.getElementById("saveChangesButton").style.display = "none";
+                document.getElementById("doneMessage").style.display = "block";
+            }, 2000); // Change 2000 to the time it takes to save changes in milliseconds
         });
     </script>
 </body>
