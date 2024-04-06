@@ -62,8 +62,29 @@ function createDockIcon(appName, appDetails, parentElement) {
     parentElement.appendChild(dockIcon);
 }
 
+// Function to open app window or navigate to the specified HTML script
+function openApp(appName, appDetails) {
+    if (appDetails.NewTab) {
+        // Open in a new tab
+        window.open(appDetails.MainEXE, '_blank');
+    } else {
+        // Open in the current tab
+        navigateToHTMLScript(appDetails.MainEXE);
+    }
+}
+
+// Function to navigate to the specified HTML script
+function navigateToHTMLScript(htmlScript) {
+    window.location.href = htmlScript;
+}
+
 // Function to open app window with specified size or fallback size
 function openAppWindow(appName, appDetails) {
+    if (appDetails.NewTab) {
+        openApp(appName, appDetails);
+        return;
+    }
+    
     const windowElement = document.createElement('div');
     windowElement.className = 'window';
     windowElement.style.top = '50px';
