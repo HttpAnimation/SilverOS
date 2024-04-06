@@ -1,6 +1,6 @@
 # SilverOS
 
-SilverOS is a user-friendly operating system simulator designed with :3 in mind.
+SilverOS is a user-friendly operating system simulator designed with **:3** in mind.
 
 ## Installation - Source
 
