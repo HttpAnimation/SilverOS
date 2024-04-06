@@ -134,11 +134,11 @@ Now add the following
 ```json
 {
     "Name": "Name",
-    "Photo": "Minecraft/photos/icon.png",
-    "MainEXE": "Minecraft/index.html",
+    "Photo": "ModName/iconpath/icon.png",
+    "MainEXE": "ModName/file.html",
     "Width": "800px",
     "Height": "480px",
-    "NewTab": true
+    "NewTab": false
 }
 ```
 
