@@ -89,4 +89,3 @@
             // Initially toggle network sections based on Wi-Fi status
             toggleNetworkSections();
         };
-    </script>
