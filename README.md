@@ -89,5 +89,4 @@ After modification:
 
 ## Credits
 
-- Bell icon by [SVG Repo](https://www.svgrepo.com/svg/52215/bell)
 - Markdown support by [md-block](https://md-block.verou.me/)
