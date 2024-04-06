@@ -86,11 +86,11 @@
         <div class="section">
             <h2>Other Settings</h2>
             <div class="setting">
-                <label for="discoverable">Wi-Fi On:</label>
-                <input type="checkbox" id="wifiOn">
+                <label for="wifiOn">Wi-Fi On:</label>
+                <input type="checkbox" id="wifiOn" checked> <!-- Automatically checked -->
             </div>
             <div class="setting">
-                <label for="pairing">Auto-Connect:</label>
+                <label for="autoConnect">Auto-Connect:</label>
                 <input type="checkbox" id="autoConnect">
             </div>
         </div>
@@ -150,6 +150,9 @@
                     }
                 }
             });
+
+            // Check the "Wi-Fi On" checkbox automatically
+            document.getElementById("wifiOn").checked = true;
         };
     </script>
 </body>
