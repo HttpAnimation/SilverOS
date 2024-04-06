@@ -1,4 +1,3 @@
-<script>
 function generateRandomName() {
     const adjectives = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Black", "White", "Gray"];
     const nouns = ["Car", "Tree", "House", "Laptop", "Phone", "Chair", "Table", "Book", "Bottle", "Dog"];
