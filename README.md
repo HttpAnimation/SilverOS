@@ -122,6 +122,28 @@ After modification:
 }
 ```
 
+## How to package
+To package a mod/plugin make a new file called **package.json**
+
+```bash
+nano package.json
+```
+
+Now add the following
+
+```json
+{
+    "Name": "Name",
+    "Photo": "Minecraft/photos/icon.png",
+    "MainEXE": "Minecraft/index.html",
+    "Width": "800px",
+    "Height": "480px",
+    "NewTab": true
+}
+```
+
+
+
 ## Credits
 
 - Markdown support by [md-block](https://md-block.verou.me/)
