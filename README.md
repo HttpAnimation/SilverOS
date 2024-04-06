@@ -75,7 +75,7 @@ Before modification:
 ```json
 {
     "Comment-2": "This is the login password",
-    "LoginPassword": "Root"
+    "LoginPassword": "admin"
 }
 ```
 
