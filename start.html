@@ -21,6 +21,9 @@
     </style>
 </head>
 <body>
+    <!-- Audio element for intro sound -->
+    <audio id="intro-audio" src="audio/intro.wav"></audio>
+
     <div id="loading-image"></div>
 
     <script>
@@ -29,6 +32,10 @@
             image.src = "Projectphotos/starting.png";
             image.id = "loading-image";
             document.body.appendChild(image);
+
+            // Play intro audio
+            var introAudio = document.getElementById('intro-audio');
+            introAudio.play();
 
             // Trigger reflow and enable the transition
             image.offsetWidth; 
