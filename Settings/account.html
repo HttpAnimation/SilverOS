@@ -60,6 +60,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        #backupDate {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -102,10 +107,31 @@
                 <span id="backup">April 5, 2024</span>
             </div>
             <div class="setting">
-                <input type="submit" value="Backup Now">
+                <input type="submit" id="backupButton" value="Backup Now">
             </div>
+            <div id="backupDate"></div>
         </div>
         
     </div>
+
+    <script>
+        document.getElementById("backupButton").addEventListener("click", function() {
+            // Display animation
+            document.getElementById("backupButton").value = "Backing up...";
+            
+            // Simulate backup process
+            setTimeout(function() {
+                // Display backup date
+                var currentDate = new Date();
+                var formattedDate = currentDate.toLocaleDateString();
+                document.getElementById("backup").textContent = formattedDate;
+
+                // Hide animation
+                document.getElementById("backupButton").style.display = "none";
+                document.getElementById("backupDate").style.display = "block";
+                document.getElementById("backupDate").textContent = "Backup completed on " + formattedDate;
+            }, 2000); // Change 2000 to the time it takes to perform the backup process in milliseconds
+        });
+    </script>
 </body>
 </html>
