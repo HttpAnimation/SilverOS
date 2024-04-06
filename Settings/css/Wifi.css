@@ -1,80 +1,96 @@
-/* CSS for body and top bar */
 body {
-    background-color: #242424;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.top-bar {
-    background-color: #333;
+    background-color: #202124;
     color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.close-button {
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.close-button img {
-    width: 24px;
-    height: 24px;
-}
-
-.app-name {
-    flex-grow: 1;
-    text-align: center;
-}
-
-/* CSS for Wi-Fi list animation */
-.wifi-list {
+.container {
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    animation: slideIn 1s ease-out forwards;
-    opacity: 0;
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes slideIn {
-    from {
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue accent color */
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 10px;
+    color: #9b59b6; /* Purple accent color */
+}
+
+.network {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Animation */
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Move down initially */
+    animation: loadIn 0.5s ease forwards; /* Apply animation */
+}
+
+.network:last-child {
+    border-bottom: none;
+}
+
+.network .name {
+    flex: 1;
+    color: #fff;
+}
+
+.network .strength {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.network .status {
+    margin-left: auto;
+}
+
+.network .status button {
+    padding: 5px 10px;
+    background-color: #9b59b6; /* Purple accent color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.setting label {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.setting input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Add animation */
+@keyframes loadIn {
+    0% {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(20px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Additional styling for individual Wi-Fi networks */
-.wifi-network {
-    background-color: #444;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Additional styling for Wi-Fi network name and strength */
-.wifi-name {
-    flex-grow: 1;
-}
-
-.wifi-strength {
-    margin-left: 10px;
 }
