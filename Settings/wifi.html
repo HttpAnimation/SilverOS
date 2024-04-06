@@ -3,14 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wifi</title>
+    <title>Wi-Fi Settings</title>
     <style>
         body {
-            background: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #202124;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff; /* Blue accent color */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+            color: #9b59b6; /* Purple accent color */
+        }
+        .network {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease-in-out; /* Animation */
+        }
+        .network:last-child {
+            border-bottom: none;
+        }
+        .network .name {
+            flex: 1;
+            color: #fff;
+        }
+        .network .status {
+            margin-left: auto;
+        }
+        .network .status button {
+            padding: 5px 10px;
+            background-color: #9b59b6; /* Purple accent color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .setting {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .setting label {
+            margin-right: 10px;
+            color: #fff;
+        }
+        .setting input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    To be added {wifi page}
+    <div class="container">        
+        <div class="section">
+            <h2>Connected Networks</h2>
+            <div id="connectedNetworkList"></div>
+        </div>
+
+        <div class="section">
+            <h2>Available Networks</h2>
+            <div id="availableNetworkList"></div>
+        </div>
+        
+        <div class="section">
+            <h2>Other Settings</h2>
+            <div class="setting">
+                <label for="discoverable">Wi-Fi On:</label>
+                <input type="checkbox" id="wifiOn">
+            </div>
+            <div class="setting">
+                <label for="pairing">Auto-Connect:</label>
+                <input type="checkbox" id="autoConnect">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateRandomSSID() {
+            const adjectives = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Black", "White", "Gray"];
+            const nouns = ["Network", "Wi-Fi", "Internet", "Connection", "Router", "Access Point", "Hotspot", "SSID"];
+            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+            return `${randomAdjective} ${randomNoun}`;
+        }
+
+        function createNetworkElement(name, connected) {
+            const networkElement = document.createElement("div");
+            networkElement.className = "network";
+            networkElement.dataset.name = name; // Set data attribute for easier identification
+            networkElement.innerHTML = `
+                <div class="name">${name}</div>
+                <div class="status"><button>${connected ? "Disconnect" : "Connect"}</button></div>
+            `;
+            return networkElement;
+        }
+
+        window.onload = function() {
+            const connectedNetworkList = document.getElementById("connectedNetworkList");
+            const availableNetworkList = document.getElementById("availableNetworkList");
+            
+            // Generate random connected networks
+            for (let i = 0; i < 2; i++) { // Generate 2 random connected networks
+                const networkName = generateRandomSSID();
+                connectedNetworkList.appendChild(createNetworkElement(networkName, true));
+            }
+
+            // Generate random available networks
+            for (let i = 0; i < 3; i++) { // Generate 3 random available networks
+                const networkName = generateRandomSSID();
+                availableNetworkList.appendChild(createNetworkElement(networkName, false));
+            }
+
+            // Event delegation to handle button clicks
+            document.addEventListener('click', function(event) {
+                const button = event.target.closest('button');
+                if (button) {
+                    const network = button.closest('.network');
+                    if (network) {
+                        if (button.textContent === "Disconnect") {
+                            availableNetworkList.appendChild(network);
+                            button.textContent = "Connect";
+                        } else if (button.textContent === "Connect") {
+                            setTimeout(() => {
+                                connectedNetworkList.appendChild(network);
+                                button.textContent = "Disconnect";
+                            }, 1000); // 1000 milliseconds delay
+                        }
+                    }
+                }
+            });
+        };
+    </script>
 </body>
 </html>
