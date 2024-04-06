@@ -1,8 +1,13 @@
+const { app, BrowserWindow, globalShortcut, shell } = require('electron');
+const path = require('path');
+const url = require('url');
+
+let mainWindow;
+
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 1500,
-        fullscreen: true, // Add this line to enable full-screen mode
         webPreferences: {
             nodeIntegration: true
         }
@@ -34,3 +39,24 @@ function createWindow() {
         }
     });
 }
+
+app.whenReady().then(() => {
+    createWindow();
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
+});
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
+});
+
+// Unregister all global shortcuts when the app is about to quit
+app.on('will-quit', () => {
+    globalShortcut.unregisterAll();
+});
