@@ -96,6 +96,10 @@ mv My\ Mod Mods
 
 5. For NT use the [modLoader.bat](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.bat) script:
 
+```bash
+start modLoader.bat
+```
+
 ## Login
 
 Access the login page with the default password **admin**. Modify the password by editing the **config.json** file:
