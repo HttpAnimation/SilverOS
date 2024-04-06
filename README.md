@@ -27,6 +27,10 @@ npm install
 npm run make
 ```
 
+```bash
+cd out/make
+```
+
 
 
 ## Mods
