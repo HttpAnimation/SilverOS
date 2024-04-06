@@ -3,14 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>iCloud Settings</title>
     <style>
         body {
-            background: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        .setting {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .setting:last-child {
+            border-bottom: none;
+        }
+        .setting label {
+            display: inline-block;
+            width: 200px;
+        }
+        .setting input[type="text"], .setting input[type="password"] {
+            width: calc(100% - 220px);
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .setting input[type="submit"] {
+            margin-left: 200px;
+            padding: 8px 20px;
+            background-color: #007aff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    To be added {account page}
+    <div class="container">
+        <h1>iCloud Settings</h1>
+        
+        <div class="section">
+            <h2>Account Information</h2>
+            <div class="setting">
+                <label for="email">Email:</label>
+                <input type="text" id="email" value="example@example.com">
+            </div>
+            <div class="setting">
+                <label for="password">Password:</label>
+                <input type="password" id="password" value="********">
+            </div>
+            <div class="setting">
+                <input type="submit" value="Save Changes">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Storage</h2>
+            <div class="setting">
+                <label for="storage">Total Storage:</label>
+                <span id="storage">15 GB</span>
+            </div>
+            <div class="setting">
+                <label for="usedStorage">Used Storage:</label>
+                <span id="usedStorage">5 GB</span>
+            </div>
+            <div class="setting">
+                <label for="remainingStorage">Remaining Storage:</label>
+                <span id="remainingStorage">10 GB</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Backup</h2>
+            <div class="setting">
+                <label for="backup">Last Backup:</label>
+                <span id="backup">April 5, 2024</span>
+            </div>
+            <div class="setting">
+                <input type="submit" value="Backup Now">
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
