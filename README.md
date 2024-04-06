@@ -1,6 +1,6 @@
 # SilverOS
 
-SilverOS is an operating system simulator designed for educational purposes.
+SilverOS is an operating system simulator designed for being :3.
 
 ## Installation
 
