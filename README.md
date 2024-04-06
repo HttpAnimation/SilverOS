@@ -147,14 +147,68 @@ Now add the following
 ```bash
     "Name": "NameOfApp",
 ```
-Name is the name of app usally the folder name
+Name is the name of app usally the folder name.
 
 ```bash
     "Name": "Forkfights",
 ```
 
 2) "Photo"
+```bash
+    "Photo": "ModName/iconpath/icon.png",
+```
 
+Photo is the icon that gets displayed on the desktop usally a size of >612x612.
+
+2) "Photo"
+
+```bash
+    "Photo": "Forkfights/photos/icon.png",
+```
+
+3) "MainEXE"
+
+```bash
+    "MainEXE": "ModName/file.html",
+```
+
+MainEXE is the file gets displayed this is your main page.
+
+```bash
+    "MainEXE": "Forkfights/index.html",
+```
+
+4) "Width"
+
+```bash
+    "Width": "800px",
+```
+
+Width is the x axis of the app and should usally kept to be default unless reason.
+
+```bash
+    "Width": "800px",
+```
+
+5) "Height"
+
+```bash
+    "Height": "480px",
+```
+
+Height is the size of the y-axis of your app and should usally be kept as defauly unless reason.
+
+```bash
+    "Height": "480px",
+```
+
+6) NewTab
+
+```bash
+    "NewTab": false
+```
+
+NewTab tells SilverOS if the app should be opening a full new frame or a new app window this is usally for fullscreen.
 
 
 ## Credits
