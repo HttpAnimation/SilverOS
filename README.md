@@ -142,6 +142,13 @@ Now add the following
 }
 ```
 
+1) "Name"
+
+```bash
+    "Name": "NameOfApp",
+```
+Name is the 
+
 
 
 ## Credits
