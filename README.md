@@ -1,42 +1,51 @@
-# SilverOS/main
-An os simualtor.
+# SilverOS
 
-## Installing
-To install open a terminal and run the following command.
+SilverOS is an operating system simulator designed for educational purposes.
+
+## Installation
+
+To install SilverOS, follow these steps:
+
+1. Open a terminal.
+2. Run the following command:
 
 ```bash
 git clone -b gh-pages https://github.com/HttpAnimation/SilverOS.git
 ```
 
+3. Navigate to the SilverOS directory:
+
 ```bash
 cd SilverOS
 ```
 
-### Running
+## Usage
+
+To start SilverOS, run the following command:
 
 ```bash
 npm start
 ```
 
 ## Mods
-To install mods do the folling
 
-1) Download the mod and make sure it's safe first remember [github](https://github.com) first.
+You can enhance SilverOS by installing mods. Follow these steps to install mods:
 
-2) If the mod is in a zip or a sub-folder make sure it's not it should look something like this.
-
-```
--ModEXP
--- index.html
--- package.json
--- script.js
--- style.css
-```
-
-3) Put the folder in the folder [mods](https://github.com/HttpAnimation/SilverOS/tree/gh-pages/mods).
+1. Download the desired mod from a trusted source, such as [GitHub](https://github.com).
+2. Ensure that the mod files are organized properly, as follows:
 
 ```
-$/ls
+- ModEXP
+  - index.html
+  - package.json
+  - script.js
+  - style.css
+```
+
+3. Move the mod folder to the "mods" directory within the SilverOS project:
+
+```
+$ ls
 index.html
 mods
 scripts
@@ -49,31 +58,36 @@ modLoader.sh
 ```
 
 ```
-$/mv My\ Mod Mods
+$ mv My\ Mod Mods
 ```
 
-4) Run the [modLoader](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.sh) script.
+4. Run the [modLoader](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.sh) script:
 
 ```bash
 ./modLoader.sh
 ```
 
-
 ## Login
-The default password for the login page is **admin** you can change the password in the file **config.json**
 
+The default password for the login page is **admin**. You can change the password by modifying the **config.json** file:
 
+Before modification:
 ```json
-        "Comment-2": "This is the login password",
-        "LoginPassword": "Root"
+{
+    "Comment-2": "This is the login password",
+    "LoginPassword": "Root"
+}
 ```
 
+After modification:
 ```json
-        "Comment-2": "This is the login password",
-        "LoginPassword": "NewPasswordHEre"
+{
+    "Comment-2": "This is the login password",
+    "LoginPassword": "NewPasswordHere"
+}
 ```
 
 ## Credits
-Bell | [svgrepo](https://www.svgrepo.com/svg/52215/bell)
 
-Markdown | [md-block](https://md-block.verou.me/)
+- Bell icon by [SVG Repo](https://www.svgrepo.com/svg/52215/bell)
+- Markdown support by [md-block](https://md-block.verou.me/)
