@@ -51,8 +51,24 @@
 </div>
 
 <script>
+    // Array of random locations
+    const locations = [
+        "New York, USA",
+        "London, UK",
+        "Tokyo, Japan",
+        "Sydney, Australia",
+        "Paris, France",
+        "Berlin, Germany",
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "Moscow, Russia",
+        "Cape Town, South Africa"
+    ];
+
     function connect() {
-        document.getElementById("status").textContent = "Connected";
+        const randomIndex = Math.floor(Math.random() * locations.length); // Generate random index
+        const randomLocation = locations[randomIndex]; // Get random location
+        document.getElementById("status").textContent = "Connected to: " + randomLocation; // Display random location
     }
 
     function disconnect() {
