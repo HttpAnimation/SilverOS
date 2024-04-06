@@ -10694,3 +10694,4 @@ out/silveros-linux-x64/locales/vi.pak
 out/silveros-linux-x64/locales/zh-CN.pak
 out/silveros-linux-x64/locales/zh-TW.pak
 out/silveros-linux-x64/resources/app.asar
+out/make/rpm/x64/silveros-1.0.2-1.x86_64.rpm
