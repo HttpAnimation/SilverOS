@@ -1,13 +1,29 @@
 const { app, BrowserWindow, globalShortcut, shell } = require('electron');
 const path = require('path');
 const url = require('url');
+const fs = require('fs');
 
 let mainWindow;
 
 function createWindow() {
+    // Load configuration from config.json
+    const configPath = path.join(app.getAppPath(), 'config.json');
+    let fullscreen = false; // Default value
+    try {
+        const configFile = fs.readFileSync(configPath, 'utf8');
+        const config = JSON.parse(configFile);
+        if (config.Fullscreen === 'true') {
+            fullscreen = true;
+        }
+    } catch (error) {
+        console.error('Error reading config file:', error);
+    }
+
+    // Create the main window
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 1500,
+        fullscreen: fullscreen, // Set fullscreen based on config
         webPreferences: {
             nodeIntegration: true
         }
@@ -33,6 +49,7 @@ function createWindow() {
         }
     });
 
+    // Listen for keydown events to navigate to intro.html when "[" key is pressed
     mainWindow.webContents.on('before-input-event', (event, input) => {
         if (input.key === '[') {
             mainWindow.loadFile('intro.html');
