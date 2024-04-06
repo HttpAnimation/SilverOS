@@ -73,8 +73,13 @@
 <body>
     <div class="container">        
         <div class="section">
-            <h2>Devices</h2>
-            <div id="deviceList"></div>
+            <h2>Connected Devices</h2>
+            <div id="connectedDeviceList"></div>
+        </div>
+
+        <div class="section">
+            <h2>Disconnected Devices</h2>
+            <div id="disconnectedDeviceList"></div>
         </div>
         
         <div class="section">
@@ -99,21 +104,30 @@
             return `${randomAdjective} ${randomNoun}`;
         }
 
-        function createDeviceElement() {
-            const deviceName = generateRandomName();
+        function createDeviceElement(name) {
             const deviceElement = document.createElement("div");
             deviceElement.className = "device";
             deviceElement.innerHTML = `
-                <div class="name">${deviceName}</div>
+                <div class="name">${name}</div>
                 <div class="status"><button>Connect</button></div>
             `;
             return deviceElement;
         }
 
         window.onload = function() {
-            const deviceList = document.getElementById("deviceList");
-            for (let i = 0; i < 3; i++) { // Generate 3 random devices
-                deviceList.appendChild(createDeviceElement());
+            const connectedDeviceList = document.getElementById("connectedDeviceList");
+            const disconnectedDeviceList = document.getElementById("disconnectedDeviceList");
+            
+            // Generate random connected devices
+            for (let i = 0; i < 2; i++) { // Generate 2 random connected devices
+                const deviceName = generateRandomName();
+                connectedDeviceList.appendChild(createDeviceElement(deviceName));
+            }
+
+            // Generate random disconnected devices
+            for (let i = 0; i < 3; i++) { // Generate 3 random disconnected devices
+                const deviceName = generateRandomName();
+                disconnectedDeviceList.appendChild(createDeviceElement(deviceName));
             }
         };
     </script>
