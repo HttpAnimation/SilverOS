@@ -12,7 +12,7 @@ function createWindow() {
     try {
         const configFile = fs.readFileSync(configPath, 'utf8');
         const config = JSON.parse(configFile);
-        if (config.Fullscreen === 'true') {
+        if (config.Fullscreen === true || config.Fullscreen === "true") {
             fullscreen = true;
         }
     } catch (error) {
