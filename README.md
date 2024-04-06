@@ -147,7 +147,11 @@ Now add the following
 ```bash
     "Name": "NameOfApp",
 ```
-Name is the aps anme 
+Name is the name of app usally the folder name
+
+```bash
+    "Name": "Forkfights",
+```
 
 
 
