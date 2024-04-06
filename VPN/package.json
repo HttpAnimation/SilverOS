@@ -1,0 +1,8 @@
+{
+    "Name": "NameOfApp",
+    "Photo": "ModName/iconpath/icon.png",
+    "MainEXE": "ModName/file.html",
+    "Width": "800px",
+    "Height": "480px",
+    "NewTab": false
+}
