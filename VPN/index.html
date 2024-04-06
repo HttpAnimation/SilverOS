@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExpressVPN-like Interface</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>ExpressVPN-like Interface</h1>
+    <p>Status: <span id="status">Disconnected</span></p>
+    <button class="button" onclick="connect()">Connect</button>
+    <button class="button" onclick="disconnect()">Disconnect</button>
+</div>
+
+<script>
+    function connect() {
+        document.getElementById("status").textContent = "Connected";
+    }
+
+    function disconnect() {
+        document.getElementById("status").textContent = "Disconnected";
+    }
+</script>
+</body>
+</html>
