@@ -77,12 +77,12 @@
 </head>
 <body>
     <div class="container">        
-        <div class="section">
+        <div class="section" id="connectedNetworkSection">
             <h2>Connected Networks</h2>
             <div id="connectedNetworkList"></div>
         </div>
 
-        <div class="section">
+        <div class="section" id="availableNetworkSection">
             <h2>Available Networks</h2>
             <div id="availableNetworkList"></div>
         </div>
@@ -126,10 +126,19 @@
         }
 
         window.onload = function() {
+            const connectedNetworkSection = document.getElementById("connectedNetworkSection");
+            const availableNetworkSection = document.getElementById("availableNetworkSection");
             const connectedNetworkList = document.getElementById("connectedNetworkList");
             const availableNetworkList = document.getElementById("availableNetworkList");
             let currentConnectedNetwork = null; // Variable to store the currently connected network
             
+            // Function to show or hide network sections based on Wi-Fi status
+            function toggleNetworkSections() {
+                const wifiOn = document.getElementById("wifiOn").checked;
+                connectedNetworkSection.style.display = wifiOn ? "block" : "none";
+                availableNetworkSection.style.display = wifiOn ? "block" : "none";
+            }
+
             // Generate random connected networks
             for (let i = 0; i < 1; i++) { // Generate only 1 random connected network initially
                 const networkName = generateRandomSSID();
@@ -176,6 +185,11 @@
 
             // Check the "Wi-Fi On" checkbox automatically
             document.getElementById("wifiOn").checked = true;
+
+            // Attach onchange event listener to Wi-Fi checkbox to toggle network sections
+            document.getElementById("wifiOn").onchange = toggleNetworkSections;
+            // Initially toggle network sections based on Wi-Fi status
+            toggleNetworkSections();
         };
     </script>
 </body>
