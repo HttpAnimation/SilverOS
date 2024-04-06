@@ -119,11 +119,13 @@
         window.onload = function() {
             const connectedNetworkList = document.getElementById("connectedNetworkList");
             const availableNetworkList = document.getElementById("availableNetworkList");
+            let currentConnectedNetwork = null; // Variable to store the currently connected network
             
             // Generate random connected networks
-            for (let i = 0; i < 2; i++) { // Generate 2 random connected networks
+            for (let i = 0; i < 1; i++) { // Generate only 1 random connected network initially
                 const networkName = generateRandomSSID();
                 connectedNetworkList.appendChild(createNetworkElement(networkName, true));
+                currentConnectedNetwork = networkName; // Update the currently connected network
             }
 
             // Generate random available networks
@@ -139,13 +141,23 @@
                     const network = button.closest('.network');
                     if (network) {
                         if (button.textContent === "Disconnect") {
+                            // Disconnect the current connected network
+                            if (network.dataset.name === currentConnectedNetwork) {
+                                currentConnectedNetwork = null; // Reset the current connected network
+                            }
                             availableNetworkList.appendChild(network);
                             button.textContent = "Connect";
                         } else if (button.textContent === "Connect") {
-                            setTimeout(() => {
-                                connectedNetworkList.appendChild(network);
-                                button.textContent = "Disconnect";
-                            }, 1000); // 1000 milliseconds delay
+                            // Disconnect the current connected network before connecting a new one
+                            if (currentConnectedNetwork) {
+                                const currentConnectedNetworkElement = connectedNetworkList.querySelector(`[data-name="${currentConnectedNetwork}"]`);
+                                currentConnectedNetworkElement.querySelector('button').textContent = "Connect"; // Update button text
+                                availableNetworkList.appendChild(currentConnectedNetworkElement); // Move to available networks
+                            }
+                            // Connect the new network
+                            connectedNetworkList.appendChild(network);
+                            button.textContent = "Disconnect";
+                            currentConnectedNetwork = network.dataset.name; // Update the currently connected network
                         }
                     }
                 }
