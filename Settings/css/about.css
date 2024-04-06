@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #202124;
+    color: #fff;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out forwards; /* Load-in animation */
+    opacity: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue accent color */
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    margin-bottom: 10px;
+    color: #9b59b6; /* Purple accent color */
+}
+.info {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+.info:last-child {
+    border-bottom: none;
+}
+.info label {
+    color: #bbb;
+}
+.logo {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some spacing between the image and text */
+}
