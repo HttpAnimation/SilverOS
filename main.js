@@ -13,7 +13,7 @@ function createWindow() {
         }
     });
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile('start.html');
 
     // Register global shortcut for reloading the page
     globalShortcut.register('CommandOrControl+R', () => {
