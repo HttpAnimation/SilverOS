@@ -1,4 +1,3 @@
-    <script>
         function generateRandomSSID() {
             const adjectives = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Black", "White", "Gray"];
             const nouns = ["Network", "Wi-Fi", "Internet", "Connection", "Router", "Access Point", "Hotspot", "SSID"];
