@@ -11,6 +11,7 @@
         color: #fff;
         margin: 0;
         padding: 0;
+        overflow: hidden; /* Hide overflow during loading animation */
     }
     .container {
         max-width: 600px;
@@ -20,6 +21,8 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         text-align: center; /* Center align content */
+        opacity: 0; /* Initially hide content */
+        transition: opacity 0.5s ease; /* Add transition for opacity */
     }
     h1 {
         text-align: center;
@@ -50,7 +53,7 @@
 </style>
 </head>
 <body>
-<div class="container">
+<div class="container" id="content">
     <h1>ExpressVPN-like Interface</h1>
     <p class="status hidden" id="status">Disconnected</p>
     <button class="button" onclick="connect()">Connect</button>
@@ -71,6 +74,15 @@
         "Moscow, Russia",
         "Cape Town, South Africa"
     ];
+
+    // Function to show content with animation
+    function showContent() {
+        document.getElementById("content").style.opacity = 1;
+        document.body.style.overflow = "auto"; /* Restore overflow after animation */
+    }
+
+    // Show content after a delay
+    setTimeout(showContent, 2000); // Adjust duration as needed
 
     function connect() {
         const randomIndex = Math.floor(Math.random() * locations.length); // Generate random index
