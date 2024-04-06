@@ -107,6 +107,7 @@
         function createDeviceElement(name, connected) {
             const deviceElement = document.createElement("div");
             deviceElement.className = "device";
+            deviceElement.dataset.name = name; // Set data attribute for easier identification
             deviceElement.innerHTML = `
                 <div class="name">${name}</div>
                 <div class="status"><button>${connected ? "Disconnect" : "Connect"}</button></div>
@@ -129,6 +130,18 @@
                 const deviceName = generateRandomName();
                 disconnectedDeviceList.appendChild(createDeviceElement(deviceName, false));
             }
+
+            // Event delegation to handle button clicks
+            document.addEventListener('click', function(event) {
+                const button = event.target.closest('button');
+                if (button && button.textContent === "Disconnect") {
+                    const device = button.closest('.device');
+                    if (device && device.parentNode.id === "connectedDeviceList") {
+                        disconnectedDeviceList.appendChild(device);
+                        button.textContent = "Connect";
+                    }
+                }
+            });
         };
     </script>
 </body>
