@@ -40,12 +40,13 @@
         #content {
             margin-left: 120px; /* Adjust to match the width of the sidebar */
             padding: 20px;
+            box-sizing: border-box;
         }
 
         iframe {
             border: none; /* Remove border around iframe */
-            width: calc(100% - 120px); /* Adjust width to fill remaining space (subtract width of sidebar) */
-            height: 100vh; /* Make iframe fill the entire viewport height */
+            width: calc(100vw - 120px); /* Adjust width to fill remaining space */
+            height: calc(100vh - 40px); /* Adjust height to fill viewport height minus sidebar padding */
         }
     </style>
 </head>
