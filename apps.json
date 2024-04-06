@@ -3,5 +3,6 @@
     "Notes": "Notes/package.json",
     "Terminal": "Terminal/package.json",
     "Browser": "Browser/package.json",
-    "Photos": "Photos/package.json"
+    "Photos": "Photos/package.json",
+    "Minecraft": "Minecraft/package.json"
 }
