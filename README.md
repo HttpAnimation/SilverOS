@@ -88,11 +88,13 @@ Enhance SilverOS with additional mods by following these steps:
 mv My\ Mod Mods
 ```
 
-4. Run the [modLoader](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.sh) script:
+4. for Linux and macOS run the [modLoader.sh](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.sh) script:
 
 ```bash
 ./modLoader.sh
 ```
+
+5. For NT use the [modLoader.bat]() script:
 
 ## Login
 
