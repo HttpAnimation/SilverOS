@@ -94,7 +94,7 @@ mv My\ Mod Mods
 ./modLoader.sh
 ```
 
-5. For NT use the [modLoader.bat]() script:
+5. For NT use the [modLoader.bat](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.bat) script:
 
 ## Login
 
