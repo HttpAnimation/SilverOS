@@ -2,6 +2,7 @@
   "name": "silveros",
   "version": "1.0.2",
   "main": "main.js",
+  "description": "A OS made for :3",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
