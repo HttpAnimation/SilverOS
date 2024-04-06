@@ -1,12 +1,12 @@
 # SilverOS
 
-SilverOS is an operating system simulator designed for being :3.
+SilverOS is a user-friendly operating system simulator designed with :3 in mind.
 
 ## Installation - Source
 
-To install SilverOS, follow these steps:
+To install SilverOS from the source, follow these straightforward steps:
 
-1. Open a terminal.
+1. Open your terminal.
 2. Run the following command:
 
 ```bash
@@ -19,49 +19,60 @@ git clone -b gh-pages https://github.com/HttpAnimation/SilverOS.git
 cd SilverOS
 ```
 
+4. Install dependencies:
+
 ```bash
 npm install
 ```
+
+5. Build SilverOS:
 
 ```bash
 npm run make
 ```
 
+6. Navigate to the build directory:
+
 ```bash
 cd out/make
 ```
 
-Once here you will need to install the package for your OS
+Choose your operating system and follow the specific installation instructions below:
 
-1) Linux - RPM
+### Linux
 
-```
+- RPM:
+
+```bash
 sudo dnf install *.rpm
 ```
 
-2) Linux - DEB
+- DEB:
 
-```
+```bash
 sudo dpkg -i *.deb
 ```
 
-3) macOS - intel
-Extract the zip file and then drag the app into your applications folder
+### macOS
 
-4) macOS - arm
+- Intel:
 
-Not tested don't own a mac on arm :(
+Extract the zip file and drag the app into your Applications folder.
 
-5) NT - x64/x32
+- ARM:
 
-Not tested might not work
+(Not tested)
+
+### Windows
+
+(Not tested)
 
 ## Mods
 
-You can enhance SilverOS by installing mods. Follow these steps to install mods:
+Enhance SilverOS with additional mods by following these steps:
 
 1. Download the desired mod from a trusted source, such as [GitHub](https://github.com).
-2. Ensure that the mod files are organized properly, as follows:
+2. Ensure proper organization of mod files:
 
 ```
 - ModEXP
@@ -73,21 +84,8 @@ You can enhance SilverOS by installing mods. Follow these steps to install mods:
 
 3. Move the mod folder to the "mods" directory within the SilverOS project:
 
-```
-$ ls
-index.html
-mods
-scripts
-:3
-css
-old
-I Like Boys :3
-My Mod
-modLoader.sh
-```
-
-```
-$ mv My\ Mod Mods
+```bash
+mv My\ Mod Mods
 ```
 
 4. Run the [modLoader](https://github.com/HttpAnimation/SilverOS/blob/gh-pages/modLoader.sh) script:
@@ -98,9 +96,10 @@ $ mv My\ Mod Mods
 
 ## Login
 
-The default password for the login page is **admin**. You can change the password by modifying the **config.json** file:
+Access the login page with the default password **admin**. Modify the password by editing the **config.json** file:
 
 Before modification:
+
 ```json
 {
     "Comment-2": "This is the login password",
@@ -109,6 +108,7 @@ Before modification:
 ```
 
 After modification:
+
 ```json
 {
     "Comment-2": "This is the login password",
