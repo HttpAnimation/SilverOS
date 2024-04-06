@@ -65,13 +65,14 @@ function createDockIcon(appName, appDetails, parentElement) {
 // Function to open app window or navigate to the specified HTML script
 function openApp(appName, appDetails) {
     if (appDetails.NewTab) {
-        // Open in a new tab
-        window.open(appDetails.MainEXE, '_blank');
+        // Change the tab without opening a new one
+        navigateToHTMLScript(appDetails.MainEXE);
     } else {
         // Open in the current tab
-        navigateToHTMLScript(appDetails.MainEXE);
+        window.open(appDetails.MainEXE, '_blank');
     }
 }
+
 
 // Function to navigate to the specified HTML script
 function navigateToHTMLScript(htmlScript) {
