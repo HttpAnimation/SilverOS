@@ -19,13 +19,15 @@ git clone -b gh-pages https://github.com/HttpAnimation/SilverOS.git
 cd SilverOS
 ```
 
-## Usage
-
-To start SilverOS, run the following command:
+```bash
+npm install
+```
 
 ```bash
-npm start
+npm run make
 ```
+
+
 
 ## Mods
 
