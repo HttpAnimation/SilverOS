@@ -1,7 +1,7 @@
 {
     "Name": "VPN",
     "Photo": "VPN/iconpath/icon.png",
-    "MainEXE": "VPN/file.html",
+    "MainEXE": "VPN/index.html",
     "Width": "800px",
     "Height": "480px",
     "NewTab": false
