@@ -4,5 +4,6 @@
     "Terminal": "Terminal/package.json",
     "Browser": "Browser/package.json",
     "Photos": "Photos/package.json",
-    "Minecraft": "Minecraft/package.json"
+    "Minecraft": "Minecraft/package.json",
+    "VPN": "VPN/package.json"
 }
