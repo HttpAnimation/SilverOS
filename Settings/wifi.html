@@ -5,74 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wi-Fi Settings</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #202124;
-            color: #fff;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #333;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            text-align: center;
-            color: #007bff; /* Blue accent color */
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            margin-bottom: 10px;
-            color: #9b59b6; /* Purple accent color */
-        }
-        .network {
-            padding: 10px;
-            border-bottom: 1px solid #555;
-            display: flex;
-            align-items: center;
-            transition: transform 0.3s ease-in-out; /* Animation */
-        }
-        .network:last-child {
-            border-bottom: none;
-        }
-        .network .name {
-            flex: 1;
-            color: #fff;
-        }
-        .network .strength {
-            margin-right: 10px;
-            color: #fff;
-        }
-        .network .status {
-            margin-left: auto;
-        }
-        .network .status button {
-            padding: 5px 10px;
-            background-color: #9b59b6; /* Purple accent color */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .setting {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .setting label {
-            margin-right: 10px;
-            color: #fff;
-        }
-        .setting input[type="checkbox"] {
-            margin-right: 10px;
-            cursor: pointer;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #202124;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue accent color */
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 10px;
+    color: #9b59b6; /* Purple accent color */
+}
+
+.network {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Animation */
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Move down initially */
+    animation: loadIn 0.5s ease forwards; /* Apply animation */
+}
+
+.network:last-child {
+    border-bottom: none;
+}
+
+.network .name {
+    flex: 1;
+    color: #fff;
+}
+
+.network .strength {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.network .status {
+    margin-left: auto;
+}
+
+.network .status button {
+    padding: 5px 10px;
+    background-color: #9b59b6; /* Purple accent color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.setting label {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.setting input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Add animation */
+@keyframes loadIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
     </style>
 </head>
 <body>
