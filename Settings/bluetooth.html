@@ -36,6 +36,7 @@
             border-bottom: 1px solid #555;
             display: flex;
             align-items: center;
+            transition: transform 0.3s ease-in-out; /* Animation */
         }
         .device:last-child {
             border-bottom: none;
@@ -141,8 +142,10 @@
                             disconnectedDeviceList.appendChild(device);
                             button.textContent = "Connect";
                         } else if (button.textContent === "Connect") {
-                            connectedDeviceList.appendChild(device);
-                            button.textContent = "Disconnect";
+                            setTimeout(() => {
+                                connectedDeviceList.appendChild(device);
+                                button.textContent = "Disconnect";
+                            }, 1000); // 1000 milliseconds delay
                         }
                     }
                 }
