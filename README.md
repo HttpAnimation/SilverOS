@@ -31,7 +31,30 @@ npm run make
 cd out/make
 ```
 
+Once here you will need to install the package for your OS
 
+1) Linux - RPM
+
+```
+sudo dnf install *.rpm
+```
+
+2) Linux - DEB
+
+```
+sudo dpkg -i *.deb
+```
+
+3) macOS - intel
+Extract the zip file and then drag the app into your applications folder
+
+4) macOS - arm
+
+Not tested don't own a mac on arm :(
+
+5) NT - x64/x32
+
+Not tested might not work
 
 ## Mods
 
