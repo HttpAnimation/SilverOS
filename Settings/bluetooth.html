@@ -74,18 +74,7 @@
     <div class="container">        
         <div class="section">
             <h2>Devices</h2>
-            <div class="device">
-                <div class="name">Bluetooth Device 1</div>
-                <div class="status"><button>Connect</button></div>
-            </div>
-            <div class="device">
-                <div class="name">Bluetooth Device 2</div>
-                <div class="status"><button>Connect</button></div>
-            </div>
-            <div class="device">
-                <div class="name">Bluetooth Device 3</div>
-                <div class="status"><button>Connect</button></div>
-            </div>
+            <div id="deviceList"></div>
         </div>
         
         <div class="section">
@@ -100,5 +89,33 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function generateRandomName() {
+            const adjectives = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Black", "White", "Gray"];
+            const nouns = ["Car", "Tree", "House", "Laptop", "Phone", "Chair", "Table", "Book", "Bottle", "Dog"];
+            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+            return `${randomAdjective} ${randomNoun}`;
+        }
+
+        function createDeviceElement() {
+            const deviceName = generateRandomName();
+            const deviceElement = document.createElement("div");
+            deviceElement.className = "device";
+            deviceElement.innerHTML = `
+                <div class="name">${deviceName}</div>
+                <div class="status"><button>Connect</button></div>
+            `;
+            return deviceElement;
+        }
+
+        window.onload = function() {
+            const deviceList = document.getElementById("deviceList");
+            for (let i = 0; i < 3; i++) { // Generate 3 random devices
+                deviceList.appendChild(createDeviceElement());
+            }
+        };
+    </script>
 </body>
 </html>
