@@ -9,16 +9,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
-            color: #202124;
+            background-color: #202124;
+            color: #fff;
         }
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         h1 {
             text-align: center;
@@ -33,7 +33,7 @@
         }
         .device {
             padding: 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #555;
             display: flex;
             align-items: center;
         }
@@ -42,6 +42,7 @@
         }
         .device .name {
             flex: 1;
+            color: #fff;
         }
         .device .status {
             margin-left: auto;
@@ -52,6 +53,19 @@
             color: #fff;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        .setting {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .setting label {
+            margin-right: 10px;
+            color: #fff;
+        }
+        .setting input[type="checkbox"] {
+            margin-right: 10px;
             cursor: pointer;
         }
     </style>
