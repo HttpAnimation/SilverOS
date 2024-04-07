@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut, shell } = require('electron');
+const { app, BrowserWindow, globalShortcut, shell, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 
