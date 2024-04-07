@@ -10,11 +10,12 @@ function createWindow() {
         height: 1500,
         fullscreen: true,
         webPreferences: {
-            nodeIntegration: true,
+            nodeIntegration: false,
             contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js') // Ensure this path is correct
         }
     });
+    
 
     mainWindow.loadFile('start.html');
 
