@@ -4,65 +4,90 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #1e1e1e; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
-    font-family: Arial, sans-serif; /* Default font family */
+    background-color: #1e1e1e;
+    /* Dark mode background color */
+    color: #fff;
+    /* Dark mode text color */
+    font-family: Arial, sans-serif;
+    /* Default font family */
 }
 
 #desktop {
     width: 100%;
-    height: calc(100% - 100px); /* Adjust height for the dock and top bar */
+    height: calc(100% - 100px);
+    /* Adjust height for the dock and top bar */
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px; /* Add space between top bar and icons */
+    margin-top: 30px;
+    /* Add space between top bar and icons */
 }
 
-.app-icon, .dock-icon {
-    width: 100px; /* Common width for icons */
-    height: 100px; /* Common height for icons */
+.app-icon,
+.dock-icon {
+    width: 100px;
+    /* Common width for icons */
+    height: 100px;
+    /* Common height for icons */
     margin: 10px;
     cursor: pointer;
-    border-radius: 50%; /* Rounded corners for icons */
-    overflow: hidden; /* Ensures content doesn't overflow if content is larger than the container */
+    border-radius: 50%;
+    /* Rounded corners for icons */
+    overflow: hidden;
+    /* Ensures content doesn't overflow if content is larger than the container */
 }
 
-.app-icon img, .dock-icon img {
+.app-icon img,
+.dock-icon img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
+    object-fit: cover;
+    /* Ensure the image covers the entire container */
 }
 
 .window {
     position: absolute;
-    border: 1px solid #666; /* Dark mode border color */
-    background-color: #333; /* Dark mode window background color */
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid #666;
+    /* Dark mode border color */
+    background-color: #333;
+    /* Dark mode window background color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    width: 60%; /* Set default width */
-    height: 60%; /* Set default height */
-    resize: both; /* Allow window to be resizable */
-    overflow: auto; /* Allow content overflow */
+    width: 60%;
+    /* Set default width */
+    height: 60%;
+    /* Set default height */
+    resize: both;
+    /* Allow window to be resizable */
+    overflow: auto;
+    /* Allow content overflow */
 }
 
 .window-content {
     padding: 10px;
-    width: 100%; /* Ensure content fills the window */
-    height: calc(100% - 30px); /* Subtract header height */
+    width: 100%;
+    /* Ensure content fills the window */
+    height: calc(100% - 30px);
+    /* Subtract header height */
 }
 
 .window-header {
-    background-color: #444; /* Dark mode header background color */
+    background-color: #444;
+    /* Dark mode header background color */
     padding: 5px;
     cursor: move;
     display: flex;
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: flex-start;
+    /* Align items to the left */
     align-items: center;
-    border-top-left-radius: 5px; /* Adjust border radius */
-    border-top-right-radius: 5px; /* Adjust border radius */
+    border-top-left-radius: 5px;
+    /* Adjust border radius */
+    border-top-right-radius: 5px;
+    /* Adjust border radius */
 }
 
 .window-header {
-    background-color: #444; /* Dark mode header background color */
+    background-color: #444;
+    /* Dark mode header background color */
     padding: 5px;
     cursor: move;
     display: flex;
@@ -81,12 +106,15 @@ body {
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: #333; /* Dark mode background color */
+    background-color: #333;
+    /* Dark mode background color */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 20px; /* Rounded corners for the dock */
-    border-top-right-radius: 20px; /* Rounded corners for the dock */
+    border-top-left-radius: 20px;
+    /* Rounded corners for the dock */
+    border-top-right-radius: 20px;
+    /* Rounded corners for the dock */
 }
 
 /* Menu Bar Styles */
@@ -94,7 +122,8 @@ body {
 #menu-bar {
     width: 100%;
     height: 30px;
-    background-color: #333; /* Dark mode menu bar background color */
+    background-color: #333;
+    /* Dark mode menu bar background color */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,11 +131,13 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999; /* Ensure menu bar appears above other elements */
+    z-index: 9999;
+    /* Ensure menu bar appears above other elements */
 }
 
 #title {
-    color: #fff; /* Dark mode text color */
+    color: #fff;
+    /* Dark mode text color */
     font-weight: bold;
 }
 
@@ -123,7 +154,8 @@ body {
 }
 
 .control:hover {
-    opacity: 0.7; /* Hover effect for system controls */
+    opacity: 0.7;
+    /* Hover effect for system controls */
 }
 
 /* Dropdown Menu Styles */
@@ -131,24 +163,30 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333; /* Dark mode dropdown menu background color */
+    background-color: #333;
+    /* Dark mode dropdown menu background color */
     min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 30px; /* Position relative to the top bar */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Fade-in/out transition */
+    top: 30px;
+    /* Position relative to the top bar */
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+    /* Fade-in/out transition */
 }
 
 .dropdown-content a {
-    color: #fff; /* Dark mode dropdown menu text color */
+    color: #fff;
+    /* Dark mode dropdown menu text color */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #555; /* Dark mode hover background color */
+    background-color: #555;
+    /* Dark mode hover background color */
 }
 
 .show {
@@ -158,11 +196,14 @@ body {
 
 /* Close button Styles */
 .close-button {
-    width: 20px; /* Set a fixed width */
-    height: 20px; /* Set a fixed height */
+    width: 20px;
+    /* Set a fixed width */
+    height: 20px;
+    /* Set a fixed height */
     cursor: pointer;
 }
 
 .close-button:hover {
-    opacity: 0.7; /* Hover effect for close button */
+    opacity: 0.7;
+    /* Hover effect for close button */
 }
