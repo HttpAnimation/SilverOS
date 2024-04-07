@@ -202,4 +202,3 @@ window.addEventListener('click', event => {
         }
     }
 });
-</script>
