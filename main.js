@@ -22,6 +22,11 @@ function createWindow() {
         mainWindow.reload();
     });
 
+    // Listen for the 'shutdown-app' message
+    ipcMain.on('shutdown-app', () => {
+        app.quit(); // Quit the application
+    });    
+
     // Open external links in default browser
     mainWindow.webContents.on('new-window', (event, url) => {
         event.preventDefault();
