@@ -10,9 +10,10 @@ function createWindow() {
         height: 1500,
         fullscreen: true,
         webPreferences: {
-            nodeIntegration: false,
+            preload: path.join(__dirname, 'preload.js'), // Adjust path as necessary
             contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js') // Ensure this path is correct
+            enableRemoteModule: false, // Deprecated in newer Electron versions, avoid if possible
+            nodeIntegration: false
         }
     });
     
