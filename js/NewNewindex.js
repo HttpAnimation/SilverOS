@@ -1,4 +1,3 @@
-<script>
 // Function to read config file
 function readConfig() {
     return fetch('config.json')
