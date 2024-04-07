@@ -47,6 +47,12 @@ Choose your operating system and follow the specific installation instructions b
 sudo dnf install *.rpm
 ```
 
+- DEB:
+
+```bash
+sudo dpkg -i *.deb
+```
+
 ### macOS
 
 - Intel:
