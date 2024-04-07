@@ -1,4 +1,5 @@
 {
     "Settings": "Settings/package.json",
+    "Browser": "Browser/package.json",
     "Notes": "Notes/package.json"
 }
