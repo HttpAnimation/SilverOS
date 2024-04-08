@@ -1,6 +1,6 @@
 {
     "Name": "Calculator",
-    "Photo": "Calculator/iconpath/icon.png",
+    "Photo": "Calculator/photos/icon.png",
     "MainEXE": "Calculator/index.html",
     "Width": "800px",
     "Height": "480px",
