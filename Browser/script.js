@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return; // Prevent the iframe from loading the blocked URL
         }
 
+        if (url === 'https://e621.net') {
+            alert('This url is blocked')
+            return; 
+        }
+
         iframe.src = url;
     });
 
