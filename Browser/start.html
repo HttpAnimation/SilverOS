@@ -16,7 +16,7 @@
             background-color: #121212; /* Dark mode background */
             color: white; /* Light text for contrast */
         }
-        .search-bar {
+        .search-bar form {
             display: flex;
             margin-bottom: 20px;
         }
@@ -56,8 +56,11 @@
 </head>
 <body>
     <div class="search-bar">
-        <input type="text" placeholder="Search the web...">
-        <input type="submit" value="Search">
+        <!-- Search form configured to use Bing as the search engine -->
+        <form action="https://www.bing.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="Search the web...">
+            <input type="submit" value="Search">
+        </form>
     </div>
     <div class="shortcuts">
         <div class="shortcut"><a href="#">Shortcut 1</a></div>
