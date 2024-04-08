@@ -1,6 +1,6 @@
 {
     "Name": "Abandoned Apps",
-    "Photo": "AbandonedApps/photos/browser.png",
+    "Photo": "AbandonedApps/photos/icon.png",
     "MainEXE": "AbandonedApps/index.html",
     "Width": "800px",
     "Height": "480px"
