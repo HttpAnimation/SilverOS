@@ -17,7 +17,7 @@ body, html {
     background-color: #1e1e1e; /* Darker shade for the header */
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #555; /* Slightly lighter border */
+    border-bottom: 1px solid #555; /* Slightly lighter border for contrast */
 }
 
 .header input[type=text], .header button {
@@ -38,9 +38,10 @@ body, html {
     color: #fff; /* Light text for content within iframe, though actual content color is controlled by the webpage itself */
 }
 
-/* Additional styling for buttons to improve appearance */
+/* Styling for the back and forward buttons to use arrows */
 .header button {
     cursor: pointer;
+    font-size: 16px; /* Adjust the size as needed */
 }
 
 .header button:hover {
