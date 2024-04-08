@@ -1,0 +1,8 @@
+{
+    "Name": "Calculator",
+    "Photo": "Calculator/photos/icon.png",
+    "MainEXE": "Calculator/index.html",
+    "Width": "800px",
+    "Height": "480px",
+    "NewTab": false
+}
