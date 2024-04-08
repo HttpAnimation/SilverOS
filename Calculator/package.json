@@ -1,6 +1,6 @@
 {
     "Name": "Calculator",
-    "Photo": "ModName/iconpath/icon.png",
+    "Photo": "Calculator/iconpath/icon.png",
     "MainEXE": "ModName/file.html",
     "Width": "800px",
     "Height": "480px",
