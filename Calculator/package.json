@@ -1,7 +1,7 @@
 {
     "Name": "Calculator",
     "Photo": "Calculator/iconpath/icon.png",
-    "MainEXE": "Calculator/file.html",
+    "MainEXE": "Calculator/index.html",
     "Width": "800px",
     "Height": "480px",
     "NewTab": false
