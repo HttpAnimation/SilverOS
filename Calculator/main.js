@@ -1,4 +1,3 @@
-<script>
 function appendToDisplay(value) {
     document.calculator.display.value += value;
 }
