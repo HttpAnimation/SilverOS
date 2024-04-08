@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac App Store</title>
+    <link rel="stylesheet" href="styles.css"> <!-- You can create a separate CSS file for styling -->
+</head>
+<body>
+    <div class="app">
+        <img src="minecraft_icon.png" alt="Minecraft Icon">
+        <h2>Minecraft</h2>
+        <button onclick="launchApp()">Launch</button>
+    </div>
+
+    <script>
+        function launchApp() {
+            window.open('../Minecraft/index.html', '_self'); // Open Minecraft app in the same window
+        }
+    </script>
+</body>
+</html>
