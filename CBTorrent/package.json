@@ -1,6 +1,6 @@
 {
     "Name": "CBTorrent",
-    "Photo": "Calculator/photos/icon.png",
+    "Photo": "CBTorrent/photos/icon.png",
     "MainEXE": "Calculator/index.html",
     "Width": "800px",
     "Height": "480px",
