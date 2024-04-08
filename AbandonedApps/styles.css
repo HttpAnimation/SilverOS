@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #3d3939;
     text-align: center;
 }
 
 .app {
-    background-color: #fff;
+    background-color: #1d1c1c;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -25,7 +25,7 @@ h2 {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #7917ca;
     color: #fff;
     padding: 8px 16px;
     border: none;
