@@ -1,11 +1,17 @@
-document.getElementById('goButton').onclick = function() {
-    const url = document.getElementById('urlBar').value;
-    document.getElementById('webpageView').src = url;
-};
+// When the DOM is fully loaded, set up event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // When the "Go" button is clicked, update the iframe's source to the entered URL
+    document.getElementById('goButton').addEventListener('click', function() {
+        const urlInput = document.getElementById('urlBar');
+        const iframe = document.getElementById('webpageView');
+        const url = urlInput.value.startsWith('http://') || urlInput.value.startsWith('https://') ? urlInput.value : 'http://' + urlInput.value;
+        iframe.src = url;
+    });
 
-document.getElementById('backButton').onclick = function() {
-    window.history.back();
-};
-
-document.getElementById('forwardButton').onclick = function() {
-    window
+    // Optional: Load a site when pressing Enter while focused on the URL bar
+    document.getElementById('urlBar').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('goButton').click();
+        }
+    });
+});
