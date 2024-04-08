@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // "Go" button functionality
-    document.getElementById('goButton').addEventListener('click', function() {
+    document.getElementById('goButton').addEventListener('click', function () {
         const urlInput = document.getElementById('urlBar');
         const iframe = document.getElementById('webpageView');
         let url = urlInput.value;
@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Enter key functionality in the URL bar
-    document.getElementById('urlBar').addEventListener('keypress', function(e) {
+    document.getElementById('urlBar').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             document.getElementById('goButton').click();
         }
     });
 
     // Reload button functionality
-    document.getElementById('reloadButton').addEventListener('click', function() {
+    document.getElementById('reloadButton').addEventListener('click', function () {
         const iframe = document.getElementById('webpageView');
         // Reload the iframe content
         iframe.contentWindow.location.reload();
