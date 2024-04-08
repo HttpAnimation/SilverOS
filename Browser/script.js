@@ -1,14 +1,27 @@
-// When the DOM is fully loaded, set up event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // When the "Go" button is clicked, update the iframe's source to the entered URL
     document.getElementById('goButton').addEventListener('click', function() {
         const urlInput = document.getElementById('urlBar');
         const iframe = document.getElementById('webpageView');
-        const url = urlInput.value.startsWith('http://') || urlInput.value.startsWith('https://') ? urlInput.value : 'http://' + urlInput.value;
+        let url = urlInput.value;
+
+        // Check if the URL starts with the proper protocol; if not, prepend it
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            url = 'http://' + url;
+        }
+
+        // Block the specific URL
+        if (url === 'http://127.0.0.1:3000/Browser/index.html') {
+            alert('This URL is blocked.');
+            // Optionally, clear the input or redirect to a default URL
+            // urlInput.value = '';
+            // iframe.src = 'about:blank'; // Redirect to a blank page
+            return; // Prevent the iframe from loading the blocked URL
+        }
+
         iframe.src = url;
     });
 
-    // Optional: Load a site when pressing Enter while focused on the URL bar
+    // Load site when pressing Enter in the URL bar
     document.getElementById('urlBar').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.getElementById('goButton').click();
