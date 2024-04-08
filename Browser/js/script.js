@@ -1,38 +1,59 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // "Go" button functionality
-    document.getElementById('goButton').addEventListener('click', function () {
-        const urlInput = document.getElementById('urlBar');
-        const iframe = document.getElementById('webpageView');
-        let url = urlInput.value;
+document.addEventListener('DOMContentLoaded', function() {
+    let history = []; // Array to keep track of URLs for back/forward functionality
+    let historyIndex = -1; // Current index in history
 
-        // Check if the URL starts with the proper protocol; if not, prepend it
+    function navigateTo(url) {
+        const iframe = document.getElementById('webpageView');
+        iframe.src = url;
+        // Update history and index
+        if (historyIndex < history.length - 1) {
+            history = history.slice(0, historyIndex + 1); // Trim forward history if navigating anew
+        }
+        history.push(url);
+        historyIndex++;
+    }
+
+    document.getElementById('goButton').addEventListener('click', function() {
+        const urlInput = document.getElementById('urlBar');
+        let url = urlInput.value.trim();
+
         if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'http://' + url;
         }
 
-        // Block specific URLs
         if (url === 'http://127.0.0.1:3000/Browser/index.html' || url === 'https://e621.net') {
             alert('This URL is blocked.');
-            // Optionally, clear the input or redirect to a default URL
-            // urlInput.value = '';
-            // iframe.src = 'about:blank'; // Redirect to a blank page
-            return; // Prevent the iframe from loading the blocked URL
+            return;
         }
 
-        iframe.src = url;
+        navigateTo(url);
     });
 
-    // Enter key functionality in the URL bar
-    document.getElementById('urlBar').addEventListener('keypress', function (e) {
+    document.getElementById('urlBar').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.getElementById('goButton').click();
         }
     });
 
-    // Reload button functionality
-    document.getElementById('reloadButton').addEventListener('click', function () {
-        const iframe = document.getElementById('webpageView');
-        // Reload the iframe content
-        iframe.contentWindow.location.reload();
+    document.getElementById('reloadButton').addEventListener('click', function() {
+        if (history.length > 0) {
+            document.getElementById('webpageView').contentWindow.location.reload();
+        }
+    });
+
+    document.getElementById('backButton').addEventListener('click', function() {
+        if (historyIndex > 0) {
+            historyIndex--;
+            const url = history[historyIndex];
+            document.getElementById('webpageView').src = url;
+        }
+    });
+
+    document.getElementById('forwardButton').addEventListener('click', function() {
+        if (historyIndex < history.length - 1) {
+            historyIndex++;
+            const url = history[historyIndex];
+            document.getElementById('webpageView').src = url;
+        }
     });
 });
