@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Calculator</title>
+    <title>Simple Calculator - macOS Style Dark Mode</title>
+    <style>
+        body {
+            background-color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type=text] {
+            width: 218px;
+            height: 40px;
+            margin-bottom: 20px;
+            background-color: #555;
+            border: none;
+            color: white;
+            text-align: right;
+            padding-right: 10px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            margin: 2px;
+            background-color: #666;
+            border: none;
+            color: white;
+            font-size: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #777;
+        }
+    </style>
 </head>
 <body>
     <form name="calculator">
@@ -39,7 +83,11 @@
         }
 
         function calculateResult() {
-            document.calculator.display.value = eval(document.calculator.display.value);
+            try {
+                document.calculator.display.value = eval(document.calculator.display.value);
+            } catch (e) {
+                document.calculator.display.value = 'Error';
+            }
         }
     </script>
 </body>
