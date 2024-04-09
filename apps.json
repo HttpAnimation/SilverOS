@@ -6,5 +6,6 @@
     "Photos": "Photos/package.json",
     "VPN": "VPN/package.json",
     "Calculator": "Calculator/package.json",
-    "Abandoned Apps": "AbandonedApps/package.json"
+    "Abandoned Apps": "AbandonedApps/package.json",
+    "CBTorrent": "CBTorrent/package.json"
 }
