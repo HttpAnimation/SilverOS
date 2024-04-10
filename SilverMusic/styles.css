@@ -46,11 +46,6 @@ body {
     cursor: pointer;
 }
 
-#play {
-    background-color: #5c09c7;
-    color: #fff;
-}
-
 #prev, #next, #shuffle, #add-files, #play {
     background-color: #ffffff;
     color: #fff;
