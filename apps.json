@@ -8,5 +8,6 @@
     "Calculator": "Calculator/package.json",
     "Abandoned Apps": "AbandonedApps/package.json",
     "CBTorrent": "CBTorrent/package.json",
-    "Silver Music": "SilverMusic/package.json"
+    "Silver Music": "SilverMusic/package.json",
+    "Mod Downloader": "ModDownloader/package.json"
 }
