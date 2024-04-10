@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: white;
+  }
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+    height: calc(100% - 100px);
+    overflow: auto;
+  }
+  .media-controls {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .album-art {
+    width: 100px;
+    height: 100px;
+    background-image: url('photos/icon.png');
+    background-size: cover;
+    display: inline-block;
+  }
+</style>
 </head>
 <body>
-    <center><h1>test</h1></center>
+
+<div class="sidebar">
+  <p>Song 1</p>
+  <p>Song 2</p>
+  <p>Song 3</p>
+  <!-- Add more songs as needed -->
+</div>
+
+<div class="main-content">
+  <div class="album-art"></div>
+  <!-- Additional content can go here -->
+</div>
+
+<div class="media-controls">
+  <button>Play</button>
+  <button>Pause</button>
+  <button>Next</button>
+  <button>Previous</button>
+  <!-- Add more controls as needed -->
+</div>
+
 </body>
 </html>
