@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music Player</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock YouTube Music</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="sidebar">
-  <p>Song 1</p>
-  <p>Song 2</p>
-  <p>Song 3</p>
-  <!-- Add more songs as needed -->
-</div>
-
-<div class="main-content">
-  <div class="album-art"></div>
-  <!-- Additional content can go here -->
-</div>
-
-<div class="media-controls">
-  <button>Play</button>
-  <button>Pause</button>
-  <button>Next</button>
-  <button>Previous</button>
-  <!-- Add more controls as needed -->
-</div>
-
+    <div id="app">
+        <aside id="sidebar">
+            <div id="music-list">
+                <p>Drag and drop music files here</p>
+            </div>
+        </aside>
+        <main id="main-content">
+            <div id="album-art">
+                <img src="photos/icon.png" alt="Album Art">
+            </div>
+        </main>
+        <footer id="media-controls">
+            <button>Play</button>
+            <button>Pause</button>
+            <button>Next</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
