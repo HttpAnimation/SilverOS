@@ -1,0 +1,9 @@
+[
+    {
+        "Minecraft-SilverOS": {
+            "Description": "Minecraft ported over to a mod for SilverOS.",
+            "Logo": "https://raw.githubusercontent.com/HttpAnimation/SilverOS/gh-pages/Minecraft/photos/icon.png",
+            "DownloadURL": "https://github.com/HttpAnimation/Minecraft-SilverOS/archive/refs/tags/1.tar.gz"
+        }
+    }
+]
