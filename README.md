@@ -215,6 +215,12 @@ NewTab tells SilverOS if the app should be opening a full new frame or a new app
 ## How updates are made.
 Updates will be sent out to the [github](https://github.com) as packages.
 
+## Modded NT READ
+If your modded NT distro edits the terminal/cmd app then the app may not work to make sure it works type in the app cmd and make sure it enters the dir.
+
+```bash
+cd Downloads
+```
 
 ## Credits
 
