@@ -65,7 +65,7 @@ Extract the zip file and drag the app into your Applications folder.
 
 don't have a m# :(
 
-### Windows
+### NT
 
 (Not tested)
 
