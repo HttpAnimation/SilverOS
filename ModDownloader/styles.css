@@ -47,6 +47,7 @@ h1 {
 }
 
 .mod-name {
+    font-weight: bold;
     font-size: 24px;
     color: #e8adff;
 }
