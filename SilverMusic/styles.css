@@ -38,7 +38,8 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 1000%;
-    background-color: #fff;
+    background-color: #000000;
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
