@@ -1,6 +1,6 @@
 {
     "Name": "Silver Music",
-    "Photo": "Settings/photos/gear.png",
+    "Photo": "SilverMusic/photos/gear.png",
     "MainEXE": "SilverMusic/index.html",
     "Width": "800px",
     "Height": "480px"
