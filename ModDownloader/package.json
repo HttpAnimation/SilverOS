@@ -1,0 +1,8 @@
+{
+    "Name": "Minecraft",
+    "Photo": "Minecraft/photos/icon.png",
+    "MainEXE": "Minecraft/index.html",
+    "Width": "800px",
+    "Height": "480px",
+    "NewTab": true
+}
