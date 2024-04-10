@@ -1,7 +1,7 @@
 {
     "Name": "Mod Downloader",
     "Photo": "ModDownloader/photos/icon.png",
-    "MainEXE": "Minecraft/index.html",
+    "MainEXE": "ModDownloader/index.html",
     "Width": "800px",
     "Height": "480px",
     "NewTab": false
