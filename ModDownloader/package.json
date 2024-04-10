@@ -4,5 +4,5 @@
     "MainEXE": "Minecraft/index.html",
     "Width": "800px",
     "Height": "480px",
-    "NewTab": true
+    "NewTab": false
 }
