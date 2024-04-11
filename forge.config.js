@@ -22,16 +22,6 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
-    {
-      name: '@electron-forge/maker-flatpak',
-      platforms: ['linux'], // Specifies that this maker is only for Linux
-      config: {
-        options: {
-          arch: ['x64', 'armv7l', 'arm64'], // Specify architectures
-          runtimeVersion: '21.08' // Specify the runtime version you are targeting
-        }
-      }
-    }
   ],
   plugins: [
     {
