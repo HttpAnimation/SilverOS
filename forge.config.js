@@ -1,7 +1,6 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
-
 module.exports = {
   packagerConfig: {
     asar: true,
@@ -27,8 +26,8 @@ module.exports = {
       name: '@electron-forge/maker-flatpak',
       config: {
         options: {
-          arch: ['x64', 'armv7l', 'arm64'], // Specify architectures
-          runtimeVersion: '21.08' // Specify the runtime version you are targeting
+          arch: ['x64', 'armv7l', 'arm64'],
+          runtimeVersion: '21.08'
         }
       }
     }
