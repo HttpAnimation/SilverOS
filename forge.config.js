@@ -31,11 +31,6 @@ module.exports = {
           runtimeVersion: '21.08' // Specify the runtime version you are targeting
         }
       }
-    },
-    {
-      name: '@electron-forge/maker-appimage',
-      platforms: ['linux'], // Specifies that this maker is only for Linux
-      config: {}
     }
   ],
   plugins: [
