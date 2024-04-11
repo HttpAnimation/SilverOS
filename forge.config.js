@@ -12,7 +12,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['darwin'], // Ensures this maker is only used for macOS
     },
     {
       name: '@electron-forge/maker-deb',
@@ -24,10 +24,11 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-flatpak',
+      platforms: ['linux'], // Specifies that this maker is only for Linux
       config: {
         options: {
-          arch: ['x64', 'armv7l', 'arm64'],
-          runtimeVersion: '21.08'
+          arch: ['x64', 'armv7l', 'arm64'], // Specify architectures
+          runtimeVersion: '21.08' // Specify the runtime version you are targeting
         }
       }
     }
