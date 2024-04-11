@@ -10,8 +10,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "dev": "electron index.html",
-    "make:flatpak": "electron-forge make --targets=@electron-forge/maker-flatpak"
-  },
+    "make:flatpak": "electron-forge make --platform=linux --targets=@electron-forge/maker-flatpak"  },
   "devDependencies": {
     "@electron-forge/cli": "^7.3.1",
     "@electron-forge/maker-deb": "^7.3.1",
