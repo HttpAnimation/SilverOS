@@ -37,4 +37,3 @@
             // Set the src attribute of the iframe to wifi.html
             mainFrame.src = 'wifi.html';
         });
-    </script>
