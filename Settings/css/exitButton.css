@@ -1,5 +1,5 @@
 .exit-link {
-    color: black;
+    color: rgb(255, 254, 254);
     text-decoration: none; /* Remove underline */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
