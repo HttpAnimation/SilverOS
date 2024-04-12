@@ -2,7 +2,7 @@
   "name": "silveros",
   "version": "1.0.9",
   "main": "main.js",
-  "description": "A OS made for :3",
+  "description": "An OS made in raw to run on anything with a mordern web browser.",
   "author": "HttpAnimation",
   "license": "GPL-3.0",
   "scripts": {
