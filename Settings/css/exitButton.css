@@ -1,0 +1,5 @@
+.exit-link {
+    color: black;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
