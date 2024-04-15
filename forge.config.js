@@ -22,10 +22,6 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
-    {
-      name: '@electron-forge/maker-appimage', // Add this maker for Linux
-      config: {},
-    }
   ],
   plugins: [
     {
