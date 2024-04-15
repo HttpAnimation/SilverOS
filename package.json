@@ -10,7 +10,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "dev": "electron index.html",
-    "make:flatpak": "electron-forge make --platform=linux --targets=@electron-forge/maker-flatpak"  },
+    "make:flatpak": "electron-forge make --platform=linux --targets=@electron-forge/maker-flatpak"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^7.3.1",
     "@electron-forge/maker-deb": "^7.3.1",
@@ -25,6 +26,7 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "express": "^4.19.2",
+    "md-block": "^0.0.1",
     "node-fetch": "^3.3.2"
   }
 }
