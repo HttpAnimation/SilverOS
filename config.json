@@ -1,6 +1,7 @@
 [
     {
         "DesktopIconSize": "40px",
-        "LoginPassword": "admin"
+        "LoginPassword": "admin",
+        "DarkMode": "true"
     }
 ]
