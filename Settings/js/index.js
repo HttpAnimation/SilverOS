@@ -4,6 +4,7 @@
         const bluetoothButton = document.getElementById('bluetoothButton');
         const wifiButton = document.getElementById('wifiButton');
         const mainFrame = document.getElementById('mainFrame');
+        const securityButton = document.getElementById('securityButton');
 
         // Add click event listeners to the buttons
         accountButton.addEventListener('click', function() {
