@@ -3,63 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SilverOS</title>
-    <link rel="stylesheet" href="css/exitButton.css">
-    <link rel="stylesheet" href="css/FIndex.css">
+    <title>Bluetooth Settings</title>
+    <link rel="stylesheet" href="css/bluetooth.css">
+    <style>
+    </style>
 </head>
 <body>
-    <div class="sidebar">
-        <button id="closeButton"><a href="../index.html" class="exit-link">Exit</a></button>
-        <button id="accountButton">Account</button>
-        <button id="aboutButton">About</button>
-        <button id="bluetoothButton">Bluetooth</button>
-        <button id="wifiButton">Wi-Fi</button>
+    <div class="container">        
+        <div class="section">
+            <h2>Connected Devices</h2>
+            <div id="connectedDeviceList"></div>
+        </div>
+
+        <div class="section">
+            <h2>Disconnected Devices</h2>
+            <div id="disconnectedDeviceList"></div>
+        </div>
+        
+        <div class="section">
+            <h2>Other Settings</h2>
+            <div class="setting">
+                <label for="discoverable">Discoverable:</label>
+                <input type="checkbox" id="discoverable">
+            </div>
+            <div class="setting">
+                <label for="pairing">Allow Pairing:</label>
+                <input type="checkbox" id="pairing">
+            </div>
+        </div>
     </div>
 
-    <div id="content">
-        <iframe id="mainFrame"></iframe>
-    </div>
+    <script src="js/bluetooth.js"></script>
 
-    <script>
-        // Get references to the buttons and the iframe
-        const accountButton = document.getElementById('accountButton');
-        const aboutButton = document.getElementById('aboutButton');
-        const bluetoothButton = document.getElementById('bluetoothButton');
-        const wifiButton = document.getElementById('wifiButton');
-        const mainFrame = document.getElementById('mainFrame');
-
-        // Add click event listeners to the buttons
-        accountButton.addEventListener('click', function() {
-            // Set the src attribute of the iframe to account.html
-            mainFrame.src = 'account.html';
-        });
-
-        aboutButton.addEventListener('click', function() {
-            // Close the iframe if already displaying content
-            if (mainFrame.src !== '') {
-                mainFrame.src = '';
-            }
-            // Set the src attribute of the iframe to about.html
-            mainFrame.src = 'about.html';
-        });
-
-        bluetoothButton.addEventListener('click', function() {
-            // Close the iframe if already displaying content
-            if (mainFrame.src !== '') {
-                mainFrame.src = '';
-            }
-            // Set the src attribute of the iframe to bluetooth.html
-            mainFrame.src = 'bluetooth.html';
-        });
-
-        wifiButton.addEventListener('click', function() {
-            // Close the iframe if already displaying content
-            if (mainFrame.src !== '') {
-                mainFrame.src = '';
-            }
-            // Set the src attribute of the iframe to wifi.html
-            mainFrame.src = 'wifi.html';
-        });
-    </script>
 </body>
 </html>
