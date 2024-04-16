@@ -39,11 +39,11 @@
             mainFrame.src = 'wifi.html';
         });
 
-        bluetoothButton.addEventListener('click', function() {
+        securityButton.addEventListener('click', function() {
             // Close the iframe if already displaying content
             if (mainFrame.src !== '') {
                 mainFrame.src = '';
             }
             // Set the src attribute of the iframe to bluetooth.html
-            mainFrame.src = 'bluetooth.html';
+            mainFrame.src = 'Security.html';
         });
