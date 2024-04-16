@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SilverOS</title>
+    <title>Login Password</title>
 </head>
 <body>
-    
+    <h1>Current Password</h1>
+    <p id="passwordDisplay"></p>
+
+    <script>
+        // Fetching the config.json file
+        fetch('../config.json')
+            .then(response => response.json())
+            .then(data => {
+                // Extracting the LoginPassword value
+                const password = data[0].LoginPassword;
+
+                // Displaying the password on the HTML page
+                document.getElementById('passwordDisplay').innerText = password;
+            })
+            .catch(error => {
+                console.error('Error fetching config.json:', error);
+            });
+    </script>
 </body>
 </html>
