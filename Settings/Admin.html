@@ -35,14 +35,14 @@
         // Function to change the password
         function changePassword() {
             const newPassword = document.getElementById('newPassword').value;
-            fs.readFile('/path/to/config.json', 'utf8', (err, data) => {
+            fs.readFile('../config.json', 'utf8', (err, data) => {
                 if (err) {
                     console.error(err);
                     return;
                 }
                 const config = JSON.parse(data);
                 config[0].LoginPassword = newPassword;
-                fs.writeFile('/path/to/config.json', JSON.stringify(config, null, 2), (err) => {
+                fs.writeFile('../config.json', JSON.stringify(config, null, 2), (err) => {
                     if (err) {
                         console.error(err);
                         return;
@@ -55,7 +55,7 @@
 
         // Function to revert to default password
         function revertToDefault() {
-            fs.writeFile('/path/to/config.json', JSON.stringify(defaultConfig, null, 2), (err) => {
+            fs.writeFile('../config.json', JSON.stringify(defaultConfig, null, 2), (err) => {
                 if (err) {
                     console.error(err);
                     return;
