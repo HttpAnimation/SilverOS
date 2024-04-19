@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="mod-info">
                             <div class="mod-name">${key.replace('-SilverOS', '')}</div>
                             <div class="mod-description">${value.Description}</div>
-                            <a href="${value.DownloadURL}" class="mod-download" download>Download</a>
+                            <a href="${value.DownloadURL}" target=”_blank” class="mod-download" download>Download</a>
                         </div>
                     `;
                     modList.appendChild(modElement);
