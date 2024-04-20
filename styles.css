@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .top-bar {
+    background-color: #f0f0f0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .desktop {
+    background-image: url('path/to/your/wallpaper.jpg');
+    background-size: cover;
+    height: calc(100% - 40px);
+    overflow: auto;
+  }
+  
+  .dock {
+    background-color: #333;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-icons, .right-icons {
+    display: flex;
+  }
+  
+  .center-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Add more styling as needed */
+  
