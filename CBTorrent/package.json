@@ -1,8 +1,0 @@
-{
-    "Name": "CBTorrent",
-    "Photo": "CBTorrent/photos/icon.png",
-    "MainEXE": "CBTorrent/index.html",
-    "Width": "800px",
-    "Height": "480px",
-    "NewTab": false
-}

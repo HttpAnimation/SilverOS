@@ -1,8 +1,0 @@
-{
-    "Name": "Mod Downloader",
-    "Photo": "ModDownloader/photos/icon.png",
-    "MainEXE": "ModDownloader/index.html",
-    "Width": "800px",
-    "Height": "480px",
-    "NewTab": false
-}

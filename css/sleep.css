@@ -1,9 +1,0 @@
-body {
-    background-color: black;
-    opacity: 1;
-    transition: opacity 1s; /* Transition for opacity with 1 second duration */
-}
-
-body.fade-out {
-    opacity: 0;
-}
