@@ -1,0 +1,12 @@
+{
+  "name": "silveros",
+  "version": "1.0.0",
+  "description": "SilverOS is a user-friendly operating system simulator designed with **:3** in mind.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
